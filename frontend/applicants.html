@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>Applicants — Turontoo</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">
+tailwind.config = { darkMode: 'class', theme: { extend: {
+  colors: { 'inverse-surface': '#31302d','outline-variant': '#c4c8ba','background': '#fcf9f4','error': '#ba1a1a','primary': '#4c6630','surface-container': '#f0ede9','on-primary-fixed-variant': '#354e1b','on-tertiary-fixed-variant': '#33495c','on-secondary-fixed': '#2e1500','error-container': '#ffdad6','on-surface': '#1c1c19','inverse-primary': '#b2d08f','on-primary-container': '#3a531f','on-secondary': '#ffffff','surface-container-highest': '#e5e2dd','primary-container': '#a8c686','surface-variant': '#e5e2dd','secondary-fixed': '#ffdcc2','outline': '#74796c','on-surface-variant': '#44483d','secondary': '#8c4f0e','on-primary': '#ffffff','surface-container-lowest': '#ffffff','on-background': '#1c1c19','tertiary-container': '#a8bfd5','primary-fixed': '#cdeda9','secondary-container': '#fdac65','on-tertiary': '#ffffff','surface-container-high': '#eae8e3','on-primary-fixed': '#0f2000','inverse-on-surface': '#f3f0eb','tertiary-fixed': '#cde5fc','secondary-fixed-dim': '#ffb77a','tertiary-fixed-dim': '#b2c9e0','on-error': '#ffffff','surface-container-low': '#f6f3ee','surface-tint': '#4c6630','on-error-container': '#93000a','surface-bright': '#fcf9f4','on-secondary-fixed-variant': '#6d3a00','surface-dim': '#dcdad5','on-secondary-container': '#763f00','on-tertiary-container': '#384e61','tertiary': '#4a6174','on-tertiary-fixed': '#041d2e','surface': '#fcf9f4' },
+  borderRadius: { 'DEFAULT': '0.25rem','lg': '0.5rem','xl': '0.75rem','full': '9999px' },
+  spacing: { 'space-xs': '0.25rem','space-sm': '0.5rem','space-md': '0.75rem','space-lg': '1rem','space-xl': '1.5rem','margin': '1rem','margin-desktop': '2.5rem' },
+  fontFamily: { 'label-lg': ['Plus Jakarta Sans'],'label-sm': ['Plus Jakarta Sans'],'headline-lg': ['Plus Jakarta Sans'],'title-md': ['Plus Jakarta Sans'],'body-lg': ['Plus Jakarta Sans'],'headline-md': ['Plus Jakarta Sans'],'body-sm': ['Plus Jakarta Sans'],'label-md': ['Plus Jakarta Sans'],'display-lg': ['Plus Jakarta Sans'],'headline-sm': ['Plus Jakarta Sans'],'body-md': ['Plus Jakarta Sans'] },
+  fontSize: { 'label-lg': ['14px',{lineHeight:'20px',fontWeight:'600'}],'label-sm': ['10px',{lineHeight:'14px',letterSpacing:'0.04em',fontWeight:'700'}],'headline-lg': ['28px',{lineHeight:'36px',fontWeight:'700'}],'title-md': ['16px',{lineHeight:'24px',fontWeight:'600'}],'body-lg': ['16px',{lineHeight:'24px',fontWeight:'400'}],'headline-md': ['22px',{lineHeight:'30px',fontWeight:'600'}],'body-sm': ['12px',{lineHeight:'18px',fontWeight:'400'}],'label-md': ['12px',{lineHeight:'16px',fontWeight:'600'}],'display-lg': ['36px',{lineHeight:'44px',fontWeight:'700'}],'headline-sm': ['18px',{lineHeight:'26px',fontWeight:'600'}],'body-md': ['14px',{lineHeight:'20px',fontWeight:'400'}] }
+} } };
+</script>
+<script src="js/user.js"></script>
+<script src="js/config.js"></script>
+<script src="js/ui.js"></script>
+<style>
+@layer base { html, body { margin: 0; padding: 0; min-height: 100%; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } }
+::-webkit-scrollbar { display: none; }
+.clay-btn { box-shadow: 0 4px 12px 0 rgba(168, 198, 134, 0.35), inset 0 2px 2px 0 rgba(255, 255, 255, 0.6), inset 0 -2px 3px 0 rgba(0, 0, 0, 0.08); }
+.logo-placeholder { display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #a8c686 0%, #4c6630 100%); color: #fff; font-weight: 700; }
+.skeleton { background: linear-gradient(90deg, #f0ede9 25%, #e5e2dd 50%, #f0ede9 75%); background-size: 200% 100%; animation: shimmer 1.4s infinite; }
+@keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+</style>
+</head>
+<body class="bg-surface text-on-surface font-body-md text-body-md min-h-screen flex flex-col antialiased selection:bg-primary-container selection:text-on-primary-container">
+
+<!-- HEADER -->
+<header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_12px_rgba(43,43,40,0.04)] pt-safe">
+  <div class="h-16 max-w-7xl mx-auto px-margin lg:px-margin-desktop flex items-center justify-between gap-space-md">
+    <div class="flex items-center gap-2">
+      <button onclick="history.back()" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container-high/60 transition-colors" aria-label="Go back">
+        <span class="material-symbols-outlined text-[24px]">arrow_back</span>
+      </button>
+      <a class="flex items-center gap-space-sm" href="index.html">
+        <img src="logo.png" alt="Turontoo" class="w-9 h-9 rounded-full object-cover"/>
+        <div class="flex flex-col">
+          <span class="font-headline-sm text-headline-sm tracking-tight text-on-surface leading-none">Turontoo</span>
+          <span class="font-label-sm text-label-sm text-on-surface-variant leading-tight hidden sm:inline">Applicants</span>
+        </div>
+      </a>
+    </div>
+    <a class="ml-space-xs flex items-center p-0.5 rounded-full hover:ring-2 hover:ring-primary-container transition-all" href="profile.html">
+      <div id="nav-avatar" class="w-8 h-8 rounded-full logo-placeholder text-[11px] flex items-center justify-center font-bold">?</div>
+    </a>
+  </div>
+</header>
+
+<main class="flex-1 flex flex-col relative w-full pt-16 pb-12 bg-surface min-h-[calc(100vh-4rem)]">
+  <div class="w-full max-w-3xl mx-auto px-margin lg:px-margin-desktop py-space-md flex flex-col gap-space-lg">
+
+    <!-- Loading -->
+    <div id="loading-state" class="flex flex-col gap-3">
+      <div class="h-32 rounded-2xl skeleton"></div>
+      <div class="h-24 rounded-2xl skeleton"></div>
+      <div class="h-24 rounded-2xl skeleton"></div>
+    </div>
+
+    <!-- Error / Not allowed -->
+    <div id="error-state" class="hidden flex-col items-center justify-center text-center gap-space-sm py-space-xl bg-surface-container-low rounded-2xl">
+      <span class="material-symbols-outlined text-[48px] text-error">error</span>
+      <p id="error-title" class="font-title-md text-title-md text-on-surface">Something went wrong</p>
+      <p id="error-desc" class="font-body-sm text-body-sm text-on-surface-variant max-w-sm">The page couldn't be loaded.</p>
+      <a href="profile.html" class="mt-2 px-4 py-2 rounded-xl bg-primary-container text-on-primary-container font-label-md text-label-md clay-btn">Back to Profile</a>
+    </div>
+
+    <!-- Content -->
+    <div id="content" class="hidden flex flex-col gap-space-lg">
+
+      <!-- Gig summary card -->
+      <div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm flex flex-col gap-space-md">
+        <div class="flex items-start justify-between gap-space-sm flex-wrap">
+          <div class="flex flex-col min-w-0 flex-1">
+            <div class="flex items-center gap-2 flex-wrap">
+              <h1 id="gig-title" class="font-headline-sm text-headline-sm text-on-surface font-bold">Loading...</h1>
+              <span id="gig-status-badge" class="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase bg-primary-container text-on-primary-container">open</span>
+            </div>
+            <span id="gig-meta" class="font-body-sm text-body-sm text-on-surface-variant mt-1">—</span>
+          </div>
+          <a id="gig-link" href="#" class="text-primary font-label-md text-label-md hover:underline flex items-center gap-1 shrink-0">
+            <span>View Job</span>
+            <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-3 gap-space-sm">
+          <div class="bg-surface-container-low rounded-xl p-3 flex flex-col">
+            <span id="stat-total" class="font-headline-sm text-headline-sm text-on-surface font-bold">0</span>
+            <span class="font-label-sm text-label-sm text-on-surface-variant">Total</span>
+          </div>
+          <div class="bg-primary-container/30 rounded-xl p-3 flex flex-col">
+            <span id="stat-booked" class="font-headline-sm text-headline-sm text-primary font-bold">0</span>
+            <span class="font-label-sm text-label-sm text-on-surface-variant">Hired</span>
+          </div>
+          <div class="bg-secondary-fixed/40 rounded-xl p-3 flex flex-col">
+            <span id="stat-pending" class="font-headline-sm text-headline-sm text-secondary font-bold">0</span>
+            <span class="font-label-sm text-label-sm text-on-surface-variant">Pending</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Applicant list -->
+      <div class="flex flex-col gap-space-md">
+        <div class="flex items-center justify-between">
+          <h2 class="font-title-md text-title-md font-bold text-on-surface flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-[20px]">group</span>
+            Applicants
+          </h2>
+          <span id="list-count" class="font-label-sm text-label-sm text-on-surface-variant">0 total</span>
+        </div>
+
+        <div id="applicants-list" class="flex flex-col gap-space-sm"></div>
+
+        <div id="applicants-empty" class="hidden flex-col items-center justify-center text-center gap-space-sm py-space-xl bg-surface-container-low rounded-2xl">
+          <span class="material-symbols-outlined text-[48px] text-outline">person_off</span>
+          <p class="font-title-md text-title-md text-on-surface">No applicants yet</p>
+          <p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm">Your job is live. Share it or wait for workers to apply.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<!-- TOAST -->
+<div class="fixed top-20 left-1/2 -translate-x-1/2 z-[80] transition-all duration-300 transform -translate-y-6 opacity-0 pointer-events-none px-margin py-space-sm rounded-full bg-inverse-surface text-inverse-on-surface shadow-lg flex items-center gap-space-sm font-label-md text-label-md" id="toastNotification">
+  <span class="material-symbols-outlined text-primary-fixed-dim text-[18px]">check_circle</span>
+  <span id="toastMessage">Action completed</span>
+</div>
+
+<script>
+(function () {
+  const API = window.API_BASE || 'http://localhost:5000';
+  const USER_KEY = 'turontoo_user';
+
+  const authUser = JSON.parse(localStorage.getItem(USER_KEY) || 'null');
+  if (!authUser || !authUser.id) {
+    window.location.href = 'login.html';
+    return;
+  }
+
+  const params = new URLSearchParams(window.location.search);
+  const gigId = params.get('id');
+
+  let gig = null;
+  let applicants = [];
+
+  // ---------- HELPERS ----------
+  function initials(name) {
+    if (!name) return '?';
+    return name.trim().split(/\s+/).map(w => w[0]).slice(0, 2).join('').toUpperCase();
+  }
+  function escapeHtml(s) {
+    if (s == null) return '';
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  }
+  function showToast(msg, type = 'success') {
+    const t = document.getElementById('toastNotification');
+    const l = document.getElementById('toastMessage');
+    if (!t || !l) return;
+    l.textContent = msg;
+    const icon = t.querySelector('.material-symbols-outlined');
+    if (icon) {
+      if (type === 'error') icon.className = 'material-symbols-outlined text-error text-[18px]';
+      else icon.className = 'material-symbols-outlined text-primary-fixed-dim text-[18px]';
+    }
+    t.classList.remove('opacity-0', '-translate-y-6', 'pointer-events-none');
+    t.classList.add('opacity-100', 'translate-y-0');
+    setTimeout(() => {
+      t.classList.remove('opacity-100', 'translate-y-0');
+      t.classList.add('opacity-0', '-translate-y-6', 'pointer-events-none');
+    }, 2400);
+  }
+
+  function showError(title, desc) {
+    document.getElementById('loading-state').classList.add('hidden');
+    document.getElementById('content').classList.add('hidden');
+    const err = document.getElementById('error-state');
+    err.classList.remove('hidden');
+    err.classList.add('flex');
+    document.getElementById('error-title').textContent = title;
+    document.getElementById('error-desc').textContent = desc;
+  }
+
+  // ---------- LOAD ----------
+  async function loadPage() {
+    if (!gigId) {
+      showError('No job selected', 'Open this page from your profile → My Posted Jobs.');
+      return;
+    }
+
+    try {
+      // 1. Fetch gig
+      const gigRes = await fetch(`${API}/api/gigs/${gigId}`);
+      const gigData = await gigRes.json();
+      if (!gigData.ok || !gigData.gig) throw new Error('Gig not found');
+      gig = gigData.gig;
+
+      // 2. Guard: must be the poster
+      if (!gig.poster || gig.poster.id !== authUser.id) {
+        showError('Not allowed', 'Only the job poster can view applicants.');
+        return;
+      }
+
+      // 3. Fetch applicants
+      const appsRes = await fetch(`${API}/api/gigs/${gigId}/applications`);
+      const appsData = await appsRes.json();
+      if (!appsData.ok) throw new Error(appsData.error || 'Failed to load applicants');
+      applicants = appsData.applications || [];
+
+      renderGigSummary();
+      renderApplicants();
+      document.getElementById('loading-state').classList.add('hidden');
+      const content = document.getElementById('content');
+      content.classList.remove('hidden');
+      content.classList.add('flex');
+    } catch (e) {
+      console.error('loadPage:', e);
+      showError('Could not load', e.message || 'Try again in a moment.');
+    }
+  }
+
+  // ---------- RENDER GIG HEADER ----------
+  function renderGigSummary() {
+    const g = gig;
+    document.getElementById('gig-title').textContent = g.title_bn || g.title || 'Job';
+
+    const statusBadges = {
+      open: 'bg-primary-container text-on-primary-container',
+      filled: 'bg-secondary-fixed text-on-secondary-fixed',
+      closed: 'bg-surface-container-highest text-on-surface-variant'
+    };
+    const gigStatus = g.status || 'open';
+    const badge = document.getElementById('gig-status-badge');
+    badge.textContent = gigStatus;
+    badge.className = `px-2 py-0.5 rounded-full text-[10px] font-bold uppercase ${statusBadges[gigStatus] || statusBadges.open}`;
+
+    document.getElementById('gig-meta').textContent = `৳${g.wage || 0} • ${g.area || ''}, ${g.city || ''} • ${g.workers_hired || 0}/${g.workers_needed || 1} hired`;
+    document.getElementById('gig-link').href = `job-details.html?id=${g.id}`;
+
+    // Stats
+    const total = applicants.length;
+    const hired = applicants.filter(a => a.status === 'booked' || a.status === 'completed').length;
+    const pending = applicants.filter(a => a.status === 'applied').length;
+    document.getElementById('stat-total').textContent = total;
+    document.getElementById('stat-booked').textContent = hired;
+    document.getElementById('stat-pending').textContent = pending;
+    document.getElementById('list-count').textContent = `${total} total`;
+  }
+
+  // ---------- RENDER APPLICANTS ----------
+  function renderApplicants() {
+    const list = document.getElementById('applicants-list');
+    const empty = document.getElementById('applicants-empty');
+    list.innerHTML = '';
+
+    if (!applicants.length) {
+      empty.classList.remove('hidden');
+      empty.classList.add('flex');
+      return;
+    }
+    empty.classList.add('hidden');
+    empty.classList.remove('flex');
+
+    applicants.forEach(a => list.appendChild(renderApplicantCard(a)));
+  }
+
+  function renderApplicantCard(a) {
+    const w = a.worker || {};
+    const wName = w.full_name_bn || w.full_name || 'Worker';
+    const wRating = w.rating_as_worker || 5.0;
+    const status = a.status || 'applied';
+
+    const statusColors = {
+      applied: 'bg-secondary-fixed text-on-secondary-fixed',
+      booked: 'bg-primary-container text-on-primary-container',
+      completed: 'bg-primary-fixed text-on-primary-fixed',
+      cancelled: 'bg-error-container text-on-error-container'
+    };
+    const statusColor = statusColors[status] || 'bg-surface-container-high text-on-surface-variant';
+
+    const card = document.createElement('div');
+    card.className = 'bg-surface-container-lowest rounded-2xl p-space-md shadow-sm flex flex-col gap-space-sm';
+
+    // Avatar image support
+    const avatarHtml = w.avatar_url
+      ? `<img src="${escapeHtml(w.avatar_url)}" alt="${escapeHtml(wName)}" class="w-14 h-14 rounded-full object-cover shrink-0"/>`
+      : `<div class="w-14 h-14 rounded-full logo-placeholder text-[18px] shrink-0 flex items-center justify-center">${initials(wName)}</div>`;
+
+    card.innerHTML = `
+      <div class="flex items-start gap-space-md">
+        <a href="profile.html?id=${w.id}" class="shrink-0 hover:opacity-90 transition-opacity">
+          ${avatarHtml}
+        </a>
+        <div class="flex flex-col min-w-0 flex-1 gap-1">
+          <div class="flex items-center gap-2 flex-wrap">
+            <a href="profile.html?id=${w.id}" class="font-title-md text-title-md text-on-surface font-semibold truncate hover:text-primary transition-colors">${escapeHtml(wName)}</a>
+            <span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full ${statusColor} capitalize">${status}</span>
+          </div>
+          <div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface-variant flex-wrap">
+            <span class="flex items-center gap-0.5">
+              <span class="material-symbols-outlined text-[14px] text-secondary" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="font-semibold text-on-surface">${wRating}</span>
+            </span>
+            <span>•</span>
+            <span>Applied ${new Date(a.created_at).toLocaleDateString('en-US', { day: 'numeric', month: 'short' })}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1">
+        <a href="profile.html?id=${w.id}" class="py-2 px-3 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors flex items-center justify-center gap-1">
+          <span class="material-symbols-outlined text-[16px]">person</span>
+          <span>Profile</span>
+        </a>
+        <button class="chat-btn py-2 px-3 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors flex items-center justify-center gap-1" data-gig="${gig.id}" data-worker="${w.id}">
+          <span class="material-symbols-outlined text-[16px] text-tertiary">chat_bubble</span>
+          <span>Chat</span>
+        </button>
+        ${status === 'applied' ? `
+          <button class="approve-btn py-2 px-3 rounded-xl bg-primary-container text-on-primary-container font-label-md text-label-md font-bold clay-btn transition-colors flex items-center justify-center gap-1 col-span-2" data-app="${a.id}" data-action="booked">
+            <span class="material-symbols-outlined text-[16px]">check_circle</span>
+            <span>Book This Worker</span>
+          </button>` : ''}
+        ${status === 'booked' ? `
+          <button class="approve-btn py-2 px-3 rounded-xl bg-primary text-on-primary font-label-md text-label-md font-bold clay-btn transition-colors flex items-center justify-center gap-1 col-span-2" data-app="${a.id}" data-action="completed">
+            <span class="material-symbols-outlined text-[16px]">task_alt</span>
+            <span>Mark Completed</span>
+          </button>` : ''}
+        ${status === 'completed' ? `
+          <button class="rate-btn py-2 px-3 rounded-xl bg-secondary text-on-secondary font-label-md text-label-md font-bold clay-btn transition-colors flex items-center justify-center gap-1 col-span-2" data-worker="${w.id}" data-gig="${gig.id}" data-name="${escapeHtml(wName)}">
+            <span class="material-symbols-outlined text-[16px]">star</span>
+            <span>Rate Worker</span>
+          </button>` : ''}
+      </div>
+    `;
+
+    // Bind
+    card.querySelector('.chat-btn')?.addEventListener('click', function () {
+      const gid = this.dataset.gig;
+      const wid = this.dataset.worker;
+      window.location.href = `chat.html?gig=${gid}&with=${wid}`;
+    });
+
+    card.querySelector('.approve-btn')?.addEventListener('click', async function () {
+      const appId = this.dataset.app;
+      const action = this.dataset.action;
+      this.disabled = true;
+      const orig = this.innerHTML;
+      this.innerHTML = '<span class="material-symbols-outlined animate-spin text-[16px]">progress_activity</span>';
+      try {
+        const res = await fetch(`${API}/api/applications/${appId}/status`, {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ status: action })
+        });
+        const data = await res.json();
+        if (!data.ok) throw new Error(data.error);
+        showToast(action === 'booked' ? 'Worker booked!' : 'Marked as completed!');
+        // Reload fresh
+        await loadPage();
+      } catch (e) {
+        showToast('Failed: ' + e.message, 'error');
+        this.disabled = false;
+        this.innerHTML = orig;
+      }
+    });
+
+    card.querySelector('.rate-btn')?.addEventListener('click', function () {
+      const workerId = this.dataset.worker;
+      const gid = this.dataset.gig;
+      // Go to profile with review params — profile.html opens the modal
+      window.location.href = `profile.html?review=${workerId}&gig=${gid}`;
+    });
+
+    return card;
+  }
+
+  // ---------- BOOT ----------
+  loadPage();
+
+  if (window.TurontooUser && window.TurontooUser.applyAvatar) window.TurontooUser.applyAvatar();
+})();
+</script>
+</body>
+</html>

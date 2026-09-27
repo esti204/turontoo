@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>Job Policy & Rules — Turontoo</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">
+tailwind.config = { darkMode: 'class', theme: { extend: {
+  colors: { 'inverse-surface': '#31302d','outline-variant': '#c4c8ba','background': '#fcf9f4','error': '#ba1a1a','primary': '#4c6630','surface-container': '#f0ede9','on-primary-fixed-variant': '#354e1b','on-tertiary-fixed-variant': '#33495c','on-secondary-fixed': '#2e1500','error-container': '#ffdad6','on-surface': '#1c1c19','inverse-primary': '#b2d08f','on-primary-container': '#3a531f','on-secondary': '#ffffff','surface-container-highest': '#e5e2dd','primary-container': '#a8c686','surface-variant': '#e5e2dd','secondary-fixed': '#ffdcc2','outline': '#74796c','on-surface-variant': '#44483d','secondary': '#8c4f0e','on-primary': '#ffffff','surface-container-lowest': '#ffffff','on-background': '#1c1c19','tertiary-container': '#a8bfd5','primary-fixed': '#cdeda9','secondary-container': '#fdac65','on-tertiary': '#ffffff','surface-container-high': '#eae8e3','on-primary-fixed': '#0f2000','inverse-on-surface': '#f3f0eb','tertiary-fixed': '#cde5fc','secondary-fixed-dim': '#ffb77a','tertiary-fixed-dim': '#b2c9e0','on-error': '#ffffff','surface-container-low': '#f6f3ee','surface-tint': '#4c6630','on-error-container': '#93000a','surface-bright': '#fcf9f4','on-secondary-fixed-variant': '#6d3a00','surface-dim': '#dcdad5','on-secondary-container': '#763f00','on-tertiary-container': '#384e61','tertiary': '#4a6174','on-tertiary-fixed': '#041d2e','surface': '#fcf9f4' },
+  borderRadius: { 'DEFAULT': '0.25rem','lg': '0.5rem','xl': '0.75rem','full': '9999px' },
+  spacing: { 'space-xs': '0.25rem','space-sm': '0.5rem','space-md': '0.75rem','space-lg': '1rem','space-xl': '1.5rem','margin': '1rem','margin-desktop': '2.5rem' },
+  fontFamily: { 'label-lg': ['Plus Jakarta Sans'],'label-sm': ['Plus Jakarta Sans'],'headline-lg': ['Plus Jakarta Sans'],'title-md': ['Plus Jakarta Sans'],'body-lg': ['Plus Jakarta Sans'],'headline-md': ['Plus Jakarta Sans'],'body-sm': ['Plus Jakarta Sans'],'label-md': ['Plus Jakarta Sans'],'display-lg': ['Plus Jakarta Sans'],'headline-sm': ['Plus Jakarta Sans'],'body-md': ['Plus Jakarta Sans'] },
+  fontSize: { 'label-lg': ['14px',{lineHeight:'20px',fontWeight:'600'}],'label-sm': ['10px',{lineHeight:'14px',letterSpacing:'0.04em',fontWeight:'700'}],'headline-lg': ['28px',{lineHeight:'36px',fontWeight:'700'}],'title-md': ['16px',{lineHeight:'24px',fontWeight:'600'}],'body-lg': ['16px',{lineHeight:'24px',fontWeight:'400'}],'headline-md': ['22px',{lineHeight:'30px',fontWeight:'600'}],'body-sm': ['12px',{lineHeight:'18px',fontWeight:'400'}],'label-md': ['12px',{lineHeight:'16px',fontWeight:'600'}],'display-lg': ['36px',{lineHeight:'44px',fontWeight:'700'}],'headline-sm': ['18px',{lineHeight:'26px',fontWeight:'600'}],'body-md': ['14px',{lineHeight:'20px',fontWeight:'400'}] }
+} } };
+</script>
+<script src="js/user.js"></script>
+<script src="js/ui.js"></script>
+<style>
+@layer base { html, body { margin: 0; padding: 0; min-height: 100%; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } }
+::-webkit-scrollbar { display: none; }
+.clay-fab { box-shadow: 0 4px 14px 0 rgba(168, 198, 134, 0.45), inset 0 2px 2px 0 rgba(255, 255, 255, 0.7), inset 0 -2px 3px 0 rgba(0, 0, 0, 0.1); }
+.clay-btn { box-shadow: 0 4px 12px 0 rgba(168, 198, 134, 0.35), inset 0 2px 2px 0 rgba(255, 255, 255, 0.6), inset 0 -2px 3px 0 rgba(0, 0, 0, 0.08); }
+.logo-placeholder { display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #a8c686 0%, #4c6630 100%); color: #fff; font-weight: 700; }
+html { scroll-behavior: smooth; }
+</style>
+</head>
+<body class="bg-surface text-on-surface font-body-md text-body-md min-h-screen flex flex-col antialiased selection:bg-primary-container selection:text-on-primary-container">
+
+<!-- Header -->
+<header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_12px_rgba(43,43,40,0.04)] pt-safe">
+  <div class="h-16 max-w-7xl mx-auto px-margin lg:px-margin-desktop flex items-center justify-between gap-space-md">
+    <div class="flex items-center gap-space-md">
+      <button onclick="history.back()" aria-label="Go back" class="w-10 h-10 rounded-full bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-on-surface transition-colors">
+        <span class="material-symbols-outlined text-[22px]">arrow_back</span>
+      </button>
+      <a class="flex items-center gap-space-sm" href="index.html">
+        <img src="logo.png" alt="Turontoo" class="w-8 h-8 rounded-full object-cover"/>
+        <span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Job Policy</span>
+      </a>
+    </div>
+    <a href="report.html" class="hidden sm:flex items-center gap-1.5 bg-surface-container text-on-surface px-space-md py-2 rounded-xl font-label-md text-label-md hover:bg-surface-container-high transition-colors">
+      <span class="material-symbols-outlined text-[18px] text-error">flag</span>
+      <span>Report</span>
+    </a>
+  </div>
+</header>
+
+<main class="flex-1 flex flex-col w-full pt-16 pb-28 lg:pb-12 bg-surface min-h-[calc(100vh-4rem)]">
+  <div class="w-full max-w-4xl mx-auto px-margin lg:px-margin-desktop py-space-lg">
+
+    <div class="flex flex-col items-center text-center gap-space-sm mb-space-xl">
+      <div class="w-16 h-16 rounded-2xl bg-primary-container text-on-primary-container flex items-center justify-center shadow-md">
+        <span class="material-symbols-outlined text-[36px]" style="font-variation-settings: 'FILL' 1;">gavel</span>
+      </div>
+      <h1 class="font-headline-lg text-headline-lg text-on-surface font-bold mt-space-sm">Job Policy &amp; Rules</h1>
+      <p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">How Turontoo keeps every job safe, fair, and free of middlemen. Read this before posting or booking.</p>
+      <p class="font-label-sm text-label-sm text-on-surface-variant">Last updated: August 2026</p>
+    </div>
+
+    <div class="sticky top-16 z-40 bg-surface/95 backdrop-blur-md -mx-margin px-margin lg:mx-0 lg:px-0 py-space-sm mb-space-md border-b border-outline-variant/30">
+      <div class="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar text-nowrap">
+        <a href="#dos-donts" class="toc-chip shrink-0 px-3 py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors">Do's &amp; Don'ts</a>
+        <a href="#wage" class="toc-chip shrink-0 px-3 py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors">Wage &amp; Payment</a>
+        <a href="#safety" class="toc-chip shrink-0 px-3 py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors">Safety</a>
+        <a href="#suspension" class="toc-chip shrink-0 px-3 py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors">Suspension</a>
+        <a href="#privacy" class="toc-chip shrink-0 px-3 py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors">Privacy</a>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-space-lg">
+
+      <section id="dos-donts" class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm flex flex-col gap-space-md scroll-mt-32">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-primary-container text-on-primary-container flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-[22px]">rule</span>
+          </div>
+          <div>
+            <h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Do's &amp; Don'ts</h2>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">What you can and cannot post on Turontoo</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+          <div class="bg-primary-fixed/40 rounded-xl p-space-md flex flex-col gap-space-sm">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary text-[22px]">check_circle</span>
+              <span class="font-title-md text-title-md text-on-surface font-bold">Allowed</span>
+            </div>
+            <ul class="flex flex-col gap-2">
+              <li class="flex items-start gap-2 font-body-sm text-body-sm text-on-surface leading-snug">
+                <span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check</span>
+                <span>Shop helpers, salesmen, cashiers</span>
+              </li>
+              <li class="flex items-start gap-2 font-body-sm text-body-sm text-on-surface leading-snug">
+                <span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check</span>
+                <span>Delivery, courier, errand running</span>
+              </li>
+              <li class="flex items-start gap-2 font-body-sm text-body-sm text-on-surface leading-snug">
+                <span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check</span>
+                <span>Home repairs, electrical, plumbing, carpentry</span>
+              </li>
+              <li class="flex items-start gap-2 font-body-sm text-body-sm text-on-surface leading-snug">
+                <span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check</span>
+                <span>Cleaning, cooking, household chores</span>
+              </li>
+              <li class="flex items-start gap-2 font-body-sm text-body-sm text-on-surface leading-snug">
+                <span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check</span>
+                <span>Event helpers, catering, food prep</span>
+              </li>
+              <li class="flex items-start gap-2 font-body-sm text-body-sm text-on-surface leading-snug">
+                <span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check</span>
+                <span>Tutoring, translation, data entry (in-person only)</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-error-container/60 rounded-xl p-space-md flex flex-col gap-space-sm">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-error text-[22px]">cancel</span>
+              <span class="font-title-md text-title-md text-on-surface font-bold">Banned</span>
+            </div>
+            <ul class="flex flex-col gap-2">
+              <li class="flex items-start gap-2 font-body-sm text-body-sm text-on-surface leading-snug">
+                <span class="material-symbols-outlined text-error text-[18px] shrink-0 mt-0.5">close</span>
+                <span>Anything illegal under Bangladeshi law</span>
+              </li>
+              <li class="flex items-start gap-2 font-body-sm text-body-sm text-on-surface leading-snug">
+                <span class="material-symbols-outlined text-error text-[18px] shrink-0 mt-0.5">close</span>
+                <span>Gambling, betting, adult content, escort services</span>
+              </li>
+              <li class="flex items-start gap-2 font-body-sm text-body-sm text-on-surface leading-snug">
+                <span class="material-symbols-outlined text-error text-[18px] shrink-0 mt-0.5">close</span>
+                <span>Selling drugs, weapons, stolen goods</span>
+              </li>
+              <li class="flex items-start gap-2 font-body-sm text-body-sm text-on-surface leading-snug">
+                <span class="material-symbols-outlined text-error text-[18px] shrink-0 mt-0.5">close</span>
+                <span>Pyramid schemes, MLM, "get rich quick" jobs</span>
+              </li>
+              <li class="flex items-start gap-2 font-body-sm text-body-sm text-on-surface leading-snug">
+                <span class="material-symbols-outlined text-error text-[18px] shrink-0 mt-0.5">close</span>
+                <span>Off-platform payment requests (WhatsApp, outside bKash)</span>
+              </li>
+              <li class="flex items-start gap-2 font-body-sm text-body-sm text-on-surface leading-snug">
+                <span class="material-symbols-outlined text-error text-[18px] shrink-0 mt-0.5">close</span>
+                <span>Discrimination based on religion, gender, or caste</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="wage" class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm flex flex-col gap-space-md scroll-mt-32">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-[22px]">payments</span>
+          </div>
+          <div>
+            <h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Wage &amp; Payment Rules</h2>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">Fair pay, no hidden fees</p>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-space-sm">
+          <div class="flex items-start gap-space-sm p-space-sm rounded-xl bg-surface-container-low">
+            <span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">percent</span>
+            <div class="flex flex-col min-w-0">
+              <span class="font-label-lg text-label-lg text-on-surface font-semibold">0% commission for workers</span>
+              <span class="font-body-sm text-body-sm text-on-surface-variant">Workers keep 100% of the agreed wage. Turontoo never takes a cut from worker pay.</span>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-space-sm p-space-sm rounded-xl bg-surface-container-low">
+            <span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">lock</span>
+            <div class="flex flex-col min-w-0">
+              <span class="font-label-lg text-label-lg text-on-surface font-semibold">Escrow protection</span>
+              <span class="font-body-sm text-body-sm text-on-surface-variant">Wages are reserved in escrow before the job starts. Workers are guaranteed payment on completion.</span>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-space-sm p-space-sm rounded-xl bg-surface-container-low">
+            <span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">schedule</span>
+            <div class="flex flex-col min-w-0">
+              <span class="font-label-lg text-label-lg text-on-surface font-semibold">Payment within 24 hours</span>
+              <span class="font-body-sm text-body-sm text-on-surface-variant">Cash on finish or bKash — the choice is set at posting and cannot change after booking.</span>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-space-sm p-space-sm rounded-xl bg-error-container/40">
+            <span class="material-symbols-outlined text-error text-[20px] shrink-0 mt-0.5">warning</span>
+            <div class="flex flex-col min-w-0">
+              <span class="font-label-lg text-label-lg text-on-surface font-semibold">Never pay off-platform</span>
+              <span class="font-body-sm text-body-sm text-on-surface-variant">Requests to pay via personal bKash, cash outside escrow, or advance fees are a red flag. Report them.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="safety" class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm flex flex-col gap-space-md scroll-mt-32">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-primary-fixed text-on-primary-fixed flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-[22px]">shield</span>
+          </div>
+          <div>
+            <h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Safety Guidelines</h2>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">Protect yourself and others</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-space-sm">
+          <div class="flex items-start gap-space-sm p-space-sm rounded-xl bg-surface-container-low">
+            <span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">badge</span>
+            <div class="flex flex-col min-w-0">
+              <span class="font-label-lg text-label-lg text-on-surface font-semibold">Verify your ID</span>
+              <span class="font-body-sm text-body-sm text-on-surface-variant">NID-verified workers and posters get priority matching and higher trust scores.</span>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-space-sm p-space-sm rounded-xl bg-surface-container-low">
+            <span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">location_on</span>
+            <div class="flex flex-col min-w-0">
+              <span class="font-label-lg text-label-lg text-on-surface font-semibold">Meet in public first</span>
+              <span class="font-body-sm text-body-sm text-on-surface-variant">For first-time meetings, prefer a public place. Share your location with a friend.</span>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-space-sm p-space-sm rounded-xl bg-surface-container-low">
+            <span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">call</span>
+            <div class="flex flex-col min-w-0">
+              <span class="font-label-lg text-label-lg text-on-surface font-semibold">Keep communication in-app</span>
+              <span class="font-body-sm text-body-sm text-on-surface-variant">Chat, calls, and confirmations stay on Turontoo. We can help if something goes wrong.</span>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-space-sm p-space-sm rounded-xl bg-surface-container-low">
+            <span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">photo_camera</span>
+            <div class="flex flex-col min-w-0">
+              <span class="font-label-lg text-label-lg text-on-surface font-semibold">Take before/after photos</span>
+              <span class="font-body-sm text-body-sm text-on-surface-variant">Document work with photos. Protects both sides if there's a dispute.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="suspension" class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm flex flex-col gap-space-md scroll-mt-32">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-error-container text-error flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-[22px]">block</span>
+          </div>
+          <div>
+            <h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Suspension Policy</h2>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">How accounts get restricted</p>
+          </div>
+        </div>
+
+        <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          Turontoo reviews every report. Accounts can be restricted, warned, or suspended depending on the severity and frequency of violations.
+        </p>
+
+        <div class="flex flex-col gap-space-sm">
+          <div class="flex items-start gap-space-md p-space-sm rounded-xl bg-surface-container-low">
+            <div class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shrink-0 font-bold">1</div>
+            <div class="flex flex-col min-w-0">
+              <span class="font-label-lg text-label-lg text-on-surface font-semibold">First warning</span>
+              <span class="font-body-sm text-body-sm text-on-surface-variant">Minor issues (late arrival, unclear description) — warning only.</span>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-space-md p-space-sm rounded-xl bg-surface-container-low">
+            <div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0 font-bold">2</div>
+            <div class="flex flex-col min-w-0">
+              <span class="font-label-lg text-label-lg text-on-surface font-semibold">3-5 reports</span>
+              <span class="font-body-sm text-body-sm text-on-surface-variant">If 3-5 different users report the same account with valid evidence, the account is flagged for review.</span>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-space-md p-space-sm rounded-xl bg-error-container/40">
+            <div class="w-8 h-8 rounded-full bg-error text-on-error flex items-center justify-center shrink-0 font-bold">3</div>
+            <div class="flex flex-col min-w-0">
+              <span class="font-label-lg text-label-lg text-on-surface font-semibold">Suspension</span>
+              <span class="font-body-sm text-body-sm text-on-surface-variant">Serious violations (fraud, harassment, illegal activity) → immediate suspension. Wallet funds are held for 30 days pending investigation.</span>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-space-md p-space-sm rounded-xl bg-surface-container-low">
+            <div class="w-8 h-8 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center shrink-0 font-bold">
+              <span class="material-symbols-outlined text-[16px]">undo</span>
+            </div>
+            <div class="flex flex-col min-w-0">
+              <span class="font-label-lg text-label-lg text-on-surface font-semibold">Appeal</span>
+              <span class="font-body-sm text-body-sm text-on-surface-variant">You can appeal within 14 days by contacting support. Our team reviews every appeal.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="privacy" class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm flex flex-col gap-space-md scroll-mt-32">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-[22px]">privacy_tip</span>
+          </div>
+          <div>
+            <h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Privacy &amp; Data</h2>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">What we collect and why</p>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-space-sm">
+          <div class="flex items-start gap-space-sm p-space-sm rounded-xl bg-surface-container-low">
+            <span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">visibility</span>
+            <div class="flex flex-col min-w-0">
+              <span class="font-label-lg text-label-lg text-on-surface font-semibold">Public profile</span>
+              <span class="font-body-sm text-body-sm text-on-surface-variant">Your name, city, rating, and skills are visible. Your phone number and NID are not.</span>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-space-sm p-space-sm rounded-xl bg-surface-container-low">
+            <span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">enhanced_encryption</span>
+            <div class="flex flex-col min-w-0">
+              <span class="font-label-lg text-label-lg text-on-surface font-semibold">Encrypted documents</span>
+              <span class="font-body-sm text-body-sm text-on-surface-variant">NID and identity documents are stored encrypted and only used for verification.</span>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-space-sm p-space-sm rounded-xl bg-surface-container-low">
+            <span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">delete</span>
+            <div class="flex flex-col min-w-0">
+              <span class="font-label-lg text-label-lg text-on-surface font-semibold">Delete anytime</span>
+              <span class="font-body-sm text-body-sm text-on-surface-variant">You can request account and data deletion at any time from Profile → Settings.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="bg-gradient-to-r from-secondary-fixed to-secondary-container rounded-2xl p-space-lg shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-md text-on-secondary-fixed">
+        <div class="flex items-center gap-space-md min-w-0">
+          <div class="w-12 h-12 rounded-xl bg-secondary text-on-secondary flex items-center justify-center shrink-0 shadow-sm">
+            <span class="material-symbols-outlined text-[26px]">flag</span>
+          </div>
+          <div class="flex flex-col min-w-0">
+            <span class="font-title-md text-title-md font-bold">See something wrong?</span>
+            <p class="font-body-sm text-body-sm text-on-secondary-fixed-variant leading-snug">Report a job, account, or message. We respond within 30 minutes.</p>
+          </div>
+        </div>
+        <a href="report.html" class="shrink-0 bg-on-secondary-fixed text-secondary-fixed px-space-md py-2 rounded-xl text-label-md font-label-md font-bold shadow-sm hover:brightness-110 active:scale-95 transition-all">
+          Report Now
+        </a>
+      </div>
+
+      <div class="bg-surface-container-low rounded-2xl p-space-lg flex flex-col gap-space-sm">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary text-[22px]">support_agent</span>
+          <h3 class="font-title-md text-title-md text-on-surface font-bold">Still have questions?</h3>
+        </div>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">Our support team is available 9 AM – 9 PM, 7 days a week.</p>
+        <div class="flex flex-wrap gap-space-sm pt-1">
+          <a href="tel:01815848096" class="inline-flex items-center gap-1.5 bg-surface-container-lowest text-on-surface px-space-md py-2 rounded-xl font-label-md text-label-md shadow-sm hover:bg-surface-container-high transition-colors">
+            <span class="material-symbols-outlined text-[18px] text-primary">call</span>
+            <span>01815848096</span>
+          </a>
+          <a href="mailto:support@turontoo.com" class="inline-flex items-center gap-1.5 bg-surface-container-lowest text-on-surface px-space-md py-2 rounded-xl font-label-md text-label-md shadow-sm hover:bg-surface-container-high transition-colors">
+            <span class="material-symbols-outlined text-[18px] text-primary">mail</span>
+            <span>support@turontoo.com</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-space-lg">
+      <a href="index.html" class="inline-flex items-center gap-1 font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors">
+        <span class="material-symbols-outlined text-[18px]">arrow_back</span>
+        <span>Back to home</span>
+      </a>
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="mt-auto w-full bg-surface-container-low pt-space-xl pb-safe shadow-[0_-1px_10px_rgba(43,43,40,0.03)]">
+  <div class="max-w-7xl mx-auto px-margin lg:px-margin-desktop">
+    <div class="bg-surface-container rounded-2xl p-space-lg mb-space-xl grid grid-cols-2 md:grid-cols-4 gap-space-lg">
+      <div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary">30 Mins</span><span class="font-label-md text-label-md text-on-surface-variant">Avg Match Speed</span></div>
+      <div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary">৳ 0 Fee</span><span class="font-label-md text-label-md text-on-surface-variant">Worker Keeps 100%</span></div>
+      <div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary">100%</span><span class="font-label-md text-label-md text-on-surface-variant">NID-Verified Labor</span></div>
+      <div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary">64</span><span class="font-label-md text-label-md text-on-surface-variant">Districts Covered</span></div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-space-xl pb-space-lg">
+      <div class="md:col-span-5 flex flex-col gap-space-sm">
+        <div class="flex items-center gap-space-sm">
+          <img src="logo.png" alt="Turontoo" class="w-7 h-7 rounded-full object-cover"/>
+          <span class="font-headline-sm text-headline-sm text-on-surface">Turontoo</span>
+        </div>
+        <p class="font-body-md text-body-md text-on-surface font-medium leading-relaxed mt-1">“প্রয়োজন হলেই, মানুষ মিলে সহজে, অভিজ্ঞতা নয়, ইচ্ছেটাই আসল কাজে।”</p>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">Hyperlocal peer-to-peer labor, on-demand errands, and instant skilled trade coordination across all of Bangladesh.</p>
+      </div>
+      <div class="md:col-span-2 flex flex-col gap-space-xs">
+        <span class="font-label-lg text-label-lg text-on-surface uppercase tracking-wider mb-1">Platform</span>
+        <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="index.html">Home</a>
+        <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="browse.html">All Jobs</a>
+        <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="post-job.html">Post Job</a>
+        <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="activity.html">My Work</a>
+      </div>
+      <div class="md:col-span-2 flex flex-col gap-space-xs">
+        <span class="font-label-lg text-label-lg text-on-surface uppercase tracking-wider mb-1">Safety &amp; Trust</span>
+        <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="policy.html">Job Policies</a>
+        <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="report.html">Report Issue</a>
+        <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="policy.html#privacy">NID Screening</a>
+        <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="policy.html#wage">Escrow Guarantee</a>
+      </div>
+      <div class="md:col-span-3 flex flex-col gap-space-xs">
+        <span class="font-label-lg text-label-lg text-on-surface uppercase tracking-wider mb-1">Coverage</span>
+        <span class="font-body-sm text-body-sm text-on-surface-variant">All 64 districts of Bangladesh — from Dhaka &amp; Chattogram to Sylhet, Khulna, Rajshahi, Barishal, Rangpur, Mymensingh.</span>
+      </div>
+    </div>
+    <div class="pt-space-lg pb-space-xl flex flex-col sm:flex-row items-center justify-between gap-space-sm font-body-sm text-body-sm text-on-surface-variant">
+      <p>© 2026 Turontoo Technologies Bangladesh. All rights reserved By Saad Iqbal Esti.</p>
+      <div class="flex items-center gap-space-lg">
+        <a class="hover:text-primary transition-colors" href="policy.html">Privacy</a>
+        <a class="hover:text-primary transition-colors" href="policy.html">Terms</a>
+        <a class="hover:text-primary transition-colors" href="policy.html">Guidelines</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- BOTTOM NAV -->
+<nav class="lg:hidden fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_16px_rgba(43,43,40,0.06)]">
+  <div class="flex justify-around items-center h-20 px-space-xs relative max-w-lg mx-auto">
+    <a class="flex flex-col items-center justify-center min-w-[56px] h-14 text-on-surface-variant hover:text-on-surface transition-all" href="index.html">
+      <span class="material-symbols-outlined text-[24px]">home</span>
+      <span class="font-label-sm text-label-sm mt-1">Home</span>
+    </a>
+    <a class="flex flex-col items-center justify-center min-w-[56px] h-14 text-on-surface-variant hover:text-on-surface transition-all" href="browse.html">
+      <span class="material-symbols-outlined text-[24px]">work</span>
+      <span class="font-label-sm text-label-sm mt-1">Jobs</span>
+    </a>
+    <div class="relative -top-5 flex flex-col items-center">
+      <a aria-label="Post Job" class="w-14 h-14 rounded-full bg-primary-container text-on-primary-container clay-fab flex items-center justify-center active:scale-95 transition-transform" href="post-job.html">
+        <span class="material-symbols-outlined text-[30px]">add</span>
+      </a>
+      <span class="font-label-sm text-label-sm text-on-surface-variant mt-1.5 font-medium">Post</span>
+    </div>
+    <a class="flex flex-col items-center justify-center min-w-[56px] h-14 text-on-surface-variant hover:text-on-surface transition-all" href="activity.html">
+      <span class="material-symbols-outlined text-[24px]">bolt</span>
+      <span class="font-label-sm text-label-sm mt-1">My Work</span>
+    </a>
+    <a class="flex flex-col items-center justify-center min-w-[56px] h-14 text-on-surface-variant hover:text-on-surface transition-all" href="profile.html">
+      <span class="material-symbols-outlined text-[24px]">person</span>
+      <span class="font-label-sm text-label-sm mt-1">Profile</span>
+    </a>
+  </div>
+</nav>
+
+<script>
+(function () {
+  const chips = document.querySelectorAll('.toc-chip');
+  const sections = document.querySelectorAll('section[id]');
+
+  chips.forEach(chip => {
+    chip.addEventListener('click', e => {
+      e.preventDefault();
+      const id = chip.getAttribute('href').slice(1);
+      const target = document.getElementById(id);
+      if (!target) return;
+      const top = target.getBoundingClientRect().top + window.scrollY - 120;
+      window.scrollTo({ top, behavior: 'smooth' });
+      history.replaceState(null, '', '#' + id);
+    });
+  });
+
+  function setActiveChip(id) {
+    chips.forEach(c => {
+      const matches = c.getAttribute('href') === '#' + id;
+      c.classList.toggle('bg-primary-container', matches);
+      c.classList.toggle('text-on-primary-container', matches);
+      c.classList.toggle('font-bold', matches);
+      c.classList.toggle('bg-surface-container-low', !matches);
+      c.classList.toggle('text-on-surface-variant', !matches);
+    });
+  }
+
+  const observer = new IntersectionObserver(entries => {
+    const visible = entries
+      .filter(e => e.isIntersecting)
+      .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+    if (visible.length) setActiveChip(visible[0].target.id);
+  }, { rootMargin: '-120px 0px -60% 0px', threshold: 0 });
+
+  sections.forEach(s => observer.observe(s));
+
+  if (window.location.hash) {
+    setActiveChip(window.location.hash.slice(1));
+  } else if (sections.length) {
+    setActiveChip(sections[0].id);
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === '/' && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
+      e.preventDefault();
+      const toc = document.querySelector('.toc-chip');
+      if (toc) {
+        toc.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        toc.focus();
+      }
+    }
+  });
+
+  if (window.TurontooUser && window.TurontooUser.applyAvatar) {
+    window.TurontooUser.applyAvatar();
+  }
+})();
+</script>
+</body>
+</html>

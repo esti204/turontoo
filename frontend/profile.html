@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>My Profile — Turontoo</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">
+tailwind.config = { darkMode: 'class', theme: { extend: {
+  colors: { 'inverse-surface': '#31302d','outline-variant': '#c4c8ba','background': '#fcf9f4','error': '#ba1a1a','primary': '#4c6630','surface-container': '#f0ede9','on-primary-fixed-variant': '#354e1b','on-tertiary-fixed-variant': '#33495c','on-secondary-fixed': '#2e1500','error-container': '#ffdad6','on-surface': '#1c1c19','inverse-primary': '#b2d08f','on-primary-container': '#3a531f','on-secondary': '#ffffff','surface-container-highest': '#e5e2dd','primary-container': '#a8c686','surface-variant': '#e5e2dd','secondary-fixed': '#ffdcc2','outline': '#74796c','on-surface-variant': '#44483d','secondary': '#8c4f0e','on-primary': '#ffffff','surface-container-lowest': '#ffffff','on-background': '#1c1c19','tertiary-container': '#a8bfd5','primary-fixed': '#cdeda9','secondary-container': '#fdac65','on-tertiary': '#ffffff','surface-container-high': '#eae8e3','on-primary-fixed': '#0f2000','inverse-on-surface': '#f3f0eb','tertiary-fixed': '#cde5fc','secondary-fixed-dim': '#ffb77a','tertiary-fixed-dim': '#b2c9e0','on-error': '#ffffff','surface-container-low': '#f6f3ee','surface-tint': '#4c6630','on-error-container': '#93000a','surface-bright': '#fcf9f4','on-secondary-fixed-variant': '#6d3a00','surface-dim': '#dcdad5','on-secondary-container': '#763f00','on-tertiary-container': '#384e61','tertiary': '#4a6174','on-tertiary-fixed': '#041d2e','surface': '#fcf9f4' },
+  borderRadius: { 'DEFAULT': '0.25rem','lg': '0.5rem','xl': '0.75rem','full': '9999px' },
+  spacing: { 'space-xs': '0.25rem','space-sm': '0.5rem','space-md': '0.75rem','space-lg': '1rem','space-xl': '1.5rem','margin': '1rem','margin-desktop': '2.5rem' },
+  fontFamily: { 'label-lg': ['Plus Jakarta Sans'],'label-sm': ['Plus Jakarta Sans'],'headline-lg': ['Plus Jakarta Sans'],'title-md': ['Plus Jakarta Sans'],'body-lg': ['Plus Jakarta Sans'],'headline-md': ['Plus Jakarta Sans'],'body-sm': ['Plus Jakarta Sans'],'label-md': ['Plus Jakarta Sans'],'display-lg': ['Plus Jakarta Sans'],'headline-sm': ['Plus Jakarta Sans'],'body-md': ['Plus Jakarta Sans'] },
+  fontSize: { 'label-lg': ['14px',{lineHeight:'20px',fontWeight:'600'}],'label-sm': ['10px',{lineHeight:'14px',letterSpacing:'0.04em',fontWeight:'700'}],'headline-lg': ['28px',{lineHeight:'36px',fontWeight:'700'}],'title-md': ['16px',{lineHeight:'24px',fontWeight:'600'}],'body-lg': ['16px',{lineHeight:'24px',fontWeight:'400'}],'headline-md': ['22px',{lineHeight:'30px',fontWeight:'600'}],'body-sm': ['12px',{lineHeight:'18px',fontWeight:'400'}],'label-md': ['12px',{lineHeight:'16px',fontWeight:'600'}],'display-lg': ['36px',{lineHeight:'44px',fontWeight:'700'}],'headline-sm': ['18px',{lineHeight:'26px',fontWeight:'600'}],'body-md': ['14px',{lineHeight:'20px',fontWeight:'400'}] }
+} } };
+</script>
+<script src="js/user.js"></script>
+<script src="js/config.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/auth.js"></script>
+<style>
+@layer base { html, body { margin: 0; padding: 0; min-height: 100%; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } }
+::-webkit-scrollbar { display: none; }
+.clay-fab { box-shadow: 0 4px 14px 0 rgba(168, 198, 134, 0.45), inset 0 2px 2px 0 rgba(255, 255, 255, 0.7), inset 0 -2px 3px 0 rgba(0, 0, 0, 0.1); }
+.clay-btn { box-shadow: 0 4px 12px 0 rgba(168, 198, 134, 0.35), inset 0 2px 2px 0 rgba(255, 255, 255, 0.6), inset 0 -2px 3px 0 rgba(0, 0, 0, 0.08); }
+.logo-placeholder { display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #a8c686 0%, #4c6630 100%); color: #fff; font-weight: 700; }
+.skeleton { background: linear-gradient(90deg, #f0ede9 25%, #e5e2dd 50%, #f0ede9 75%); background-size: 200% 100%; animation: shimmer 1.4s infinite; }
+@keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+.dark body { background: #1a1a17 !important; color: #f3f0eb !important; }
+.dark .bg-surface { background: #1a1a17 !important; }
+.dark .bg-surface-container-lowest { background: #232320 !important; }
+.dark .bg-surface-container-low { background: #2b2b28 !important; }
+.dark .bg-surface-container { background: #31302d !important; }
+.dark .bg-surface-container-high { background: #3a3a36 !important; }
+.dark .text-on-surface { color: #f3f0eb !important; }
+.dark .text-on-surface-variant { color: #b0aca3 !important; }
+.dark .border-outline-variant\/30 { border-color: #4a4a44 !important; }
+</style>
+</head>
+<body class="bg-surface text-on-surface font-body-md text-body-md min-h-screen flex flex-col antialiased selection:bg-primary-container selection:text-on-primary-container">
+
+<header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_12px_rgba(43,43,40,0.04)] pt-safe">
+  <div class="h-16 max-w-7xl mx-auto px-margin lg:px-margin-desktop flex items-center justify-between gap-space-md">
+    <div class="flex items-center gap-space-md">
+      <a class="flex items-center gap-space-sm group" href="index.html">
+        <img src="logo.png" alt="Turontoo" class="w-9 h-9 rounded-full object-cover shadow-[0_2px_6px_rgba(43,43,40,0.08)]"/>
+        <div class="flex flex-col">
+          <span class="font-headline-sm text-headline-sm tracking-tight text-on-surface leading-none">Turontoo</span>
+          <span class="font-label-sm text-label-sm text-on-surface-variant leading-tight hidden sm:inline">Bangladesh</span>
+        </div>
+      </a>
+      <div class="hidden lg:flex items-center ml-space-xl gap-space-lg">
+        <a class="relative font-label-lg text-label-lg text-on-surface hover:text-primary transition-colors py-1 group" href="index.html"><span class="relative z-10">Find Work</span><span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary rounded-full transition-all duration-200 group-hover:w-full"></span></a>
+        <a class="relative font-label-lg text-label-lg text-on-surface hover:text-primary transition-colors py-1 group" href="browse.html"><span class="relative z-10">All Jobs</span><span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary rounded-full transition-all duration-200 group-hover:w-full"></span></a>
+        <a class="relative font-label-lg text-label-lg text-on-surface hover:text-primary transition-colors py-1 group" href="activity.html"><span class="relative z-10">My Work</span><span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary rounded-full transition-all duration-200 group-hover:w-full"></span></a>
+        <a class="relative font-label-lg text-label-lg text-primary font-semibold py-1 group" href="profile.html"><span class="relative z-10">My Profile</span><span class="absolute bottom-0 left-0 w-full h-0.5 bg-primary rounded-full"></span></a>
+      </div>
+    </div>
+    <div class="flex items-center gap-space-xs">
+      <button id="theme-toggle" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/60 transition-colors" title="Toggle theme">
+        <span class="material-symbols-outlined text-[22px]" id="theme-icon">dark_mode</span>
+      </button>
+      <div class="relative flex items-center">
+        <button id="notif-btn" aria-label="Notifications" class="relative w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/60 transition-colors">
+          <span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;">notifications</span>
+          <span class="absolute top-2.5 right-2.5 w-2 h-2 bg-secondary rounded-full ring-2 ring-surface hidden" id="notif-dot"></span>
+        </button>
+        <div id="notif-panel" class="hidden absolute right-0 top-14 w-80 sm:w-96 max-w-[92vw] bg-surface-container-lowest rounded-2xl shadow-2xl border border-outline-variant/30 overflow-hidden z-[60]">
+          <div class="flex items-center justify-between p-space-md border-b border-outline-variant/30">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary text-[20px]">notifications</span>
+              <h3 class="font-title-md text-title-md font-bold text-on-surface">Notifications</h3>
+            </div>
+            <button id="notif-mark-all" class="text-primary font-label-sm text-label-sm hover:underline">Mark all read</button>
+          </div>
+          <div id="notif-list" class="max-h-96 overflow-y-auto p-space-sm flex flex-col gap-1">
+            <div class="text-center py-6">
+              <span class="material-symbols-outlined text-[36px] text-outline">notifications_off</span>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">No notifications yet</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="hidden lg:flex items-center gap-1.5 bg-primary-container text-on-primary-container px-space-lg py-2 rounded-xl font-label-lg text-label-lg clay-btn hover:brightness-105 transition-all ml-space-sm" href="post-job.html">
+        <span class="material-symbols-outlined text-[20px]">add_circle</span><span>Post Job</span>
+      </a>
+      <a class="ml-space-xs flex items-center p-0.5 rounded-full ring-2 ring-primary-container transition-all" href="profile.html">
+        <div id="nav-avatar" class="w-8 h-8 rounded-full logo-placeholder text-[11px] flex items-center justify-center font-bold">?</div>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="flex-1 flex flex-col relative w-full pt-16 pb-28 lg:pb-12 bg-surface min-h-[calc(100vh-4rem)]">
+  <div class="w-full max-w-6xl mx-auto px-margin lg:px-margin-desktop py-space-md flex flex-col gap-space-lg">
+
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-space-xs">
+        <h1 class="font-headline-md text-headline-md text-on-surface">My Profile</h1>
+        <span id="profile-view-badge" class="font-label-sm text-label-sm bg-surface-container-high text-on-surface-variant px-2 py-0.5 rounded-full">Private</span>
+      </div>
+      <div class="flex items-center gap-space-xs">
+        <button aria-label="Share Profile" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-highest transition-all clay-btn" id="shareBtn">
+          <span class="material-symbols-outlined text-[20px]">share</span>
+        </button>
+        <button aria-label="Log Out" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-error hover:bg-error-container/40 transition-all clay-btn" id="logoutBtn">
+          <span class="material-symbols-outlined text-[20px]">logout</span>
+        </button>
+      </div>
+    </div>
+
+    <div id="loading-skeleton" class="grid grid-cols-1 lg:grid-cols-3 gap-space-lg">
+      <div class="lg:col-span-2 flex flex-col gap-space-md">
+        <div class="h-48 rounded-2xl skeleton"></div>
+        <div class="h-32 rounded-2xl skeleton"></div>
+        <div class="h-64 rounded-2xl skeleton"></div>
+      </div>
+      <div class="flex flex-col gap-space-md">
+        <div class="h-40 rounded-2xl skeleton"></div>
+        <div class="h-64 rounded-2xl skeleton"></div>
+      </div>
+    </div>
+
+    <div id="content" class="hidden grid grid-cols-1 lg:grid-cols-3 gap-space-lg">
+
+      <div class="lg:col-span-2 flex flex-col gap-space-md">
+
+        <div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm flex flex-col gap-space-md">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+            <div class="flex items-start gap-space-md">
+              <div class="relative shrink-0">
+                <label for="avatar-input" class="cursor-pointer block group">
+                  <div id="profile-avatar" class="w-24 h-24 rounded-2xl logo-placeholder text-[32px] shadow-md overflow-hidden flex items-center justify-center">?</div>
+                  <div class="absolute inset-0 rounded-2xl bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span class="material-symbols-outlined text-white text-[24px]">photo_camera</span>
+                  </div>
+                </label>
+                <input type="file" id="avatar-input" accept="image/*" class="hidden"/>
+              </div>
+              <div class="flex flex-col min-w-0 gap-1">
+                <div class="flex items-center gap-space-xs flex-wrap">
+                  <span id="profile-name" class="font-headline-sm text-headline-sm text-on-surface">Loading...</span>
+                  <span id="profile-name-bn" class="font-label-md text-label-md text-on-surface-variant font-normal"></span>
+                </div>
+                <div class="flex items-center gap-2 flex-wrap">
+                  <span id="profile-id" class="font-label-sm text-label-sm text-on-surface-variant font-mono">#USR-......</span>
+                  <span id="profile-nid-chip" class="hidden items-center gap-1 bg-primary-fixed text-on-primary-fixed px-2 py-0.5 rounded-full font-label-sm text-label-sm">
+                    <span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>NID Verified
+                  </span>
+                  <span id="profile-pending-chip" class="hidden items-center gap-1 bg-secondary-fixed text-on-secondary-fixed px-2 py-0.5 rounded-full font-label-sm text-label-sm">
+                    <span class="material-symbols-outlined text-[13px]">schedule</span>Pending Review
+                  </span>
+                </div>
+                <div class="flex items-center gap-1 text-on-surface-variant">
+                  <span class="material-symbols-outlined text-[16px] text-secondary">location_on</span>
+                  <span id="profile-location" class="font-body-sm text-body-sm truncate">No location set</span>
+                </div>
+              </div>
+            </div>
+            <div class="flex sm:flex-col items-stretch gap-space-xs">
+              <button id="edit-profile-btn" class="bg-primary text-on-primary px-space-md py-2 rounded-xl font-label-lg text-label-lg clay-btn hover:brightness-105 transition-all flex items-center justify-center gap-1">
+                <span class="material-symbols-outlined text-[18px]">edit</span>
+                <span>Edit Profile</span>
+              </button>
+              <button id="hire-fast-btn" class="bg-surface-container text-on-surface px-space-md py-2 rounded-xl font-label-lg text-label-lg hover:bg-surface-container-high transition-all flex items-center justify-center gap-1">
+                <span class="material-symbols-outlined text-[18px]">electric_bolt</span>
+                <span>Hire Fast</span>
+              </button>
+            </div>
+          </div>
+
+          <div id="verify-prompt" class="hidden bg-secondary-fixed/40 rounded-xl p-space-sm flex items-start gap-space-sm">
+            <span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">notification_important</span>
+            <div class="flex flex-col gap-0.5 min-w-0 flex-1">
+              <span class="font-label-md text-label-md text-on-surface font-semibold">Verify your identity</span>
+              <p class="font-body-sm text-body-sm text-on-surface-variant leading-snug">Complete NID verification to apply for jobs, book, and post.</p>
+            </div>
+            <a href="verify.html" class="shrink-0 bg-primary text-on-primary px-space-md py-1.5 rounded-lg font-label-md text-label-md hover:brightness-105 transition-colors">Verify</a>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-space-md">
+          <div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col">
+            <span id="stat-completed" class="font-headline-sm text-headline-sm text-primary">0</span>
+            <span class="font-label-md text-label-md text-on-surface-variant">Completed</span>
+          </div>
+          <div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col">
+            <span id="stat-posted" class="font-headline-sm text-headline-sm text-secondary">0</span>
+            <span class="font-label-md text-label-md text-on-surface-variant">Posted</span>
+          </div>
+          <div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col">
+            <span id="stat-applied" class="font-headline-sm text-headline-sm text-tertiary">0</span>
+            <span class="font-label-md text-label-md text-on-surface-variant">Applied</span>
+          </div>
+          <div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col">
+            <span id="stat-rating" class="font-headline-sm text-headline-sm text-secondary">—</span>
+            <span class="font-label-md text-label-md text-on-surface-variant">Avg Rating</span>
+          </div>
+        </div>
+
+        <div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm flex flex-col gap-space-sm">
+          <div class="flex items-center justify-between">
+            <h2 class="font-headline-sm text-headline-sm text-on-surface">About</h2>
+            <button class="text-primary font-label-md text-label-md hover:underline" id="edit-bio-btn">Edit</button>
+          </div>
+          <p id="profile-bio" class="font-body-md text-body-md text-on-surface-variant leading-relaxed">No bio yet. Click "Edit" to add one.</p>
+          <p id="profile-bio-bn" class="font-body-md text-body-md text-on-surface leading-relaxed hidden"></p>
+        </div>
+
+        <div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm flex flex-col gap-space-sm">
+          <div class="flex items-center justify-between">
+            <h2 class="font-headline-sm text-headline-sm text-on-surface">Skills</h2>
+            <button class="text-primary font-label-md text-label-md hover:underline" id="edit-skills-btn">Edit</button>
+          </div>
+          <div id="profile-skills" class="flex flex-wrap gap-2">
+            <span class="text-on-surface-variant font-body-sm text-body-sm italic">No skills added yet.</span>
+          </div>
+        </div>
+
+        <div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm flex flex-col gap-space-sm">
+          <div class="flex items-center justify-between">
+            <h2 class="font-headline-sm text-headline-sm text-on-surface">Experience</h2>
+            <button class="text-primary font-label-md text-label-md hover:underline" id="edit-experience-btn">Edit</button>
+          </div>
+          <div id="profile-experience" class="flex flex-col gap-3">
+            <span class="text-on-surface-variant font-body-sm text-body-sm italic">No experience added yet.</span>
+          </div>
+        </div>
+
+        <div id="my-posted-jobs" class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm flex flex-col gap-space-sm">
+          <div class="flex items-center justify-between">
+            <h2 class="font-headline-sm text-headline-sm text-on-surface">My Posted Jobs</h2>
+            <a href="post-job.html" class="text-primary font-label-md text-label-md hover:underline flex items-center gap-1">
+              <span class="material-symbols-outlined text-[16px]">add</span>Post new
+            </a>
+          </div>
+          <div id="my-gigs" class="flex flex-col gap-3">
+            <p class="text-on-surface-variant font-body-sm text-body-sm italic">Loading posted jobs...</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-1 flex flex-col gap-space-md">
+        <div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm flex flex-col gap-space-md">
+          <div class="flex items-center justify-between">
+            <h2 class="font-headline-sm text-headline-sm text-on-surface">Reviews</h2>
+            <span id="reviews-count" class="font-label-sm text-label-sm bg-surface-container-high text-on-surface-variant px-2 py-0.5 rounded-full font-bold">0</span>
+          </div>
+          <div id="review-list" class="flex flex-col gap-space-sm">
+            <p class="text-on-surface-variant font-body-sm text-body-sm italic text-center py-4">No reviews yet. Complete a job to receive one.</p>
+          </div>
+        </div>
+
+        <div class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm flex flex-col gap-1">
+          <span class="font-label-lg text-label-lg text-on-surface-variant uppercase tracking-wider px-space-sm py-2">Settings</span>
+          <button class="w-full flex items-center justify-between p-space-sm rounded-xl hover:bg-surface-container-low transition-colors text-left" data-action="edit-profile">
+            <div class="flex items-center gap-space-sm">
+              <div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-on-surface">
+                <span class="material-symbols-outlined text-[20px]">person_edit</span>
+              </div>
+              <span class="font-title-md text-title-md text-on-surface">Edit Profile</span>
+            </div>
+            <span class="material-symbols-outlined text-outline text-[20px]">chevron_right</span>
+          </button>
+          <button class="w-full flex items-center justify-between p-space-sm rounded-xl hover:bg-surface-container-low transition-colors text-left" data-action="theme">
+            <div class="flex items-center gap-space-sm">
+              <div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-on-surface">
+                <span class="material-symbols-outlined text-[20px]" id="theme-setting-icon">dark_mode</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="font-title-md text-title-md text-on-surface">Theme</span>
+                <span class="font-body-sm text-body-sm text-on-surface-variant" id="theme-setting-text">Light</span>
+              </div>
+            </div>
+            <span class="material-symbols-outlined text-outline text-[20px]">chevron_right</span>
+          </button>
+          <button class="w-full flex items-center justify-between p-space-sm rounded-xl hover:bg-surface-container-low transition-colors text-left" data-action="verify">
+            <div class="flex items-center gap-space-sm">
+              <div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined text-[20px]">verified_user</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="font-title-md text-title-md text-on-surface">Identity Verification</span>
+                <span class="font-body-sm text-body-sm text-on-surface-variant" id="verification-status-text">Not started</span>
+              </div>
+            </div>
+            <span class="material-symbols-outlined text-outline text-[20px]">chevron_right</span>
+          </button>
+          <button class="w-full flex items-center justify-between p-space-sm rounded-xl hover:bg-surface-container-low transition-colors text-left" data-action="policy">
+            <div class="flex items-center gap-space-sm">
+              <div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-tertiary">
+                <span class="material-symbols-outlined text-[20px]">gavel</span>
+              </div>
+              <span class="font-title-md text-title-md text-on-surface">Safety &amp; Job Policy</span>
+            </div>
+            <span class="material-symbols-outlined text-outline text-[20px]">chevron_right</span>
+          </button>
+          <button class="w-full flex items-center justify-between p-space-sm rounded-xl hover:bg-surface-container-low transition-colors text-left" data-action="report">
+            <div class="flex items-center gap-space-sm">
+              <div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-outline">
+                <span class="material-symbols-outlined text-[20px]">flag</span>
+              </div>
+              <span class="font-title-md text-title-md text-on-surface">Report an Account</span>
+            </div>
+            <span class="material-symbols-outlined text-outline text-[20px]">chevron_right</span>
+          </button>
+          <button class="w-full flex items-center justify-between p-space-sm rounded-xl hover:bg-error-container/40 transition-colors text-left mt-1" id="logout-btn-2">
+            <div class="flex items-center gap-space-sm">
+              <div class="w-9 h-9 rounded-lg bg-error-container text-error flex items-center justify-center">
+                <span class="material-symbols-outlined text-[20px]">logout</span>
+              </div>
+              <span class="font-title-md text-title-md text-error">Log Out</span>
+            </div>
+            <span class="material-symbols-outlined text-error text-[20px]">chevron_right</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- EDIT MODAL -->
+<div class="hidden fixed inset-0 z-[70] bg-inverse-surface/40 backdrop-blur-sm items-end sm:items-center justify-center p-4" id="edit-modal">
+  <div class="bg-surface-container-lowest rounded-3xl w-full max-w-lg max-h-[90vh] shadow-2xl flex flex-col overflow-hidden">
+    <div class="flex items-center justify-between p-space-lg border-b border-outline-variant/30">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-primary text-[24px]">edit</span>
+        <h3 class="font-title-md text-title-md font-bold text-on-surface">Edit Profile</h3>
+      </div>
+      <button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface" id="close-edit-modal">
+        <span class="material-symbols-outlined text-[18px]">close</span>
+      </button>
+    </div>
+    <div class="p-space-lg overflow-y-auto flex flex-col gap-space-md">
+      <div class="flex flex-col gap-1.5">
+        <label class="font-label-md text-label-md text-on-surface" for="edit-full-name">Full name (English)</label>
+        <input id="edit-full-name" class="w-full h-12 px-3 rounded-xl bg-surface-container-low text-on-surface focus:outline-none focus:bg-surface-container-lowest shadow-[inset_0_2px_4px_rgba(43,43,40,0.05)] font-body-md text-body-md" placeholder="Your name" type="text"/>
+      </div>
+      <div class="flex flex-col gap-1.5">
+        <label class="font-label-md text-label-md text-on-surface" for="edit-full-name-bn">Full name (Bangla)</label>
+        <input id="edit-full-name-bn" class="w-full h-12 px-3 rounded-xl bg-surface-container-low text-on-surface focus:outline-none focus:bg-surface-container-lowest shadow-[inset_0_2px_4px_rgba(43,43,40,0.05)] font-body-md text-body-md" placeholder="বাংলায় নাম" type="text"/>
+      </div>
+      <div class="flex flex-col gap-1.5">
+        <label class="font-label-md text-label-md text-on-surface" for="edit-phone">Phone number</label>
+        <input id="edit-phone" class="w-full h-12 px-3 rounded-xl bg-surface-container-low text-on-surface focus:outline-none focus:bg-surface-container-lowest shadow-[inset_0_2px_4px_rgba(43,43,40,0.05)] font-body-md text-body-md" placeholder="+8801XXXXXXXXX" type="tel"/>
+      </div>
+      <div class="grid grid-cols-2 gap-space-sm">
+        <div class="flex flex-col gap-1.5">
+          <label class="font-label-md text-label-md text-on-surface" for="edit-city">City / District</label>
+          <input id="edit-city" class="w-full h-12 px-3 rounded-xl bg-surface-container-low text-on-surface focus:outline-none focus:bg-surface-container-lowest shadow-[inset_0_2px_4px_rgba(43,43,40,0.05)] font-body-md text-body-md" placeholder="Chattogram" type="text"/>
+        </div>
+        <div class="flex flex-col gap-1.5">
+          <label class="font-label-md text-label-md text-on-surface" for="edit-area">Area</label>
+          <input id="edit-area" class="w-full h-12 px-3 rounded-xl bg-surface-container-low text-on-surface focus:outline-none focus:bg-surface-container-lowest shadow-[inset_0_2px_4px_rgba(43,43,40,0.05)] font-body-md text-body-md" placeholder="GEC Circle" type="text"/>
+        </div>
+      </div>
+      <div class="flex flex-col gap-1.5">
+        <label class="font-label-md text-label-md text-on-surface" for="edit-bio">Bio (English)</label>
+        <textarea id="edit-bio" rows="3" class="w-full p-3 rounded-xl bg-surface-container-low text-on-surface focus:outline-none focus:bg-surface-container-lowest shadow-[inset_0_2px_4px_rgba(43,43,40,0.05)] font-body-md text-body-md resize-none" placeholder="Tell people about yourself"></textarea>
+      </div>
+      <div class="flex flex-col gap-1.5">
+        <label class="font-label-md text-label-md text-on-surface" for="edit-bio-bn">Bio (Bangla)</label>
+        <textarea id="edit-bio-bn" rows="3" class="w-full p-3 rounded-xl bg-surface-container-low text-on-surface focus:outline-none focus:bg-surface-container-lowest shadow-[inset_0_2px_4px_rgba(43,43,40,0.05)] font-body-md text-body-md resize-none" placeholder="নিজের সম্পর্কে লিখুন"></textarea>
+      </div>
+      <div class="flex flex-col gap-1.5">
+        <label class="font-label-md text-label-md text-on-surface">Skills</label>
+        <div class="flex items-center gap-2">
+          <input id="edit-skill-input" class="flex-1 h-11 px-3 rounded-xl bg-surface-container-low text-on-surface focus:outline-none shadow-[inset_0_2px_4px_rgba(43,43,40,0.05)] font-body-md text-body-md" placeholder="Add a skill (e.g., Electrical)" type="text"/>
+          <button id="add-skill-btn" class="h-11 px-4 rounded-xl bg-primary-container text-on-primary-container font-label-md text-label-md clay-btn">Add</button>
+        </div>
+        <div id="edit-skills-list" class="flex flex-wrap gap-2 mt-1"></div>
+      </div>
+      <div class="flex flex-col gap-1.5">
+        <label class="font-label-md text-label-md text-on-surface">Experience</label>
+        <div id="edit-experience-list" class="flex flex-col gap-2"></div>
+        <button id="add-experience-btn" class="self-start flex items-center gap-1 text-primary font-label-md text-label-md hover:underline">
+          <span class="material-symbols-outlined text-[16px]">add</span>Add experience
+        </button>
+      </div>
+      <div class="hidden items-center gap-2 bg-error-container text-on-error-container rounded-xl p-space-sm font-body-sm text-body-sm" id="edit-error">
+        <span class="material-symbols-outlined text-[18px]">error</span>
+        <span id="edit-error-text">Something went wrong</span>
+      </div>
+    </div>
+    <div class="p-space-lg border-t border-outline-variant/30 flex flex-col sm:flex-row items-center gap-space-sm">
+      <button id="cancel-edit-btn" class="w-full sm:w-auto px-space-lg h-12 rounded-xl bg-surface-container text-on-surface font-label-lg text-label-lg hover:bg-surface-container-high transition-all">Cancel</button>
+      <button id="save-edit-btn" class="w-full sm:flex-1 h-12 rounded-xl bg-primary-container text-on-primary-container font-title-md text-title-md font-bold clay-btn hover:brightness-105 transition-all flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined text-[20px]">save</span>
+        <span id="save-edit-text">Save Changes</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- REVIEW MODAL -->
+<div class="hidden fixed inset-0 z-[70] bg-inverse-surface/40 backdrop-blur-sm items-end sm:items-center justify-center p-4" id="review-modal">
+  <div class="bg-surface-container-lowest rounded-3xl w-full max-w-md shadow-2xl flex flex-col overflow-hidden">
+    <div class="flex items-center justify-between p-space-lg border-b border-outline-variant/30">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-primary text-[24px]">rate_review</span>
+        <h3 class="font-title-md text-title-md font-bold text-on-surface">Leave a Review</h3>
+      </div>
+      <button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface" id="close-review-modal">
+        <span class="material-symbols-outlined text-[18px]">close</span>
+      </button>
+    </div>
+    <div class="p-space-lg flex flex-col gap-space-md">
+      <p class="font-body-md text-body-md text-on-surface" id="review-target-text">Rate this user</p>
+      <div class="flex items-center justify-center gap-2 py-2">
+        <button class="star-btn text-outline hover:text-secondary transition-colors" data-rating="1"><span class="material-symbols-outlined text-[40px]" style="font-variation-settings: 'FILL' 0;">star</span></button>
+        <button class="star-btn text-outline hover:text-secondary transition-colors" data-rating="2"><span class="material-symbols-outlined text-[40px]" style="font-variation-settings: 'FILL' 0;">star</span></button>
+        <button class="star-btn text-outline hover:text-secondary transition-colors" data-rating="3"><span class="material-symbols-outlined text-[40px]" style="font-variation-settings: 'FILL' 0;">star</span></button>
+        <button class="star-btn text-outline hover:text-secondary transition-colors" data-rating="4"><span class="material-symbols-outlined text-[40px]" style="font-variation-settings: 'FILL' 0;">star</span></button>
+        <button class="star-btn text-outline hover:text-secondary transition-colors" data-rating="5"><span class="material-symbols-outlined text-[40px]" style="font-variation-settings: 'FILL' 0;">star</span></button>
+      </div>
+      <p class="text-center font-label-md text-label-md text-on-surface-variant" id="rating-label">Tap a star to rate</p>
+      <div class="flex flex-col gap-1.5">
+        <label class="font-label-md text-label-md text-on-surface" for="review-comment">Comment (optional)</label>
+        <textarea id="review-comment" rows="3" class="w-full p-3 rounded-xl bg-surface-container-low text-on-surface focus:outline-none focus:bg-surface-container-lowest shadow-[inset_0_2px_4px_rgba(43,43,40,0.05)] font-body-md text-body-md resize-none" placeholder="How was your experience?" maxlength="500"></textarea>
+      </div>
+      <div class="hidden items-center gap-2 bg-error-container text-on-error-container rounded-xl p-space-sm font-body-sm text-body-sm" id="review-error">
+        <span class="material-symbols-outlined text-[18px]">error</span>
+        <span id="review-error-text">Something went wrong</span>
+      </div>
+    </div>
+    <div class="p-space-lg border-t border-outline-variant/30 flex flex-col sm:flex-row items-center gap-space-sm">
+      <button id="cancel-review-btn" class="w-full sm:w-auto px-space-lg h-12 rounded-xl bg-surface-container text-on-surface font-label-lg text-label-lg">Cancel</button>
+      <button id="submit-review-btn" class="w-full sm:flex-1 h-12 rounded-xl bg-primary-container text-on-primary-container font-title-md text-title-md font-bold clay-btn flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined text-[20px]">send</span>
+        <span id="submit-review-text">Submit Review</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="fixed top-20 left-1/2 -translate-x-1/2 z-[80] transition-all duration-300 transform -translate-y-6 opacity-0 pointer-events-none px-margin py-space-sm rounded-full bg-inverse-surface text-inverse-on-surface shadow-lg flex items-center gap-space-sm font-label-md text-label-md" id="toastNotification">
+  <span class="material-symbols-outlined text-primary-fixed-dim text-[18px]">check_circle</span>
+  <span id="toastMessage">Action completed</span>
+</div>
+
+<script>
+(function () {
+  const API = window.API_BASE || 'http://localhost:5000';
+  const USER_KEY = 'turontoo_user';
+  const THEME_KEY = 'turontoo_theme';
+
+  let currentUser = null;
+  let myGigs = [];
+  let editState = { skills: [], experience: [] };
+
+  // Viewing someone else's profile via ?id=
+  const params = new URLSearchParams(window.location.search);
+  const viewUserId = params.get('id');
+
+  const authUser = JSON.parse(localStorage.getItem(USER_KEY) || 'null');
+  if (!authUser || !authUser.id) { window.location.href = 'login.html'; return; }
+
+  const isOwnProfile = !viewUserId || viewUserId === authUser.id;
+  const profileId = isOwnProfile ? authUser.id : viewUserId;
+
+  // ---------- THEME ----------
+  function applyTheme(theme) {
+    const html = document.documentElement;
+    if (theme === 'dark') html.classList.add('dark'); else html.classList.remove('dark');
+    const icon = document.getElementById('theme-icon');
+    const settingIcon = document.getElementById('theme-setting-icon');
+    const settingText = document.getElementById('theme-setting-text');
+    if (icon) icon.textContent = theme === 'dark' ? 'light_mode' : 'dark_mode';
+    if (settingIcon) settingIcon.textContent = theme === 'dark' ? 'light_mode' : 'dark_mode';
+    if (settingText) settingText.textContent = theme === 'dark' ? 'Dark' : 'Light';
+    localStorage.setItem(THEME_KEY, theme);
+  }
+  async function toggleTheme() {
+    const current = localStorage.getItem(THEME_KEY) || 'light';
+    const next = current === 'dark' ? 'light' : 'dark';
+    applyTheme(next);
+    if (isOwnProfile) {
+      try { await fetch(`${API}/api/users/${authUser.id}`, { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ theme: next }) }); } catch (e) {}
+    }
+    showToast(`Theme: ${next}`);
+  }
+  document.getElementById('theme-toggle')?.addEventListener('click', toggleTheme);
+  document.querySelector('[data-action="theme"]')?.addEventListener('click', toggleTheme);
+
+  // ---------- TOAST ----------
+  function showToast(msg, type = 'success') {
+    const t = document.getElementById('toastNotification');
+    const l = document.getElementById('toastMessage');
+    if (!t || !l) return;
+    l.textContent = msg;
+    const icon = t.querySelector('.material-symbols-outlined');
+    if (icon) {
+      if (type === 'error') icon.className = 'material-symbols-outlined text-error text-[18px]';
+      else icon.className = 'material-symbols-outlined text-primary-fixed-dim text-[18px]';
+    }
+    t.classList.remove('opacity-0', '-translate-y-6', 'pointer-events-none');
+    t.classList.add('opacity-100', 'translate-y-0');
+    setTimeout(() => {
+      t.classList.remove('opacity-100', 'translate-y-0');
+      t.classList.add('opacity-0', '-translate-y-6', 'pointer-events-none');
+    }, 2400);
+  }
+
+  // ---------- HELPERS ----------
+  function initials(name) {
+    if (!name) return '?';
+    return name.trim().split(/\s+/).map(w => w[0]).slice(0, 2).join('').toUpperCase();
+  }
+  function escapeHtml(s) {
+    if (s == null) return '';
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  }
+
+  // ---------- NOTIFICATIONS ----------
+  async function loadNotifications() {
+    const list = document.getElementById('notif-list');
+    const dot = document.getElementById('notif-dot');
+    try {
+      const res = await fetch(`${API}/api/notifications/${authUser.id}`);
+      const data = await res.json();
+      if (!data.ok) throw new Error(data.error);
+      const notifs = data.notifications || [];
+      if (dot) { if (data.unread > 0) dot.classList.remove('hidden'); else dot.classList.add('hidden'); }
+      if (!notifs.length) {
+        list.innerHTML = '<div class="text-center py-6"><span class="material-symbols-outlined text-[36px] text-outline">notifications_off</span><p class="font-body-sm text-body-sm text-on-surface-variant mt-1">No notifications yet</p></div>';
+        return;
+      }
+      list.innerHTML = '';
+      notifs.slice(0, 20).forEach(n => {
+        const btn = document.createElement('button');
+        btn.className = `text-left w-full p-3 rounded-xl hover:bg-surface-container-low transition-colors flex items-start gap-2 ${n.is_read ? 'opacity-60' : ''}`;
+        const iconMap = { application: 'work', application_booked: 'event_available', application_completed: 'check_circle', message: 'chat', report: 'flag', review: 'star' };
+        const icon = iconMap[n.type] || 'notifications';
+        btn.innerHTML = `
+          <div class="w-8 h-8 rounded-lg bg-primary-container/40 text-primary flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-[18px]">${icon}</span>
+          </div>
+          <div class="flex flex-col min-w-0 flex-1">
+            <span class="font-label-md text-label-md text-on-surface font-semibold truncate">${escapeHtml(n.title || 'Notification')}</span>
+            <span class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">${escapeHtml(n.body || '')}</span>
+          </div>
+          ${!n.is_read ? '<span class="w-2 h-2 rounded-full bg-primary mt-1 shrink-0"></span>' : ''}
+        `;
+        btn.addEventListener('click', async () => {
+          try { await fetch(`${API}/api/notifications/${n.id}/read`, { method: 'PATCH' }); } catch (e) {}
+          // Respect the link the backend provided
+          if (n.link) {
+            window.location.href = n.link;
+          } else {
+            loadNotifications();
+          }
+        });
+        list.appendChild(btn);
+      });
+    } catch (e) {
+      list.innerHTML = '<div class="text-center py-6"><span class="material-symbols-outlined text-[36px] text-error">cloud_off</span><p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Could not load</p></div>';
+    }
+  }
+
+  const notifBtn = document.getElementById('notif-btn');
+  const notifPanel = document.getElementById('notif-panel');
+  notifBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    notifPanel.classList.toggle('hidden');
+    if (!notifPanel.classList.contains('hidden')) loadNotifications();
+  });
+  document.addEventListener('click', (e) => {
+    if (notifPanel && !notifPanel.contains(e.target) && e.target !== notifBtn) notifPanel.classList.add('hidden');
+  });
+  document.getElementById('notif-mark-all')?.addEventListener('click', async () => {
+    try { await fetch(`${API}/api/notifications/read-all/${authUser.id}`, { method: 'PATCH' }); loadNotifications(); } catch (e) {}
+  });
+
+  // ---------- LOAD PROFILE ----------
+  async function loadProfile() {
+    try {
+      const res = await fetch(`${API}/api/users/${profileId}`);
+      const data = await res.json();
+      if (!data.ok) throw new Error(data.error);
+      currentUser = data.user;
+      if (isOwnProfile) {
+        localStorage.setItem(USER_KEY, JSON.stringify({ ...authUser, ...currentUser }));
+      }
+      renderProfile();
+    } catch (e) {
+      console.error('loadProfile:', e);
+      currentUser = isOwnProfile ? authUser : { id: profileId };
+      renderProfile();
+    }
+    loadStats();
+    loadReviews();
+    if (isOwnProfile) loadMyGigs();
+  }
+
+  async function loadStats() {
+    try {
+      const res = await fetch(`${API}/api/users/${profileId}/stats`);
+      const data = await res.json();
+      if (data.ok) {
+        const s = data.stats;
+        document.getElementById('stat-completed').textContent = s.total_completed;
+        document.getElementById('stat-posted').textContent = s.total_posted;
+        document.getElementById('stat-applied').textContent = s.total_applied;
+        document.getElementById('stat-rating').textContent = s.total_reviews ? s.avg_rating.toFixed(1) + ' ★' : '—';
+      }
+    } catch (e) {}
+  }
+
+  async function loadReviews() {
+    const list = document.getElementById('review-list');
+    const count = document.getElementById('reviews-count');
+    try {
+      const res = await fetch(`${API}/api/users/${profileId}/reviews`);
+      const data = await res.json();
+      const reviews = data.reviews || [];
+      if (count) count.textContent = reviews.length;
+      if (!reviews.length) {
+        if (list) list.innerHTML = '<p class="text-on-surface-variant font-body-sm text-body-sm italic text-center py-4">No reviews yet.</p>';
+        return;
+      }
+      if (!list) return;
+      list.innerHTML = '';
+      reviews.forEach(r => {
+        const reviewer = r.reviewer || {};
+        const name = reviewer.full_name_bn || reviewer.full_name || 'User';
+        const stars = '★'.repeat(r.rating) + '☆'.repeat(5 - r.rating);
+        const div = document.createElement('div');
+        div.className = 'bg-surface-container-low rounded-xl p-space-sm flex flex-col gap-1';
+        div.innerHTML = `
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <div class="w-8 h-8 rounded-full logo-placeholder text-[11px] flex items-center justify-center">${initials(name)}</div>
+              <span class="font-label-md text-label-md text-on-surface font-semibold">${escapeHtml(name)}</span>
+            </div>
+            <span class="text-secondary text-[14px]">${stars}</span>
+          </div>
+          ${r.comment ? `<p class="font-body-sm text-body-sm text-on-surface-variant">${escapeHtml(r.comment)}</p>` : ''}
+        `;
+        list.appendChild(div);
+      });
+    } catch (e) { console.error('loadReviews:', e); }
+  }
+
+  // ---------- MY POSTED JOBS ----------
+  async function loadMyGigs() {
+    const wrap = document.getElementById('my-gigs');
+    if (!wrap) return;
+    wrap.innerHTML = '<p class="text-on-surface-variant font-body-sm text-body-sm italic">Loading posted jobs...</p>';
+    try {
+      const res = await fetch(`${API}/api/users/${authUser.id}/gigs`);
+      const data = await res.json();
+      myGigs = data.gigs || [];
+
+      if (!myGigs.length) {
+        wrap.innerHTML = '<p class="text-on-surface-variant font-body-sm text-body-sm italic">No jobs posted yet. <a href="post-job.html" class="text-primary hover:underline">Post one</a>.</p>';
+        return;
+      }
+
+      // Fetch applications for ALL gigs in parallel
+      const appResults = await Promise.all(
+        myGigs.map(g =>
+          fetch(`${API}/api/gigs/${g.id}/applications`)
+            .then(r => r.json())
+            .then(d => (d.ok ? (d.applications || []) : []))
+            .catch(() => [])
+        )
+      );
+
+      wrap.innerHTML = '';
+      myGigs.forEach((g, i) => {
+        const apps = appResults[i] || [];
+        const card = document.createElement('div');
+        card.className = 'flex flex-col gap-3 p-3 rounded-xl bg-surface-container-low';
+
+        const statusBadges = {
+          open: 'bg-primary-container text-on-primary-container',
+          filled: 'bg-secondary-fixed text-on-secondary-fixed',
+          closed: 'bg-surface-container-highest text-on-surface-variant'
+        };
+        const gigStatus = g.status || 'open';
+        const gigStatusClass = statusBadges[gigStatus] || statusBadges.open;
+
+        const workersHtml = apps.length
+          ? apps.map(a => {
+              const w = a.worker || {};
+              const wName = w.full_name_bn || w.full_name || 'Worker';
+              const statusColors = {
+                applied: 'bg-secondary-fixed text-on-secondary-fixed',
+                booked: 'bg-primary-container text-on-primary-container',
+                completed: 'bg-primary-fixed text-on-primary-fixed',
+                cancelled: 'bg-error-container text-on-error-container'
+              };
+              const statusColor = statusColors[a.status] || 'bg-surface-container-high text-on-surface-variant';
+              return `
+                <div class="flex items-center justify-between gap-2 p-2 rounded-lg bg-surface-container-lowest">
+                  <a href="profile.html?id=${w.id}" class="flex items-center gap-2 min-w-0 flex-1 hover:opacity-80 transition-opacity">
+                    <div class="w-8 h-8 rounded-full logo-placeholder text-[11px] shrink-0 flex items-center justify-center">${initials(wName)}</div>
+                    <div class="flex flex-col min-w-0">
+                      <span class="font-label-md text-label-md text-on-surface font-semibold truncate">${escapeHtml(wName)}</span>
+                      <span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded ${statusColor} self-start capitalize">${a.status}</span>
+                    </div>
+                  </a>
+                  <div class="flex items-center gap-1 shrink-0">
+                    <a href="profile.html?id=${w.id}" class="text-[11px] bg-surface-container text-on-surface px-2 py-1 rounded-lg font-label-sm hover:bg-surface-container-high transition-colors">Profile</a>
+                    ${a.status === 'applied' ? `<button class="approve-btn text-[11px] bg-primary-container text-on-primary-container px-2 py-1 rounded-lg font-label-sm" data-app="${a.id}" data-action="booked">Book</button>` : ''}
+                    ${a.status === 'booked' ? `<button class="approve-btn text-[11px] bg-primary text-on-primary px-2 py-1 rounded-lg font-label-sm" data-app="${a.id}" data-action="completed">Complete</button>` : ''}
+                    ${a.status === 'completed' ? `<button class="rate-btn text-[11px] bg-secondary text-on-secondary px-2 py-1 rounded-lg font-label-sm" data-worker="${w.id}" data-gig="${g.id}" data-name="${escapeHtml(wName)}">Rate</button>` : ''}
+                  </div>
+                </div>
+              `;
+            }).join('')
+          : '<p class="text-on-surface-variant font-body-sm text-body-sm italic text-[12px]">No applications yet.</p>';
+
+        card.innerHTML = `
+          <div class="flex items-center justify-between gap-3 rounded-lg p-1">
+            <a href="job-details.html?id=${g.id}" class="flex flex-col min-w-0 flex-1 hover:text-primary transition-colors">
+              <span class="font-title-md text-title-md text-on-surface font-semibold truncate">${escapeHtml(g.title_bn || g.title)}</span>
+              <span class="font-body-sm text-body-sm text-on-surface-variant">৳${g.wage} • ${escapeHtml(g.area || g.city || '')}</span>
+            </a>
+            <span class="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase ${gigStatusClass} shrink-0">${gigStatus}</span>
+          </div>
+          <div class="flex flex-col gap-2 pt-1">
+            <div class="flex items-center justify-between">
+              <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Applications (${apps.length})</span>
+              ${apps.length ? `<a href="applicants.html?id=${g.id}" class="flex items-center gap-0.5 text-primary font-label-md text-label-md hover:underline">
+                <span>Manage</span>
+                <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+              </a>` : ''}
+            </div>
+            ${workersHtml}
+          </div>
+        `;
+        wrap.appendChild(card);
+      });
+
+      wrap.querySelectorAll('.approve-btn').forEach(btn => {
+        btn.addEventListener('click', async (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          const appId = btn.dataset.app;
+          const action = btn.dataset.action;
+          btn.disabled = true;
+          btn.textContent = '...';
+          try {
+            const res = await fetch(`${API}/api/applications/${appId}/status`, {
+              method: 'PATCH',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ status: action })
+            });
+            const data = await res.json();
+            if (!data.ok) throw new Error(data.error);
+            showToast(`Marked as ${action}`);
+            loadMyGigs();
+            loadStats();
+          } catch (err) {
+            showToast('Failed: ' + err.message, 'error');
+            btn.disabled = false;
+            btn.textContent = action === 'booked' ? 'Book' : 'Complete';
+          }
+        });
+      });
+
+      wrap.querySelectorAll('.rate-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          openReviewModal({
+            revieweeId: btn.dataset.worker,
+            gigId: btn.dataset.gig,
+            name: btn.dataset.name,
+            role: 'as_worker'
+          });
+        });
+      });
+    } catch (e) {
+      console.error('loadMyGigs:', e);
+      wrap.innerHTML = `<p class="text-error font-body-sm text-body-sm italic">Failed to load: ${e.message}</p>`;
+    }
+  }
+
+  // ---------- RENDER PROFILE ----------
+  function renderProfile() {
+    const u = currentUser || {};
+    const name = u.full_name || 'Add your name';
+    const nameBn = u.full_name_bn || '';
+
+    document.getElementById('profile-name').textContent = name;
+    document.getElementById('profile-name-bn').textContent = nameBn ? '/ ' + nameBn : '';
+    document.getElementById('profile-id').textContent = '#USR-' + (u.id ? u.id.slice(0, 6).toUpperCase() : '......');
+    document.getElementById('profile-location').textContent = u.city ? `${u.area || ''}${u.area && u.city ? ', ' : ''}${u.city}` : 'No location set';
+
+    // View badge
+    document.getElementById('profile-view-badge').textContent = isOwnProfile ? 'Private' : 'Public View';
+
+    // Hide edit/upload on other people's profiles
+    if (!isOwnProfile) {
+      document.getElementById('edit-profile-btn')?.classList.add('hidden');
+      document.getElementById('hire-fast-btn')?.classList.add('hidden');
+      document.querySelectorAll('[data-action="edit-profile"]').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('[data-action="verify"], [data-action="theme"]').forEach(el => el.classList.add('hidden'));
+      document.getElementById('verify-prompt')?.classList.add('hidden');
+      document.getElementById('my-posted-jobs')?.classList.add('hidden');
+      document.getElementById('logoutBtn')?.classList.add('hidden');
+      document.getElementById('logout-btn-2')?.classList.add('hidden');
+    }
+
+    const avatarEl = document.getElementById('profile-avatar');
+    if (avatarEl) {
+      if (u.avatar_url) avatarEl.innerHTML = `<img src="${u.avatar_url}" alt="${escapeHtml(name)}" class="w-full h-full object-cover"/>`;
+      else avatarEl.textContent = initials(name);
+    }
+    const navAvatar = document.getElementById('nav-avatar');
+    if (navAvatar) {
+      const me = JSON.parse(localStorage.getItem(USER_KEY) || 'null');
+      if (me && me.avatar_url) navAvatar.innerHTML = `<img src="${me.avatar_url}" alt="avatar" class="w-full h-full object-cover rounded-full"/>`;
+      else navAvatar.textContent = initials(me ? me.full_name : '?');
+    }
+
+    const status = u.nid_verified ? 'verified' : (u.verification_status || 'unverified');
+    const vst = document.getElementById('verification-status-text');
+    if (vst) vst.textContent = status === 'verified' ? 'Verified ✓' : status === 'pending' ? 'Pending review' : 'Not started';
+
+    const nidChip = document.getElementById('profile-nid-chip');
+    const pendingChip = document.getElementById('profile-pending-chip');
+    const verifyPrompt = document.getElementById('verify-prompt');
+    if (nidChip && pendingChip && verifyPrompt) {
+      if (status === 'verified') {
+        nidChip.classList.remove('hidden'); nidChip.classList.add('inline-flex');
+        pendingChip.classList.add('hidden'); pendingChip.classList.remove('inline-flex');
+        verifyPrompt.classList.add('hidden'); verifyPrompt.classList.remove('flex');
+      } else if (status === 'pending') {
+        pendingChip.classList.remove('hidden'); pendingChip.classList.add('inline-flex');
+        nidChip.classList.add('hidden'); nidChip.classList.remove('inline-flex');
+        verifyPrompt.classList.add('hidden'); verifyPrompt.classList.remove('flex');
+      } else if (isOwnProfile) {
+        verifyPrompt.classList.remove('hidden'); verifyPrompt.classList.add('flex');
+      }
+    }
+
+    const bioEl = document.getElementById('profile-bio');
+    const bioBnEl = document.getElementById('profile-bio-bn');
+    if (bioEl) {
+      if (u.bio) { bioEl.textContent = u.bio; bioEl.className = 'font-body-md text-body-md text-on-surface-variant leading-relaxed'; }
+      else { bioEl.textContent = 'No bio yet.'; bioEl.className = 'font-body-md text-body-md text-on-surface-variant leading-relaxed italic'; }
+    }
+    if (bioBnEl) {
+      if (u.bio_bn) { bioBnEl.textContent = u.bio_bn; bioBnEl.classList.remove('hidden'); }
+      else { bioBnEl.classList.add('hidden'); }
+    }
+
+    const skillsEl = document.getElementById('profile-skills');
+    const skills = u.skills || [];
+    if (skillsEl) {
+      if (!skills.length) skillsEl.innerHTML = '<span class="text-on-surface-variant font-body-sm text-body-sm italic">No skills added yet.</span>';
+      else skillsEl.innerHTML = skills.map(s => `<span class="bg-surface-container text-on-surface px-3 py-1.5 rounded-full font-label-md text-label-md">${escapeHtml(s)}</span>`).join('');
+    }
+
+    const expEl = document.getElementById('profile-experience');
+    const exp = Array.isArray(u.experience) ? u.experience : [];
+    if (expEl) {
+      if (!exp.length) expEl.innerHTML = '<span class="text-on-surface-variant font-body-sm text-body-sm italic">No experience added yet.</span>';
+      else expEl.innerHTML = exp.map(e => `
+        <div class="flex items-start gap-3 p-3 rounded-xl bg-surface-container-low">
+          <div class="w-9 h-9 rounded-lg bg-primary-fixed text-on-primary-fixed flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-[18px]">work</span></div>
+          <div class="flex flex-col min-w-0">
+            <span class="font-title-md text-title-md text-on-surface font-semibold">${escapeHtml(e.title || '')}</span>
+            <span class="font-body-sm text-body-sm text-on-surface-variant">${escapeHtml(e.company || '')}${e.duration ? ' • ' + escapeHtml(e.duration) : ''}</span>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    document.getElementById('loading-skeleton').classList.add('hidden');
+    const content = document.getElementById('content');
+    content.classList.remove('hidden');
+    content.classList.add('grid');
+  }
+
+  // ---------- EDIT MODAL ----------
+  const editModal = document.getElementById('edit-modal');
+  function openEditModal() {
+    if (!isOwnProfile) return;
+    const u = currentUser || {};
+    document.getElementById('edit-full-name').value = u.full_name || '';
+    document.getElementById('edit-full-name-bn').value = u.full_name_bn || '';
+    document.getElementById('edit-phone').value = u.phone || '';
+    document.getElementById('edit-city').value = u.city || '';
+    document.getElementById('edit-area').value = u.area || '';
+    document.getElementById('edit-bio').value = u.bio || '';
+    document.getElementById('edit-bio-bn').value = u.bio_bn || '';
+    editState.skills = Array.isArray(u.skills) ? [...u.skills] : [];
+    editState.experience = Array.isArray(u.experience) ? [...u.experience] : [];
+    renderEditSkills();
+    renderEditExperience();
+    editModal.classList.remove('hidden');
+    editModal.classList.add('flex');
+  }
+  function closeEditModal() { editModal.classList.add('hidden'); editModal.classList.remove('flex'); }
+  document.getElementById('edit-profile-btn')?.addEventListener('click', openEditModal);
+  document.querySelector('[data-action="edit-profile"]')?.addEventListener('click', openEditModal);
+  document.getElementById('edit-bio-btn')?.addEventListener('click', openEditModal);
+  document.getElementById('edit-skills-btn')?.addEventListener('click', openEditModal);
+  document.getElementById('edit-experience-btn')?.addEventListener('click', openEditModal);
+  document.getElementById('close-edit-modal')?.addEventListener('click', closeEditModal);
+  document.getElementById('cancel-edit-btn')?.addEventListener('click', closeEditModal);
+  editModal.addEventListener('click', e => { if (e.target === editModal) closeEditModal(); });
+
+  function renderEditSkills() {
+    const wrap = document.getElementById('edit-skills-list');
+    if (!editState.skills.length) { wrap.innerHTML = ''; return; }
+    wrap.innerHTML = editState.skills.map((s, i) => `
+      <span class="inline-flex items-center gap-1 bg-primary-container text-on-primary-container px-3 py-1 rounded-full font-label-md text-label-md">
+        ${escapeHtml(s)}
+        <button class="remove-skill" data-idx="${i}" type="button"><span class="material-symbols-outlined text-[14px]">close</span></button>
+      </span>
+    `).join('');
+    wrap.querySelectorAll('.remove-skill').forEach(btn => btn.addEventListener('click', () => {
+      editState.skills.splice(parseInt(btn.dataset.idx, 10), 1);
+      renderEditSkills();
+    }));
+  }
+  document.getElementById('add-skill-btn')?.addEventListener('click', () => {
+    const input = document.getElementById('edit-skill-input');
+    const v = input.value.trim();
+    if (!v) return;
+    if (!editState.skills.includes(v)) editState.skills.push(v);
+    input.value = '';
+    renderEditSkills();
+  });
+
+  function renderEditExperience() {
+    const wrap = document.getElementById('edit-experience-list');
+    if (!editState.experience.length) { wrap.innerHTML = ''; return; }
+    wrap.innerHTML = editState.experience.map((e, i) => `
+      <div class="flex items-start gap-2 p-2 rounded-lg bg-surface-container-low">
+        <input class="exp-title flex-1 h-10 px-2 rounded-lg bg-surface-container-lowest text-on-surface text-body-sm focus:outline-none" placeholder="Job title" value="${escapeHtml(e.title || '')}" data-idx="${i}"/>
+        <input class="exp-company flex-1 h-10 px-2 rounded-lg bg-surface-container-lowest text-on-surface text-body-sm focus:outline-none" placeholder="Company" value="${escapeHtml(e.company || '')}" data-idx="${i}"/>
+        <input class="exp-duration w-24 h-10 px-2 rounded-lg bg-surface-container-lowest text-on-surface text-body-sm focus:outline-none" placeholder="5 years" value="${escapeHtml(e.duration || '')}" data-idx="${i}"/>
+        <button class="remove-exp shrink-0 w-10 h-10 rounded-lg bg-error-container text-error flex items-center justify-center" data-idx="${i}" type="button"><span class="material-symbols-outlined text-[18px]">delete</span></button>
+      </div>
+    `).join('');
+    wrap.querySelectorAll('.exp-title').forEach(inp => inp.addEventListener('input', () => { editState.experience[inp.dataset.idx].title = inp.value; }));
+    wrap.querySelectorAll('.exp-company').forEach(inp => inp.addEventListener('input', () => { editState.experience[inp.dataset.idx].company = inp.value; }));
+    wrap.querySelectorAll('.exp-duration').forEach(inp => inp.addEventListener('input', () => { editState.experience[inp.dataset.idx].duration = inp.value; }));
+    wrap.querySelectorAll('.remove-exp').forEach(btn => btn.addEventListener('click', () => {
+      editState.experience.splice(parseInt(btn.dataset.idx, 10), 1);
+      renderEditExperience();
+    }));
+  }
+  document.getElementById('add-experience-btn')?.addEventListener('click', () => {
+    editState.experience.push({ title: '', company: '', duration: '' });
+    renderEditExperience();
+  });
+
+  document.getElementById('save-edit-btn')?.addEventListener('click', async () => {
+    const btn = document.getElementById('save-edit-btn');
+    const txt = document.getElementById('save-edit-text');
+    const orig = txt.textContent;
+    btn.disabled = true;
+    txt.innerHTML = '<span class="material-symbols-outlined animate-spin text-[20px]">progress_activity</span> Saving...';
+    const payload = {
+      full_name: document.getElementById('edit-full-name').value.trim() || null,
+      full_name_bn: document.getElementById('edit-full-name-bn').value.trim() || null,
+      phone: document.getElementById('edit-phone').value.trim() || null,
+      city: document.getElementById('edit-city').value.trim() || null,
+      area: document.getElementById('edit-area').value.trim() || null,
+      bio: document.getElementById('edit-bio').value.trim() || null,
+      bio_bn: document.getElementById('edit-bio-bn').value.trim() || null,
+      skills: editState.skills,
+      experience: editState.experience
+    };
+    try {
+      const res = await fetch(`${API}/api/users/${authUser.id}`, { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+      const data = await res.json();
+      if (!data.ok) throw new Error(data.error);
+      currentUser = data.user;
+      localStorage.setItem(USER_KEY, JSON.stringify({ ...authUser, ...currentUser }));
+      closeEditModal();
+      renderProfile();
+      showToast('Profile updated!');
+    } catch (e) {
+      document.getElementById('edit-error').classList.remove('hidden');
+      document.getElementById('edit-error').classList.add('flex');
+      document.getElementById('edit-error-text').textContent = e.message;
+    } finally {
+      btn.disabled = false;
+      txt.textContent = orig;
+    }
+  });
+
+  // ---------- AVATAR UPLOAD ----------
+  document.getElementById('avatar-input')?.addEventListener('change', async (e) => {
+    if (!isOwnProfile) return;
+    const file = e.target.files[0];
+    if (!file) return;
+    if (file.size > 2 * 1024 * 1024) { showToast('Image too large (max 2 MB)', 'error'); return; }
+    if (!file.type.startsWith('image/')) { showToast('Please pick an image', 'error'); return; }
+    const reader = new FileReader();
+    reader.onload = async (ev) => {
+      try {
+        const res = await fetch(`${API}/api/users/${authUser.id}`, { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ avatar_url: ev.target.result }) });
+        const data = await res.json();
+        if (!data.ok) throw new Error(data.error);
+        currentUser = data.user;
+        localStorage.setItem(USER_KEY, JSON.stringify({ ...authUser, ...currentUser }));
+        renderProfile();
+        showToast('Photo updated!');
+      } catch (err) { showToast('Failed to upload photo', 'error'); }
+    };
+    reader.readAsDataURL(file);
+  });
+
+  document.getElementById('shareBtn')?.addEventListener('click', () => {
+    const url = isOwnProfile ? window.location.href : `${window.location.origin}/frontend/profile.html?id=${profileId}`;
+    if (navigator.share) navigator.share({ title: 'Turontoo Profile', url }).catch(() => {});
+    else { navigator.clipboard.writeText(url); showToast('Profile link copied!'); }
+  });
+
+  function logout() {
+    if (!confirm('Log out of Turontoo?')) return;
+    localStorage.removeItem(USER_KEY);
+    localStorage.removeItem('turontoo_remember');
+    window.location.href = 'login.html';
+  }
+  document.getElementById('logoutBtn')?.addEventListener('click', logout);
+  document.getElementById('logout-btn-2')?.addEventListener('click', logout);
+
+  document.querySelectorAll('[data-action]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const action = btn.dataset.action;
+      if (action === 'edit-profile' || action === 'theme') return;
+      if (action === 'policy') return window.location.href = 'policy.html';
+      if (action === 'report') return window.location.href = 'report.html';
+      if (action === 'verify') return window.location.href = 'verify.html';
+    });
+  });
+
+  // ---------- REVIEW MODAL ----------
+  const reviewModal = document.getElementById('review-modal');
+  let reviewState = { revieweeId: null, gigId: null, rating: 0, role: 'as_worker' };
+
+  function openReviewModal(opts) {
+    reviewState = { revieweeId: opts.revieweeId, gigId: opts.gigId, rating: 0, role: opts.role || 'as_worker' };
+    document.getElementById('review-target-text').textContent = `Rate ${opts.name || 'this user'}`;
+    document.getElementById('rating-label').textContent = 'Tap a star to rate';
+    document.getElementById('review-comment').value = '';
+    document.getElementById('review-error').classList.add('hidden');
+    document.getElementById('review-error').classList.remove('flex');
+    document.querySelectorAll('.star-btn').forEach(s => {
+      s.classList.remove('text-secondary'); s.classList.add('text-outline');
+      const icon = s.querySelector('.material-symbols-outlined');
+      if (icon) icon.style.fontVariationSettings = "'FILL' 0";
+    });
+    reviewModal.classList.remove('hidden');
+    reviewModal.classList.add('flex');
+  }
+  function closeReviewModal() { reviewModal.classList.add('hidden'); reviewModal.classList.remove('flex'); }
+
+  document.querySelectorAll('.star-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const rating = parseInt(btn.dataset.rating, 10);
+      reviewState.rating = rating;
+      document.querySelectorAll('.star-btn').forEach(s => {
+        const r = parseInt(s.dataset.rating, 10);
+        const icon = s.querySelector('.material-symbols-outlined');
+        if (r <= rating) { s.classList.remove('text-outline'); s.classList.add('text-secondary'); if (icon) icon.style.fontVariationSettings = "'FILL' 1"; }
+        else { s.classList.add('text-outline'); s.classList.remove('text-secondary'); if (icon) icon.style.fontVariationSettings = "'FILL' 0"; }
+      });
+      const labels = ['', 'Poor', 'Fair', 'Good', 'Very good', 'Excellent'];
+      document.getElementById('rating-label').textContent = labels[rating];
+    });
+  });
+
+  document.getElementById('close-review-modal')?.addEventListener('click', closeReviewModal);
+  document.getElementById('cancel-review-btn')?.addEventListener('click', closeReviewModal);
+  reviewModal.addEventListener('click', e => { if (e.target === reviewModal) closeReviewModal(); });
+
+  document.getElementById('submit-review-btn')?.addEventListener('click', async () => {
+    if (!reviewState.rating) {
+      document.getElementById('review-error').classList.remove('hidden');
+      document.getElementById('review-error').classList.add('flex');
+      document.getElementById('review-error-text').textContent = 'Please pick a star rating.';
+      return;
+    }
+    const btn = document.getElementById('submit-review-btn');
+    const txt = document.getElementById('submit-review-text');
+    const orig = txt.textContent;
+    btn.disabled = true;
+    txt.innerHTML = '<span class="material-symbols-outlined animate-spin text-[20px]">progress_activity</span> Sending...';
+    try {
+      const res = await fetch(`${API}/api/users/${reviewState.revieweeId}/reviews`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          reviewer_id: authUser.id,
+          gig_id: reviewState.gigId,
+          rating: reviewState.rating,
+          comment: document.getElementById('review-comment').value.trim() || null,
+          role: reviewState.role
+        })
+      });
+      const data = await res.json();
+      if (!data.ok) throw new Error(data.error);
+      closeReviewModal();
+      showToast('Review submitted! Thank you.');
+    } catch (e) {
+      document.getElementById('review-error').classList.remove('hidden');
+      document.getElementById('review-error').classList.add('flex');
+      document.getElementById('review-error-text').textContent = e.message;
+    } finally {
+      btn.disabled = false;
+      txt.textContent = orig;
+    }
+  });
+
+  // Auto-open review modal if URL params present
+  const reviewParam = params.get('review');
+  const gigParam = params.get('gig');
+  if (reviewParam && gigParam) {
+    setTimeout(() => openReviewModal({
+      revieweeId: reviewParam,
+      gigId: gigParam,
+      name: 'this user',
+      role: 'as_worker'
+    }), 800);
+  }
+
+  // ---------- BOOT ----------
+  applyTheme(localStorage.getItem(THEME_KEY) || 'light');
+  loadProfile();
+
+  fetch(`${API}/api/notifications/${authUser.id}`).then(r => r.json()).then(d => {
+    if (d.ok && d.unread > 0) {
+      const dot = document.getElementById('notif-dot');
+      if (dot) dot.classList.remove('hidden');
+    }
+  }).catch(() => {});
+
+  if (window.TurontooUser && window.TurontooUser.applyAvatar) window.TurontooUser.applyAvatar();
+})();
+</script>
+</body>
+</html>

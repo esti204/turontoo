@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>My Work — Turontoo</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">
+tailwind.config = { darkMode: 'class', theme: { extend: {
+  colors: { 'inverse-surface': '#31302d','outline-variant': '#c4c8ba','background': '#fcf9f4','error': '#ba1a1a','primary': '#4c6630','surface-container': '#f0ede9','on-primary-fixed-variant': '#354e1b','on-tertiary-fixed-variant': '#33495c','on-secondary-fixed': '#2e1500','error-container': '#ffdad6','on-surface': '#1c1c19','inverse-primary': '#b2d08f','on-primary-container': '#3a531f','on-secondary': '#ffffff','surface-container-highest': '#e5e2dd','primary-container': '#a8c686','surface-variant': '#e5e2dd','secondary-fixed': '#ffdcc2','outline': '#74796c','on-surface-variant': '#44483d','secondary': '#8c4f0e','on-primary': '#ffffff','surface-container-lowest': '#ffffff','on-background': '#1c1c19','tertiary-container': '#a8bfd5','primary-fixed': '#cdeda9','secondary-container': '#fdac65','on-tertiary': '#ffffff','surface-container-high': '#eae8e3','on-primary-fixed': '#0f2000','inverse-on-surface': '#f3f0eb','tertiary-fixed': '#cde5fc','secondary-fixed-dim': '#ffb77a','tertiary-fixed-dim': '#b2c9e0','on-error': '#ffffff','surface-container-low': '#f6f3ee','surface-tint': '#4c6630','on-error-container': '#93000a','surface-bright': '#fcf9f4','on-secondary-fixed-variant': '#6d3a00','surface-dim': '#dcdad5','on-secondary-container': '#763f00','on-tertiary-container': '#384e61','tertiary': '#4a6174','on-tertiary-fixed': '#041d2e','surface': '#fcf9f4' },
+  borderRadius: { 'DEFAULT': '0.25rem','lg': '0.5rem','xl': '0.75rem','full': '9999px' },
+  spacing: { 'space-xs': '0.25rem','space-sm': '0.5rem','space-md': '0.75rem','space-lg': '1rem','space-xl': '1.5rem','margin': '1rem','margin-desktop': '2.5rem' },
+  fontFamily: { 'label-lg': ['Plus Jakarta Sans'],'label-sm': ['Plus Jakarta Sans'],'headline-lg': ['Plus Jakarta Sans'],'title-md': ['Plus Jakarta Sans'],'body-lg': ['Plus Jakarta Sans'],'headline-md': ['Plus Jakarta Sans'],'body-sm': ['Plus Jakarta Sans'],'label-md': ['Plus Jakarta Sans'],'display-lg': ['Plus Jakarta Sans'],'headline-sm': ['Plus Jakarta Sans'],'body-md': ['Plus Jakarta Sans'] },
+  fontSize: { 'label-lg': ['14px',{lineHeight:'20px',fontWeight:'600'}],'label-sm': ['10px',{lineHeight:'14px',letterSpacing:'0.04em',fontWeight:'700'}],'headline-lg': ['28px',{lineHeight:'36px',fontWeight:'700'}],'title-md': ['16px',{lineHeight:'24px',fontWeight:'600'}],'body-lg': ['16px',{lineHeight:'24px',fontWeight:'400'}],'headline-md': ['22px',{lineHeight:'30px',fontWeight:'600'}],'body-sm': ['12px',{lineHeight:'18px',fontWeight:'400'}],'label-md': ['12px',{lineHeight:'16px',fontWeight:'600'}],'display-lg': ['36px',{lineHeight:'44px',fontWeight:'700'}],'headline-sm': ['18px',{lineHeight:'26px',fontWeight:'600'}],'body-md': ['14px',{lineHeight:'20px',fontWeight:'400'}] }
+} } };
+</script>
+<script src="js/user.js"></script>
+<script src="js/config.js"></script>
+<script src="js/ui.js"></script>
+<style>
+@layer base { html, body { margin: 0; padding: 0; min-height: 100%; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } }
+::-webkit-scrollbar { display: none; }
+.clay-fab { box-shadow: 0 4px 14px 0 rgba(168, 198, 134, 0.45), inset 0 2px 2px 0 rgba(255, 255, 255, 0.7), inset 0 -2px 3px 0 rgba(0, 0, 0, 0.1); }
+.clay-btn { box-shadow: 0 4px 12px 0 rgba(168, 198, 134, 0.35), inset 0 2px 2px 0 rgba(255, 255, 255, 0.6), inset 0 -2px 3px 0 rgba(0, 0, 0, 0.08); }
+.logo-placeholder { display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #a8c686 0%, #4c6630 100%); color: #fff; font-weight: 700; }
+.skeleton { background: linear-gradient(90deg, #f0ede9 25%, #e5e2dd 50%, #f0ede9 75%); background-size: 200% 100%; animation: shimmer 1.4s infinite; }
+@keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+
+/* ===== HARD FALLBACK FOR NOTIFICATION BELL ===== */
+#notif-wrapper {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+#notif-btn {
+  width: 44px !important;
+  height: 44px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 9999px !important;
+  cursor: pointer !important;
+  border: none !important;
+  background: transparent !important;
+  color: #44483d !important;
+  padding: 0 !important;
+}
+#notif-btn:hover { background: #eae8e3 !important; }
+#notif-btn .material-symbols-outlined {
+  font-family: 'Material Symbols Outlined', sans-serif !important;
+  font-size: 24px !important;
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24 !important;
+  line-height: 1 !important;
+  display: inline-block !important;
+  font-weight: normal !important;
+  font-style: normal !important;
+  letter-spacing: normal !important;
+  text-transform: none !important;
+  white-space: nowrap !important;
+  word-wrap: normal !important;
+  direction: ltr !important;
+    font-feature-settings: 'liga' !important;
+  -webkit-font-feature-settings: 'liga' !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+#notif-panel {
+  position: absolute !important;
+  right: 0 !important;
+  top: 56px !important;
+  width: 320px !important;
+  max-width: 92vw !important;
+  z-index: 99999 !important;
+  background: #ffffff !important;
+  border-radius: 16px !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18) !important;
+  border: 1px solid rgba(0,0,0,0.08) !important;
+  overflow: hidden !important;
+  color: #1c1c19 !important;
+}
+#notif-panel.hidden { display: none !important; }
+#notif-panel:not(.hidden) { display: block !important; }
+</style>
+</head>
+<body class="bg-surface text-on-surface font-body-md text-body-md min-h-screen flex flex-col antialiased selection:bg-primary-container selection:text-on-primary-container">
+
+<!-- HEADER -->
+<header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_12px_rgba(43,43,40,0.04)] pt-safe">
+  <div class="h-16 max-w-7xl mx-auto px-margin lg:px-margin-desktop flex items-center justify-between gap-space-md">
+    <div class="flex items-center gap-space-md">
+      <a class="flex items-center gap-space-sm group" href="index.html">
+        <img src="logo.png" alt="Turontoo" class="w-9 h-9 rounded-full object-cover shadow-[0_2px_6px_rgba(43,43,40,0.08)]"/>
+        <div class="flex flex-col">
+          <span class="font-headline-sm text-headline-sm tracking-tight text-on-surface leading-none">Turontoo</span>
+          <span class="font-label-sm text-label-sm text-on-surface-variant leading-tight hidden sm:inline">Bangladesh</span>
+        </div>
+      </a>
+      <div class="hidden lg:flex items-center ml-space-xl gap-space-lg">
+        <a class="relative font-label-lg text-label-lg text-on-surface hover:text-primary transition-colors py-1 group" href="index.html"><span class="relative z-10">Find Work</span><span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary rounded-full transition-all duration-200 group-hover:w-full"></span></a>
+        <a class="relative font-label-lg text-label-lg text-on-surface hover:text-primary transition-colors py-1 group" href="browse.html"><span class="relative z-10">All Jobs</span><span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary rounded-full transition-all duration-200 group-hover:w-full"></span></a>
+        <a class="relative font-label-lg text-label-lg text-primary font-semibold py-1 group" href="activity.html"><span class="relative z-10">My Work</span><span class="absolute bottom-0 left-0 w-full h-0.5 bg-primary rounded-full"></span></a>
+        <a class="relative font-label-lg text-label-lg text-on-surface hover:text-primary transition-colors py-1 group" href="profile.html"><span class="relative z-10">My Profile</span><span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary rounded-full transition-all duration-200 group-hover:w-full"></span></a>
+      </div>
+    </div>
+    <div class="flex items-center gap-space-xs">
+      <a aria-label="Search" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/60 transition-colors" href="browse.html"><span class="material-symbols-outlined text-[24px]">search</span></a>
+
+      <!-- NOTIFICATION BELL -->
+      <div id="notif-wrapper">
+        <button
+          id="notif-btn"
+          type="button"
+          onclick="event.stopPropagation(); event.preventDefault(); return false;"
+          aria-label="Notifications"
+        >
+          <span class="material-symbols-outlined">notifications</span>
+          <span class="absolute top-2.5 right-2.5 w-2 h-2 bg-secondary rounded-full ring-2 ring-surface hidden" id="notif-dot" style="position:absolute;top:10px;right:10px;width:8px;height:8px;background:#8c4f0e;border-radius:9999px;"></span>
+        </button>
+        <div id="notif-panel" class="hidden">
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:12px;border-bottom:1px solid rgba(0,0,0,0.06);">
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span class="material-symbols-outlined" style="color:#4c6630;font-size:20px;">notifications</span>
+              <h3 style="font-size:16px;font-weight:700;color:#1c1c19;margin:0;">Notifications</h3>
+            </div>
+            <button id="notif-mark-all" type="button" style="color:#4c6630;font-size:12px;font-weight:600;background:none;border:none;cursor:pointer;">Mark all read</button>
+          </div>
+          <div id="notif-list" style="max-height:384px;overflow-y:auto;padding:8px;display:flex;flex-direction:column;gap:4px;">
+            <div style="text-align:center;padding:24px 8px;">
+              <span class="material-symbols-outlined" style="font-size:36px;color:#74796c;">notifications_off</span>
+              <p style="font-size:12px;color:#44483d;margin-top:4px;">No notifications yet</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a class="hidden lg:flex items-center gap-1.5 bg-primary-container text-on-primary-container px-space-lg py-2 rounded-xl font-label-lg text-label-lg clay-btn hover:brightness-105 transition-all ml-space-sm" href="post-job.html">
+        <span class="material-symbols-outlined text-[20px]">add_circle</span><span>Post Job</span>
+      </a>
+      <a class="ml-space-xs flex items-center p-0.5 rounded-full hover:ring-2 hover:ring-primary-container transition-all" href="profile.html">
+        <div id="nav-avatar" class="w-8 h-8 rounded-full logo-placeholder text-[11px] flex items-center justify-center font-bold">?</div>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="flex-1 flex flex-col relative w-full pt-16 pb-28 lg:pb-12 bg-surface min-h-[calc(100vh-4rem)]">
+  <div class="flex flex-col w-full max-w-4xl mx-auto px-margin lg:px-margin-desktop py-space-md gap-space-lg">
+
+    <div class="flex items-center justify-between">
+      <div class="flex flex-col">
+        <div class="flex items-center gap-space-xs">
+          <h1 class="font-headline-md text-headline-md text-on-surface">My Work</h1>
+          <span class="bg-primary-container/60 text-on-primary-container text-label-sm font-label-sm px-2 py-0.5 rounded-full">Job Tracker</span>
+        </div>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">Live updates, active contracts &amp; verified earnings</p>
+      </div>
+    </div>
+
+    <div class="w-full bg-gradient-to-br from-surface-container-lowest via-surface-container-low to-surface-container rounded-2xl p-space-lg shadow-sm flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-space-md relative overflow-hidden">
+      <div class="absolute -right-6 -bottom-6 w-28 h-28 bg-primary-container/20 rounded-full pointer-events-none blur-xl"></div>
+      <div class="flex items-center gap-space-md relative z-10">
+        <div class="w-12 h-12 rounded-xl bg-primary-container text-on-primary-container flex items-center justify-center shadow-sm">
+          <span class="material-symbols-outlined text-[26px]">insights</span>
+        </div>
+        <div class="flex flex-col">
+          <div class="flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+            <span class="font-label-sm text-label-sm uppercase tracking-wider text-primary">THIS MONTH</span>
+          </div>
+          <div class="flex items-baseline gap-2 mt-0.5">
+            <span id="stat-earned" class="font-headline-sm text-headline-sm text-on-surface font-bold">৳0 earned</span>
+            <span id="stat-completed" class="font-body-sm text-body-sm text-on-surface-variant">• 0 completed</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-space-xs overflow-x-auto pb-1">
+      <button class="filter-tab active flex items-center gap-1.5 px-space-md py-1.5 rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md shadow-sm shrink-0 transition-all" data-filter="all">
+        <span>All</span><span class="w-5 h-5 rounded-full bg-on-primary-container/15 flex items-center justify-center text-[11px] font-bold" id="count-all">0</span>
+      </button>
+      <button class="filter-tab flex items-center gap-1.5 px-space-md py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md hover:text-on-surface shrink-0 transition-all" data-filter="applied">
+        <span>Applied</span><span class="w-5 h-5 rounded-full bg-surface-container-high flex items-center justify-center text-[11px] font-bold" id="count-applied">0</span>
+      </button>
+      <button class="filter-tab flex items-center gap-1.5 px-space-md py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md hover:text-on-surface shrink-0 transition-all" data-filter="booked">
+        <span>Booked</span><span class="w-5 h-5 rounded-full bg-surface-container-high flex items-center justify-center text-[11px] font-bold" id="count-booked">0</span>
+      </button>
+      <button class="filter-tab flex items-center gap-1.5 px-space-md py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md hover:text-on-surface shrink-0 transition-all" data-filter="completed">
+        <span>Completed</span><span class="w-5 h-5 rounded-full bg-surface-container-high flex items-center justify-center text-[11px] font-bold" id="count-completed">0</span>
+      </button>
+    </div>
+
+    <div class="flex flex-col gap-space-md" id="task-feed"></div>
+
+    <div id="loading-state" class="flex flex-col gap-3">
+      <div class="h-32 rounded-2xl skeleton"></div>
+      <div class="h-32 rounded-2xl skeleton"></div>
+    </div>
+
+    <div id="tasks-empty" class="hidden flex-col items-center justify-center text-center gap-space-sm py-space-xl bg-surface-container-low rounded-2xl">
+      <span class="material-symbols-outlined text-[48px] text-outline">inbox</span>
+      <p class="font-title-md text-title-md text-on-surface">Nothing here yet</p>
+      <p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm">Browse jobs and apply to start building your activity history.</p>
+      <a href="browse.html" class="mt-2 px-4 py-2 rounded-xl bg-primary-container text-on-primary-container font-label-md text-label-md clay-btn">Browse Jobs</a>
+    </div>
+
+    <div id="error-state" class="hidden flex-col items-center justify-center text-center gap-space-sm py-space-xl bg-surface-container-low rounded-2xl">
+      <span class="material-symbols-outlined text-[48px] text-error">cloud_off</span>
+      <p class="font-title-md text-title-md text-on-surface">Can't reach server</p>
+      <p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm">Make sure the backend is running.</p>
+      <button id="retry-btn" class="mt-2 px-4 py-2 rounded-xl bg-primary-container text-on-primary-container font-label-md text-label-md clay-btn">Retry</button>
+    </div>
+  </div>
+</main>
+
+<footer class="mt-auto w-full bg-surface-container-low pt-space-xl pb-safe shadow-[0_-1px_10px_rgba(43,43,40,0.03)]">
+  <div class="max-w-7xl mx-auto px-margin lg:px-margin-desktop">
+    <div class="bg-surface-container rounded-2xl p-space-lg mb-space-xl grid grid-cols-2 md:grid-cols-4 gap-space-lg">
+      <div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary">30 Mins</span><span class="font-label-md text-label-md text-on-surface-variant">Avg Match Speed</span></div>
+      <div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary">৳ 0 Fee</span><span class="font-label-md text-label-md text-on-surface-variant">Worker Keeps 100%</span></div>
+      <div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary">100%</span><span class="font-label-md text-label-md text-on-surface-variant">NID-Verified Labor</span></div>
+      <div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary">64</span><span class="font-label-md text-label-md text-on-surface-variant">Districts Covered</span></div>
+    </div>
+    <div class="pt-space-lg pb-space-xl flex flex-col sm:flex-row items-center justify-between gap-space-sm font-body-sm text-body-sm text-on-surface-variant">
+      <p>© 2026 Turontoo Technologies Bangladesh. All rights reserved By Saad Iqbal Esti.</p>
+      <div class="flex items-center gap-space-lg">
+        <a class="hover:text-primary transition-colors" href="policy.html">Privacy</a>
+        <a class="hover:text-primary transition-colors" href="policy.html">Terms</a>
+        <a class="hover:text-primary transition-colors" href="policy.html">Guidelines</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<nav class="lg:hidden fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_16px_rgba(43,43,40,0.06)]">
+  <div class="flex justify-around items-center h-20 px-space-xs relative max-w-lg mx-auto">
+    <a class="flex flex-col items-center justify-center min-w-[56px] h-14 text-on-surface-variant hover:text-on-surface transition-all" href="index.html">
+      <span class="material-symbols-outlined text-[24px]">home</span><span class="font-label-sm text-label-sm mt-1">Home</span>
+    </a>
+    <a class="flex flex-col items-center justify-center min-w-[56px] h-14 text-on-surface-variant hover:text-on-surface transition-all" href="browse.html">
+      <span class="material-symbols-outlined text-[24px]">work</span><span class="font-label-sm text-label-sm mt-1">Jobs</span>
+    </a>
+    <div class="relative -top-5 flex flex-col items-center">
+      <a aria-label="Post Job" class="w-14 h-14 rounded-full bg-primary-container text-on-primary-container clay-fab flex items-center justify-center active:scale-95 transition-transform" href="post-job.html">
+        <span class="material-symbols-outlined text-[30px]">add</span>
+      </a>
+      <span class="font-label-sm text-label-sm text-on-surface-variant mt-1.5 font-medium">Post</span>
+    </div>
+    <a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] h-14 transition-all text-primary font-bold" href="activity.html">
+      <span class="material-symbols-outlined text-[24px]">bolt</span><span class="font-label-sm text-label-sm mt-1">My Work</span>
+    </a>
+    <a class="flex flex-col items-center justify-center min-w-[56px] h-14 text-on-surface-variant hover:text-on-surface transition-all" href="profile.html">
+      <span class="material-symbols-outlined text-[24px]">person</span><span class="font-label-sm text-label-sm mt-1">Profile</span>
+    </a>
+  </div>
+</nav>
+
+<script>
+(function () {
+  const API = window.API_BASE || 'http://localhost:5000';
+  const USER_KEY = 'turontoo_user';
+
+  const authUser = JSON.parse(localStorage.getItem(USER_KEY) || 'null');
+  if (!authUser || !authUser.id) {
+    window.location.href = 'login.html';
+    return;
+  }
+
+  let allApplications = [];
+  let currentFilter = 'all';
+
+  function initials(name) {
+    if (!name) return '?';
+    return name.trim().split(/\s+/).map(w => w[0]).slice(0, 2).join('').toUpperCase();
+  }
+  function avatar(name, size = 'w-11 h-11') {
+    return `<div class="${size} rounded-full logo-placeholder text-[13px] shrink-0 flex items-center justify-center">${initials(name)}</div>`;
+  }
+  function escapeHtml(s) {
+    if (s == null) return '';
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  }
+  function formatTime(iso) {
+    if (!iso) return '';
+    const d = new Date(iso);
+    const now = new Date();
+    const sameDay = d.getFullYear() === now.getFullYear() && d.getMonth() === now.getMonth() && d.getDate() === now.getDate();
+    const time = d.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+    if (sameDay) return `Today, ${time}`;
+    const yesterday = new Date();
+    yesterday.setDate(now.getDate() - 1);
+    const isYesterday = d.getFullYear() === yesterday.getFullYear() && d.getMonth() === yesterday.getMonth() && d.getDate() === yesterday.getDate();
+    if (isYesterday) return `Yesterday, ${time}`;
+    return d.toLocaleDateString('en-US', { day: 'numeric', month: 'short' }) + ', ' + time;
+  }
+
+  // ---------- NOTIFICATIONS ----------
+  async function loadNotifications() {
+    const list = document.getElementById('notif-list');
+    const dot = document.getElementById('notif-dot');
+    try {
+      const res = await fetch(`${API}/api/notifications/${authUser.id}`);
+      const data = await res.json();
+      if (!data.ok) throw new Error(data.error);
+      const notifs = data.notifications || [];
+      if (dot) { if (data.unread > 0) dot.style.display = 'block'; else dot.style.display = 'none'; }
+      if (!notifs.length) {
+        list.innerHTML = '<div style="text-align:center;padding:24px 8px;"><span class="material-symbols-outlined" style="font-size:36px;color:#74796c;">notifications_off</span><p style="font-size:12px;color:#44483d;margin-top:4px;">No notifications yet</p></div>';
+        return;
+      }
+      list.innerHTML = '';
+      notifs.slice(0, 20).forEach(n => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.style.cssText = 'text-align:left;width:100%;padding:10px;border-radius:10px;border:none;cursor:pointer;background:' + (n.is_read ? 'transparent' : '#f6f3ee') + ';display:flex;align-items:flex-start;gap:8px;';
+        const iconMap = { application: 'work', application_booked: 'event_available', application_completed: 'check_circle', message: 'chat', report: 'flag', review: 'star' };
+        const icon = iconMap[n.type] || 'notifications';
+        btn.innerHTML = `
+          <div style="width:32px;height:32px;border-radius:8px;background:rgba(168,198,134,0.4);color:#4c6630;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <span class="material-symbols-outlined" style="font-size:18px;">${icon}</span>
+          </div>
+          <div style="display:flex;flex-direction:column;min-width:0;flex:1;">
+            <span style="font-size:12px;font-weight:600;color:#1c1c19;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${escapeHtml(n.title || 'Notification')}</span>
+            <span style="font-size:12px;color:#44483d;">${escapeHtml(n.body || '')}</span>
+          </div>
+          ${!n.is_read ? '<span style="width:8px;height:8px;background:#4c6630;border-radius:9999px;margin-top:4px;flex-shrink:0;"></span>' : ''}
+        `;
+        btn.addEventListener('click', async (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          try { await fetch(`${API}/api/notifications/${n.id}/read`, { method: 'PATCH' }); } catch (err) {}
+          if (n.link) window.location.href = n.link;
+          else loadNotifications();
+        });
+        list.appendChild(btn);
+      });
+    } catch (e) {
+      list.innerHTML = '<div style="text-align:center;padding:24px 8px;"><span class="material-symbols-outlined" style="font-size:36px;color:#ba1a1a;">cloud_off</span><p style="font-size:12px;color:#44483d;margin-top:4px;">Could not load</p></div>';
+    }
+  }
+
+  // ---------- BELL TOGGLE ----------
+  (function setupBell() {
+    const btn = document.getElementById('notif-btn');
+    const panel = document.getElementById('notif-panel');
+    const markAll = document.getElementById('notif-mark-all');
+    if (!btn || !panel) return;
+
+    let open = false;
+
+    function show() {
+      open = true;
+      panel.classList.remove('hidden');
+      panel.style.display = 'block';
+      loadNotifications();
+    }
+    function hide() {
+      open = false;
+      panel.classList.add('hidden');
+      panel.style.display = 'none';
+    }
+
+    const handler = (e) => {
+      if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (e.stopImmediatePropagation) e.stopImmediatePropagation();
+      }
+      if (open) hide(); else show();
+      return false;
+    };
+
+    btn.addEventListener('mousedown', (e) => e.preventDefault());
+    btn.addEventListener('touchstart', (e) => e.preventDefault(), { passive: false });
+    btn.addEventListener('click', handler);
+
+    // Close on outside click — deferred registration
+    setTimeout(() => {
+      document.addEventListener('click', (e) => {
+        if (!open) return;
+        if (panel.contains(e.target)) return;
+        if (btn.contains(e.target)) return;
+        hide();
+      }, true);
+    }, 0);
+
+    if (markAll) {
+      markAll.addEventListener('click', async (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        try { await fetch(`${API}/api/notifications/read-all/${authUser.id}`, { method: 'PATCH' }); loadNotifications(); } catch (err) {}
+      });
+    }
+  })();
+
+  // ---------- LOAD APPLICATIONS ----------
+  async function loadActivity() {
+    const feed = document.getElementById('task-feed');
+    const loading = document.getElementById('loading-state');
+    const empty = document.getElementById('tasks-empty');
+    const error = document.getElementById('error-state');
+
+    feed.innerHTML = '';
+    loading.classList.remove('hidden');
+    empty.classList.add('hidden');
+    empty.classList.remove('flex');
+    error.classList.add('hidden');
+    error.classList.remove('flex');
+
+    try {
+      const res = await fetch(`${API}/api/users/${authUser.id}/applications`);
+      const data = await res.json();
+      if (!data.ok) throw new Error(data.error || 'Failed to load');
+      allApplications = data.applications || [];
+      loading.classList.add('hidden');
+      updateCounts();
+      renderFiltered();
+    } catch (e) {
+      console.error('loadActivity:', e);
+      loading.classList.add('hidden');
+      error.classList.remove('hidden');
+      error.classList.add('flex');
+    }
+  }
+
+  function updateCounts() {
+    const counts = {
+      all: allApplications.length,
+      applied: allApplications.filter(a => a.status === 'applied').length,
+      booked: allApplications.filter(a => a.status === 'booked').length,
+      completed: allApplications.filter(a => a.status === 'completed').length
+    };
+    document.getElementById('count-all').textContent = counts.all;
+    document.getElementById('count-applied').textContent = counts.applied;
+    document.getElementById('count-booked').textContent = counts.booked;
+    document.getElementById('count-completed').textContent = counts.completed;
+
+    const completed = allApplications.filter(a => a.status === 'completed');
+    const earned = completed.reduce((s, a) => s + ((a.gig && a.gig.wage) || 0), 0);
+    document.getElementById('stat-earned').textContent = `৳${earned.toLocaleString()} earned`;
+    document.getElementById('stat-completed').textContent = `• ${completed.length} completed`;
+  }
+
+  function renderFiltered() {
+    const feed = document.getElementById('task-feed');
+    const empty = document.getElementById('tasks-empty');
+    let list = allApplications.slice();
+    if (currentFilter !== 'all') list = list.filter(a => a.status === currentFilter);
+    feed.innerHTML = '';
+    if (!list.length) {
+      feed.classList.add('hidden');
+      empty.classList.remove('hidden');
+      empty.classList.add('flex');
+      return;
+    }
+    feed.classList.remove('hidden');
+    empty.classList.add('hidden');
+    empty.classList.remove('flex');
+    list.forEach(a => feed.appendChild(renderApplicationCard(a)));
+  }
+
+  function renderApplicationCard(a) {
+    const gig = a.gig || {};
+    const poster = gig.poster || {};
+    const posterName = poster.full_name_bn || poster.full_name || 'Poster';
+    const title = gig.title_bn || gig.title || 'Job';
+    const area = gig.area || gig.city || '—';
+    const status = a.status || 'applied';
+
+    const el = document.createElement('article');
+    el.className = 'w-full bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm flex flex-col gap-space-md';
+
+    let statusBadge = '';
+    if (status === 'applied') {
+      statusBadge = `<span class="inline-flex items-center gap-1 bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm px-2.5 py-1 rounded-full font-semibold"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Applied (Under Review)</span>`;
+    } else if (status === 'booked') {
+      statusBadge = `<span class="inline-flex items-center gap-1 bg-primary-container text-on-primary-container font-label-sm text-label-sm px-2.5 py-1 rounded-full font-semibold"><span class="material-symbols-outlined text-[14px]">event_available</span>Booked</span>`;
+    } else if (status === 'completed') {
+      statusBadge = `<span class="inline-flex items-center gap-1 bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm px-2.5 py-1 rounded-full font-semibold"><span class="material-symbols-outlined text-[14px]">check_circle</span>Completed</span>`;
+    } else if (status === 'cancelled') {
+      statusBadge = `<span class="inline-flex items-center gap-1 bg-error-container text-on-error-container font-label-sm text-label-sm px-2.5 py-1 rounded-full font-semibold"><span class="material-symbols-outlined text-[14px]">cancel</span>Cancelled</span>`;
+    }
+
+    el.innerHTML = `
+      <div class="flex items-center justify-between flex-wrap gap-2">
+        <span class="font-label-sm text-label-sm text-on-surface-variant font-medium">${formatTime(a.created_at)}</span>
+        ${statusBadge}
+      </div>
+
+      <div class="flex items-start gap-space-md">
+        ${avatar(posterName)}
+        <div class="flex flex-col gap-1 min-w-0 flex-1">
+          <h3 class="font-title-md text-title-md text-on-surface font-bold leading-snug">${escapeHtml(title)}</h3>
+          <div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface-variant flex-wrap">
+            <span>Poster: <span class="font-medium text-on-surface">${escapeHtml(posterName)}</span></span>
+            <span>•</span>
+            <span>${escapeHtml(area)}</span>
+          </div>
+        </div>
+        <div class="flex flex-col items-end shrink-0">
+          <span class="font-headline-sm text-headline-sm font-bold text-primary">৳${gig.wage || 0}</span>
+          <span class="font-label-sm text-label-sm text-outline">${gig.payment_method === 'bkash' ? 'bKash' : 'Cash'}</span>
+        </div>
+      </div>
+
+      ${a.proposed_rate ? `
+        <div class="flex items-center justify-between bg-surface-container-low p-space-md rounded-xl flex-wrap gap-2">
+          <div class="flex flex-col">
+            <span class="font-label-sm text-label-sm text-on-surface-variant">Your Proposal Rate</span>
+            <span class="font-title-md text-title-md text-on-surface font-bold">৳${a.proposed_rate}</span>
+          </div>
+        </div>` : ''}
+
+      <div class="flex items-center justify-between gap-space-md pt-1 flex-wrap">
+        <a href="job-details.html?id=${gig.id || ''}" class="flex items-center gap-1 text-primary font-label-md text-label-md hover:underline">
+          <span>View Job</span>
+          <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+        </a>
+        ${status === 'applied' ? `<button class="withdraw-btn text-error hover:bg-error-container/40 px-space-md py-1.5 rounded-lg font-label-md text-label-md transition-colors" data-id="${a.id}">Withdraw Bid</button>` : ''}
+        ${status === 'booked' ? `<button class="chat-btn flex items-center gap-1 text-primary font-label-md text-label-md hover:underline" data-gig="${gig.id}" data-poster="${poster.id}">Chat with Poster</button>` : ''}
+        ${status === 'completed' ? `<button class="review-btn flex items-center gap-1 text-primary font-label-md text-label-md hover:underline" data-gig="${gig.id}" data-reviewee="${poster.id}" data-name="${escapeHtml(posterName)}">Rate Poster</button>` : ''}
+      </div>
+    `;
+
+    el.querySelector('.withdraw-btn')?.addEventListener('click', async function () {
+      if (!confirm('Withdraw this application? (Backend support coming soon)')) return;
+      alert('Withdrawal is not yet available. Please contact support.');
+    });
+
+    el.querySelector('.chat-btn')?.addEventListener('click', function () {
+      window.location.href = `chat.html?gig=${this.dataset.gig}&with=${this.dataset.poster}`;
+    });
+
+    el.querySelector('.review-btn')?.addEventListener('click', function () {
+      window.location.href = `profile.html?review=${this.dataset.reviewee}&gig=${this.dataset.gig}`;
+    });
+
+    return el;
+  }
+
+  document.querySelectorAll('.filter-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.filter-tab').forEach(t => {
+        t.classList.remove('bg-primary-container', 'text-on-primary-container');
+        t.classList.add('bg-surface-container', 'text-on-surface-variant');
+      });
+      tab.classList.remove('bg-surface-container', 'text-on-surface-variant');
+      tab.classList.add('bg-primary-container', 'text-on-primary-container');
+      currentFilter = tab.dataset.filter;
+      renderFiltered();
+    });
+  });
+
+  document.getElementById('retry-btn')?.addEventListener('click', loadActivity);
+
+  loadActivity();
+
+  fetch(`${API}/api/notifications/${authUser.id}`).then(r => r.json()).then(d => {
+    if (d.ok && d.unread > 0) {
+      const dot = document.getElementById('notif-dot');
+      if (dot) dot.style.display = 'block';
+    }
+  }).catch(() => {});
+
+  if (window.TurontooUser && window.TurontooUser.applyAvatar) window.TurontooUser.applyAvatar();
+})();
+</script>
+</body>
+</html>

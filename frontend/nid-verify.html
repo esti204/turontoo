@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>Verify Your ID — Turontoo</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">
+tailwind.config = { darkMode: 'class', theme: { extend: {
+  colors: { 'inverse-surface': '#31302d','outline-variant': '#c4c8ba','background': '#fcf9f4','error': '#ba1a1a','primary': '#4c6630','surface-container': '#f0ede9','on-primary-fixed-variant': '#354e1b','on-tertiary-fixed-variant': '#33495c','on-secondary-fixed': '#2e1500','error-container': '#ffdad6','on-surface': '#1c1c19','inverse-primary': '#b2d08f','on-primary-container': '#3a531f','on-secondary': '#ffffff','surface-container-highest': '#e5e2dd','primary-container': '#a8c686','surface-variant': '#e5e2dd','secondary-fixed': '#ffdcc2','outline': '#74796c','on-surface-variant': '#44483d','secondary': '#8c4f0e','on-primary': '#ffffff','surface-container-lowest': '#ffffff','on-background': '#1c1c19','tertiary-container': '#a8bfd5','primary-fixed': '#cdeda9','secondary-container': '#fdac65','on-tertiary': '#ffffff','surface-container-high': '#eae8e3','on-primary-fixed': '#0f2000','inverse-on-surface': '#f3f0eb','tertiary-fixed': '#cde5fc','secondary-fixed-dim': '#ffb77a','tertiary-fixed-dim': '#b2c9e0','on-error': '#ffffff','surface-container-low': '#f6f3ee','surface-tint': '#4c6630','on-error-container': '#93000a','surface-bright': '#fcf9f4','on-secondary-fixed-variant': '#6d3a00','surface-dim': '#dcdad5','on-secondary-container': '#763f00','on-tertiary-container': '#384e61','tertiary': '#4a6174','on-tertiary-fixed': '#041d2e','surface': '#fcf9f4' },
+  borderRadius: { 'DEFAULT': '0.25rem','lg': '0.5rem','xl': '0.75rem','full': '9999px' },
+  spacing: { 'space-xs': '0.25rem','space-sm': '0.5rem','space-md': '0.75rem','space-lg': '1rem','space-xl': '1.5rem','margin': '1rem','margin-desktop': '2.5rem' },
+  fontFamily: { 'label-lg': ['Plus Jakarta Sans'],'label-sm': ['Plus Jakarta Sans'],'headline-lg': ['Plus Jakarta Sans'],'title-md': ['Plus Jakarta Sans'],'body-lg': ['Plus Jakarta Sans'],'headline-md': ['Plus Jakarta Sans'],'body-sm': ['Plus Jakarta Sans'],'label-md': ['Plus Jakarta Sans'],'display-lg': ['Plus Jakarta Sans'],'headline-sm': ['Plus Jakarta Sans'],'body-md': ['Plus Jakarta Sans'] },
+  fontSize: { 'label-lg': ['14px',{lineHeight:'20px',fontWeight:'600'}],'label-sm': ['10px',{lineHeight:'14px',letterSpacing:'0.04em',fontWeight:'700'}],'headline-lg': ['28px',{lineHeight:'36px',fontWeight:'700'}],'title-md': ['16px',{lineHeight:'24px',fontWeight:'600'}],'body-lg': ['16px',{lineHeight:'24px',fontWeight:'400'}],'headline-md': ['22px',{lineHeight:'30px',fontWeight:'600'}],'body-sm': ['12px',{lineHeight:'18px',fontWeight:'400'}],'label-md': ['12px',{lineHeight:'16px',fontWeight:'600'}],'display-lg': ['36px',{lineHeight:'44px',fontWeight:'700'}],'headline-sm': ['18px',{lineHeight:'26px',fontWeight:'600'}],'body-md': ['14px',{lineHeight:'20px',fontWeight:'400'}] }
+} } };
+</script>
+<script src="js/user.js"></script>
+<script src="js/ui.js"></script>
+<style>
+@layer base { html, body { margin: 0; padding: 0; min-height: 100%; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } }
+::-webkit-scrollbar { display: none; }
+.clay-fab { box-shadow: 0 4px 14px 0 rgba(168, 198, 134, 0.45), inset 0 2px 2px 0 rgba(255, 255, 255, 0.7), inset 0 -2px 3px 0 rgba(0, 0, 0, 0.1); }
+.clay-btn { box-shadow: 0 4px 12px 0 rgba(168, 198, 134, 0.35), inset 0 2px 2px 0 rgba(255, 255, 255, 0.6), inset 0 -2px 3px 0 rgba(0, 0, 0, 0.08); }
+.logo-placeholder { display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #a8c686 0%, #4c6630 100%); color: #fff; font-weight: 700; }
+.upload-box { border: 2px dashed #c4c8ba; transition: all 0.2s; }
+.upload-box:hover { border-color: #a8c686; background-color: #f6f3ee; }
+.upload-box.has-file { border-style: solid; border-color: #4c6630; background-color: #f0ede9; }
+</style>
+</head>
+<body class="bg-surface text-on-surface font-body-md text-body-md min-h-screen flex flex-col antialiased selection:bg-primary-container selection:text-on-primary-container">
+
+<header class="pt-safe bg-surface sticky top-0 z-40 backdrop-blur-xl bg-surface/85 shadow-[0_1px_12px_rgba(43,43,40,0.04)]">
+  <div class="h-16 max-w-3xl mx-auto px-margin lg:px-margin-desktop flex items-center justify-between">
+    <button onclick="history.back()" aria-label="Go back" class="w-10 h-10 rounded-full bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-on-surface transition-colors">
+      <span class="material-symbols-outlined text-[22px]">arrow_back</span>
+    </button>
+    <a class="flex items-center gap-space-sm" href="index.html">
+      <img src="logo.png" alt="Turontoo" class="w-8 h-8 rounded-full object-cover"/>
+      <span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Verify ID</span>
+    </a>
+    <div class="w-10"></div>
+  </div>
+</header>
+
+<main class="flex-1 flex items-start justify-center px-margin py-space-lg pb-16 bg-surface">
+  <div class="w-full max-w-lg">
+
+    <div class="flex items-center gap-space-xs mb-space-lg">
+      <div class="flex-1 h-1 rounded-full bg-primary-container"></div>
+      <div class="flex-1 h-1 rounded-full bg-primary-container"></div>
+      <div class="flex-1 h-1 rounded-full bg-primary-container"></div>
+    </div>
+    <p class="font-label-sm text-label-sm text-on-surface-variant mb-space-md">Step 3 of 3 — Upload your document</p>
+
+    <div class="flex flex-col items-center text-center gap-space-sm mb-space-lg">
+      <div class="w-16 h-16 rounded-2xl bg-primary-container text-on-primary-container flex items-center justify-center shadow-md">
+        <span class="material-symbols-outlined text-[36px]" style="font-variation-settings: 'FILL' 1;">badge</span>
+      </div>
+      <h1 class="font-headline-md text-headline-md text-on-surface font-bold mt-space-sm">Verify Your Identity</h1>
+      <p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm">Your documents are encrypted and never shared publicly. Verification usually takes under 24 hours.</p>
+    </div>
+
+    <form class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-[0_8px_24px_rgba(43,43,40,0.08)] flex flex-col gap-space-lg" id="verifyForm" onsubmit="return false;">
+
+      <div class="flex flex-col gap-2">
+        <div class="flex items-center justify-between">
+          <label class="font-label-lg text-label-lg text-on-surface flex items-center gap-1">
+            Document Type <span class="text-error">*</span>
+          </label>
+          <span class="font-label-sm text-label-sm text-on-surface-variant">ডকুমেন্টের ধরন</span>
+        </div>
+        <div class="grid grid-cols-2 gap-2" id="docTypes">
+          <button class="doc-type active-doc px-3 py-3 rounded-xl flex flex-col items-start gap-1 font-label-md text-label-md transition-all bg-primary-container text-on-primary-container shadow-md font-bold" data-type="nid" type="button">
+            <span class="material-symbols-outlined text-[22px]">badge</span>
+            <span class="text-left">National ID (NID)</span>
+          </button>
+          <button class="doc-type px-3 py-3 rounded-xl flex flex-col items-start gap-1 font-label-md text-label-md transition-all bg-surface-container text-on-surface-variant hover:bg-surface-container-high" data-type="birth_cert" type="button">
+            <span class="material-symbols-outlined text-[22px]">child_care</span>
+            <span class="text-left">Birth Certificate</span>
+          </button>
+          <button class="doc-type px-3 py-3 rounded-xl flex flex-col items-start gap-1 font-label-md text-label-md transition-all bg-surface-container text-on-surface-variant hover:bg-surface-container-high" data-type="driving" type="button">
+            <span class="material-symbols-outlined text-[22px]">directions_car</span>
+            <span class="text-left">Driving License</span>
+          </button>
+          <button class="doc-type px-3 py-3 rounded-xl flex flex-col items-start gap-1 font-label-md text-label-md transition-all bg-surface-container text-on-surface-variant hover:bg-surface-container-high" data-type="edu" type="button">
+            <span class="material-symbols-outlined text-[22px]">school</span>
+            <span class="text-left">Education Transcript</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-1.5">
+        <div class="flex items-center justify-between">
+          <label class="font-label-md text-label-md text-on-surface" for="docNumber" id="docNumberLabel">
+            NID Number <span class="text-error">*</span>
+          </label>
+          <span class="font-label-sm text-label-sm text-on-surface-variant" id="docNumberHint">১০, ১৩ বা ১৭ ডিজিট</span>
+        </div>
+        <div class="relative flex items-center">
+          <span class="material-symbols-outlined absolute left-3 text-outline text-[20px]">pin</span>
+          <input class="w-full h-12 pl-11 pr-3 rounded-xl bg-surface-container-low text-on-surface placeholder:text-outline font-body-md text-body-md tracking-wider focus:outline-none focus:bg-surface-container-lowest shadow-[inset_0_2px_4px_rgba(43,43,40,0.05)] transition-all" id="docNumber" placeholder="Enter document number" type="text" inputmode="numeric" maxlength="20"/>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <div class="flex items-center justify-between">
+          <label class="font-label-lg text-label-lg text-on-surface flex items-center gap-1">
+            Upload Document <span class="text-error">*</span>
+          </label>
+          <span class="font-label-sm text-label-sm text-on-surface-variant">ছবি আপলোড করুন</span>
+        </div>
+
+        <div class="flex flex-col gap-1.5">
+          <span class="font-label-sm text-label-sm text-on-surface-variant">Front side</span>
+          <label class="upload-box rounded-xl p-space-md cursor-pointer flex flex-col items-center justify-center gap-1.5 min-h-[100px] text-center" id="frontUploadBox">
+            <input type="file" accept="image/*" class="hidden" id="frontInput"/>
+            <span class="material-symbols-outlined text-[32px] text-primary">upload_file</span>
+            <span class="font-label-md text-label-md text-on-surface" id="frontLabel">Tap to upload front side</span>
+            <span class="font-label-sm text-label-sm text-on-surface-variant">JPG or PNG • Max 5 MB</span>
+          </label>
+        </div>
+
+        <div class="flex flex-col gap-1.5" id="backSideWrap">
+          <span class="font-label-sm text-label-sm text-on-surface-variant">Back side</span>
+          <label class="upload-box rounded-xl p-space-md cursor-pointer flex flex-col items-center justify-center gap-1.5 min-h-[100px] text-center" id="backUploadBox">
+            <input type="file" accept="image/*" class="hidden" id="backInput"/>
+            <span class="material-symbols-outlined text-[32px] text-primary">upload_file</span>
+            <span class="font-label-md text-label-md text-on-surface" id="backLabel">Tap to upload back side</span>
+            <span class="font-label-sm text-label-sm text-on-surface-variant">JPG or PNG • Max 5 MB</span>
+          </label>
+        </div>
+
+        <div class="bg-surface-container-low rounded-xl p-space-sm flex items-start gap-space-sm mt-1">
+          <span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">tips_and_updates</span>
+          <p class="font-body-sm text-body-sm text-on-surface-variant leading-snug">
+            Ensure the entire document is visible, text is readable, and there's no glare. Blurry photos delay verification.
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-primary-fixed/40 rounded-xl p-space-sm flex items-start gap-space-sm">
+        <span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">lock</span>
+        <div class="flex flex-col gap-0.5">
+          <span class="font-label-md text-label-md text-on-surface font-semibold">Your data is safe</span>
+          <p class="font-body-sm text-body-sm text-on-surface-variant leading-snug">
+            Documents are stored encrypted and used only for identity verification. They are never shown publicly.
+          </p>
+        </div>
+      </div>
+
+      <div class="hidden items-center gap-2 bg-error-container text-on-error-container rounded-xl p-space-sm font-body-sm text-body-sm" id="verifyError">
+        <span class="material-symbols-outlined text-[18px]">error</span>
+        <span id="verifyErrorText">Something went wrong</span>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center gap-space-sm pt-space-xs">
+        <button id="cancel-btn" type="button" class="w-full sm:w-auto px-space-lg h-12 rounded-xl bg-surface-container text-on-surface font-label-lg text-label-lg hover:bg-surface-container-high active:scale-[0.98] transition-all">
+          Cancel
+        </button>
+        <button id="next-btn" type="submit" class="w-full sm:flex-1 h-12 rounded-xl bg-primary-container text-on-primary-container font-title-md text-title-md font-bold clay-btn hover:brightness-105 active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+          <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+          <span id="nextBtnText">Submit for Verification</span>
+        </button>
+      </div>
+
+      <p class="text-center font-label-sm text-label-sm text-on-surface-variant">
+        By submitting, you agree to our <a href="policy.html" class="text-primary hover:underline">verification policy</a>.
+      </p>
+    </form>
+
+    <div class="mt-space-lg flex flex-wrap items-center justify-center gap-x-space-lg gap-y-2 text-on-surface-variant font-label-sm text-label-sm">
+      <div class="flex items-center gap-1">
+        <span class="material-symbols-outlined text-primary text-[16px]">enhanced_encryption</span>
+        <span>256-bit encrypted</span>
+      </div>
+      <div class="flex items-center gap-1">
+        <span class="material-symbols-outlined text-primary text-[16px]">verified_user</span>
+        <span>Govt. matched</span>
+      </div>
+      <div class="flex items-center gap-1">
+        <span class="material-symbols-outlined text-primary text-[16px]">schedule</span>
+        <span>&lt; 24 hrs review</span>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- TOAST -->
+<div class="fixed top-20 left-1/2 -translate-x-1/2 z-[70] transition-all duration-300 transform -translate-y-6 opacity-0 pointer-events-none px-margin py-space-sm rounded-full bg-inverse-surface text-inverse-on-surface shadow-lg flex items-center gap-space-sm font-label-md text-label-md" id="toastNotification">
+  <span class="material-symbols-outlined text-primary-fixed-dim text-[18px]">check_circle</span>
+  <span id="toastMessage">Action completed</span>
+</div>
+
+<!-- CANCEL MODAL -->
+<div class="hidden fixed inset-0 z-[60] bg-inverse-surface/40 backdrop-blur-sm items-center justify-center p-4" id="cancel-modal">
+  <div class="bg-surface-container-lowest rounded-3xl w-full max-w-md p-space-lg shadow-2xl flex flex-col gap-space-md">
+    <div class="flex items-center gap-2">
+      <div class="w-10 h-10 rounded-full bg-error-container text-error flex items-center justify-center">
+        <span class="material-symbols-outlined text-[22px]">warning</span>
+      </div>
+      <h3 class="font-title-md text-title-md font-bold text-on-surface">Discard this verification?</h3>
+    </div>
+    <p class="font-body-md text-body-md text-on-surface">Your uploaded documents won't be saved. You can start over anytime.</p>
+    <div class="flex flex-col sm:flex-row items-center gap-space-sm pt-space-xs">
+      <button id="cancel-keep" class="w-full sm:flex-1 px-4 py-2.5 rounded-xl bg-surface-container text-on-surface font-label-lg text-label-lg">Keep Editing</button>
+      <button id="cancel-discard" class="w-full sm:flex-1 px-4 py-2.5 rounded-xl bg-error text-on-error font-label-lg text-label-lg">Discard</button>
+    </div>
+  </div>
+</div>
+
+<!-- SUCCESS MODAL -->
+<div class="hidden fixed inset-0 z-[60] bg-inverse-surface/40 backdrop-blur-sm items-center justify-center p-4" id="success-modal">
+  <div class="bg-surface-container-lowest rounded-3xl w-full max-w-md p-space-lg shadow-2xl flex flex-col gap-space-md items-center text-center">
+    <div class="w-16 h-16 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-sm">
+      <span class="material-symbols-outlined text-[36px]">verified</span>
+    </div>
+    <h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Documents submitted!</h3>
+    <p class="font-body-md text-body-md text-on-surface-variant">Our team will review your submission within 24 hours. You'll get a notification once approved.</p>
+    <div class="w-full bg-surface-container-low rounded-xl p-space-sm mt-1 flex items-center gap-2 justify-center">
+      <span class="material-symbols-outlined text-primary text-[18px]">schedule</span>
+      <span class="font-label-md text-label-md text-on-surface">Status: <strong>Pending Review</strong></span>
+    </div>
+    <div class="flex items-center justify-center gap-2 pt-1">
+      <div class="w-2 h-2 rounded-full bg-primary animate-bounce" style="animation-delay: 0ms"></div>
+      <div class="w-2 h-2 rounded-full bg-primary animate-bounce" style="animation-delay: 150ms"></div>
+      <div class="w-2 h-2 rounded-full bg-primary animate-bounce" style="animation-delay: 300ms"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  const STORAGE_KEY = 'turontoo_user';
+
+  const state = { docType: 'nid', docNumber: '', frontFile: null, backFile: null };
+
+  function showToast(msg, type = 'success') {
+    const t = document.getElementById('toastNotification');
+    const l = document.getElementById('toastMessage');
+    l.textContent = msg;
+    const icon = t.querySelector('.material-symbols-outlined');
+    if (type === 'error') {
+      icon.textContent = 'error';
+      icon.className = 'material-symbols-outlined text-error text-[18px]';
+    } else if (type === 'info') {
+      icon.textContent = 'info';
+      icon.className = 'material-symbols-outlined text-primary-fixed-dim text-[18px]';
+    } else {
+      icon.textContent = 'check_circle';
+      icon.className = 'material-symbols-outlined text-primary-fixed-dim text-[18px]';
+    }
+    t.classList.remove('opacity-0', '-translate-y-6', 'pointer-events-none');
+    t.classList.add('opacity-100', 'translate-y-0');
+    setTimeout(() => {
+      t.classList.remove('opacity-100', 'translate-y-0');
+      t.classList.add('opacity-0', '-translate-y-6', 'pointer-events-none');
+    }, 2600);
+  }
+
+  function showError(msg) {
+    const box = document.getElementById('verifyError');
+    document.getElementById('verifyErrorText').textContent = msg;
+    box.classList.remove('hidden');
+    box.classList.add('flex');
+    setTimeout(() => {
+      box.classList.add('hidden');
+      box.classList.remove('flex');
+    }, 4500);
+  }
+
+  function hideError() {
+    const box = document.getElementById('verifyError');
+    box.classList.add('hidden');
+    box.classList.remove('flex');
+  }
+
+  function getUser() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      return raw ? JSON.parse(raw) : null;
+    } catch (e) { return null; }
+  }
+
+  function saveUser(user) {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(user));
+      if (window.TurontooUser && window.TurontooUser.applyAvatar) {
+        window.TurontooUser.applyAvatar();
+      }
+    } catch (e) {}
+  }
+
+  const user = getUser();
+  if (!user) {
+    window.location.href = 'signup.html';
+    return;
+  }
+
+  const DOC_META = {
+    nid: { label: 'NID Number', hint: '১০, ১৩ বা ১৭ ডিজিট', needsBack: true, placeholder: 'e.g. 1990123456789' },
+    birth_cert: { label: 'Birth Certificate Number', hint: '১৭ ডিজিট', needsBack: false, placeholder: 'e.g. 20061234567890123' },
+    driving: { label: 'Driving License Number', hint: 'ড্রাইভিং লাইসেন্স নম্বর', needsBack: true, placeholder: 'e.g. DK1234567' },
+    edu: { label: 'Transcript / Roll Number', hint: 'শিক্ষা সনদ নম্বর', needsBack: false, placeholder: 'e.g. 123456' }
+  };
+
+  document.querySelectorAll('.doc-type').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const type = btn.dataset.type;
+      state.docType = type;
+
+      document.querySelectorAll('.doc-type').forEach(b => {
+        b.classList.remove('bg-primary-container', 'text-on-primary-container', 'shadow-md', 'font-bold', 'active-doc');
+        b.classList.add('bg-surface-container', 'text-on-surface-variant');
+      });
+      btn.classList.add('bg-primary-container', 'text-on-primary-container', 'shadow-md', 'font-bold', 'active-doc');
+      btn.classList.remove('bg-surface-container', 'text-on-surface-variant');
+
+      const meta = DOC_META[type];
+      const label = document.getElementById('docNumberLabel');
+      label.innerHTML = `${meta.label} <span class="text-error">*</span>`;
+      document.getElementById('docNumberHint').textContent = meta.hint;
+      document.getElementById('docNumber').placeholder = meta.placeholder;
+
+      const backWrap = document.getElementById('backSideWrap');
+      if (meta.needsBack) {
+        backWrap.classList.remove('hidden');
+      } else {
+        backWrap.classList.add('hidden');
+        state.backFile = null;
+        document.getElementById('backInput').value = '';
+        const box = document.getElementById('backUploadBox');
+        box.classList.remove('has-file');
+        document.getElementById('backLabel').textContent = 'Tap to upload back side';
+      }
+      hideError();
+    });
+  });
+
+  document.getElementById('docNumber').addEventListener('input', e => {
+    e.target.value = e.target.value.replace(/[^A-Za-z0-9]/g, '').slice(0, 20);
+    state.docNumber = e.target.value;
+    hideError();
+  });
+
+  function handleFile(inputId, boxId, labelId, key) {
+    const input = document.getElementById(inputId);
+    const box = document.getElementById(boxId);
+
+    input.addEventListener('change', e => {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      if (!file.type.startsWith('image/')) {
+        showError('Please upload an image (JPG or PNG).');
+        input.value = '';
+        return;
+      }
+      if (file.size > 5 * 1024 * 1024) {
+        showError('File too large. Max 5 MB.');
+        input.value = '';
+        return;
+      }
+
+      state[key] = file;
+
+      const reader = new FileReader();
+      reader.onload = ev => {
+        box.innerHTML = `
+          <input type="file" accept="image/*" class="hidden" id="${inputId}"/>
+          <img src="${ev.target.result}" alt="Preview" class="w-full h-32 object-cover rounded-lg mb-1"/>
+          <span class="font-label-md text-label-md text-primary font-semibold flex items-center gap-1">
+            <span class="material-symbols-outlined text-[16px]">check_circle</span>
+            ${file.name.length > 30 ? file.name.slice(0, 27) + '...' : file.name}
+          </span>
+          <span class="font-label-sm text-label-sm text-on-surface-variant">Tap to change</span>
+        `;
+        box.classList.add('has-file');
+        handleFile(inputId, boxId, labelId, key);
+      };
+      reader.readAsDataURL(file);
+      hideError();
+    });
+  }
+
+  handleFile('frontInput', 'frontUploadBox', 'frontLabel', 'frontFile');
+  handleFile('backInput', 'backUploadBox', 'backLabel', 'backFile');
+
+  function validate() {
+    if (!state.docNumber.trim()) return 'Please enter the document number.';
+    if (state.docType === 'nid' && !/^\d{10,17}$/.test(state.docNumber)) {
+      return 'NID should be 10, 13, or 17 digits.';
+    }
+    if (!state.frontFile) return 'Please upload the front side of your document.';
+    const needsBack = DOC_META[state.docType].needsBack;
+    if (needsBack && !state.backFile) return 'Please upload the back side of your document.';
+    return null;
+  }
+
+  function performSubmit() {
+    const err = validate();
+    if (err) {
+      showError(err);
+      showToast(err, 'error');
+      return;
+    }
+
+    const btn = document.getElementById('next-btn');
+    const txt = document.getElementById('nextBtnText');
+    const orig = txt.textContent;
+
+    btn.disabled = true;
+    btn.classList.add('opacity-70');
+    txt.innerHTML = '<span class="material-symbols-outlined animate-spin text-[20px] align-middle">progress_activity</span> Uploading...';
+
+    setTimeout(() => {
+      const u = getUser() || {};
+      u.verification_status = 'pending';
+      u.verification_doc_type = state.docType;
+      u.verification_doc_number = state.docNumber;
+      u.verification_submitted_at = new Date().toISOString();
+      u.onboarding_step = 'done';
+      saveUser(u);
+
+      showToast('Submitted for review!');
+      document.getElementById('success-modal').classList.remove('hidden');
+      document.getElementById('success-modal').classList.add('flex');
+
+      btn.disabled = false;
+      btn.classList.remove('opacity-70');
+      txt.textContent = orig;
+
+      setTimeout(() => {
+        window.location.href = 'index.html';
+      }, 2800);
+    }, 1400);
+  }
+
+  document.getElementById('verifyForm').addEventListener('submit', e => {
+    e.preventDefault();
+    performSubmit();
+  });
+
+  const cancelModal = document.getElementById('cancel-modal');
+
+  document.getElementById('cancel-btn').addEventListener('click', () => {
+    cancelModal.classList.remove('hidden');
+    cancelModal.classList.add('flex');
+  });
+  document.getElementById('cancel-keep').addEventListener('click', () => {
+    cancelModal.classList.add('hidden');
+    cancelModal.classList.remove('flex');
+  });
+  document.getElementById('cancel-discard').addEventListener('click', () => {
+    cancelModal.classList.add('hidden');
+    cancelModal.classList.remove('flex');
+    window.location.href = 'verify.html';
+  });
+  cancelModal.addEventListener('click', e => {
+    if (e.target === cancelModal) {
+      cancelModal.classList.add('hidden');
+      cancelModal.classList.remove('flex');
+    }
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && !cancelModal.classList.contains('hidden')) {
+      cancelModal.classList.add('hidden');
+      cancelModal.classList.remove('flex');
+    }
+  });
+
+  if (window.TurontooUser && window.TurontooUser.applyAvatar) {
+    window.TurontooUser.applyAvatar();
+  }
+})();
+</script>
+</body>
+</html>

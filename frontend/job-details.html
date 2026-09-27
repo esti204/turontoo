@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>Job Details — Turontoo</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">
+tailwind.config = { darkMode: 'class', theme: { extend: {
+  colors: { 'inverse-surface': '#31302d','outline-variant': '#c4c8ba','background': '#fcf9f4','error': '#ba1a1a','primary': '#4c6630','surface-container': '#f0ede9','on-primary-fixed-variant': '#354e1b','on-tertiary-fixed-variant': '#33495c','on-secondary-fixed': '#2e1500','error-container': '#ffdad6','on-surface': '#1c1c19','inverse-primary': '#b2d08f','on-primary-container': '#3a531f','on-secondary': '#ffffff','surface-container-highest': '#e5e2dd','primary-container': '#a8c686','surface-variant': '#e5e2dd','secondary-fixed': '#ffdcc2','outline': '#74796c','on-surface-variant': '#44483d','secondary': '#8c4f0e','on-primary': '#ffffff','surface-container-lowest': '#ffffff','on-background': '#1c1c19','tertiary-container': '#a8bfd5','primary-fixed': '#cdeda9','secondary-container': '#fdac65','on-tertiary': '#ffffff','surface-container-high': '#eae8e3','on-primary-fixed': '#0f2000','inverse-on-surface': '#f3f0eb','tertiary-fixed': '#cde5fc','secondary-fixed-dim': '#ffb77a','tertiary-fixed-dim': '#b2c9e0','on-error': '#ffffff','surface-container-low': '#f6f3ee','surface-tint': '#4c6630','on-error-container': '#93000a','surface-bright': '#fcf9f4','on-secondary-fixed-variant': '#6d3a00','surface-dim': '#dcdad5','on-secondary-container': '#763f00','on-tertiary-container': '#384e61','tertiary': '#4a6174','on-tertiary-fixed': '#041d2e','surface': '#fcf9f4' },
+  borderRadius: { 'DEFAULT': '0.25rem','lg': '0.5rem','xl': '0.75rem','full': '9999px' },
+  spacing: { 'space-xs': '0.25rem','space-sm': '0.5rem','space-md': '0.75rem','space-lg': '1rem','space-xl': '1.5rem','margin': '1rem','margin-desktop': '2.5rem' },
+  fontFamily: { 'label-lg': ['Plus Jakarta Sans'],'label-sm': ['Plus Jakarta Sans'],'headline-lg': ['Plus Jakarta Sans'],'title-md': ['Plus Jakarta Sans'],'body-lg': ['Plus Jakarta Sans'],'headline-md': ['Plus Jakarta Sans'],'body-sm': ['Plus Jakarta Sans'],'label-md': ['Plus Jakarta Sans'],'display-lg': ['Plus Jakarta Sans'],'headline-sm': ['Plus Jakarta Sans'],'body-md': ['Plus Jakarta Sans'] },
+  fontSize: { 'label-lg': ['14px',{lineHeight:'20px',fontWeight:'600'}],'label-sm': ['10px',{lineHeight:'14px',letterSpacing:'0.04em',fontWeight:'700'}],'headline-lg': ['28px',{lineHeight:'36px',fontWeight:'700'}],'title-md': ['16px',{lineHeight:'24px',fontWeight:'600'}],'body-lg': ['16px',{lineHeight:'24px',fontWeight:'400'}],'headline-md': ['22px',{lineHeight:'30px',fontWeight:'600'}],'body-sm': ['12px',{lineHeight:'18px',fontWeight:'400'}],'label-md': ['12px',{lineHeight:'16px',fontWeight:'600'}],'display-lg': ['36px',{lineHeight:'44px',fontWeight:'700'}],'headline-sm': ['18px',{lineHeight:'26px',fontWeight:'600'}],'body-md': ['14px',{lineHeight:'20px',fontWeight:'400'}] }
+} } };
+</script>
+<script src="js/user.js"></script>
+<script src="js/config.js"></script>
+<script src="js/ui.js"></script>
+<style>
+@layer base { html, body { margin: 0; padding: 0; min-height: 100%; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } }
+::-webkit-scrollbar { display: none; }
+.clay-fab { box-shadow: 0 4px 14px 0 rgba(168, 198, 134, 0.45), inset 0 2px 2px 0 rgba(255, 255, 255, 0.7), inset 0 -2px 3px 0 rgba(0, 0, 0, 0.1); }
+.clay-btn { box-shadow: 0 4px 12px 0 rgba(168, 198, 134, 0.35), inset 0 2px 2px 0 rgba(255, 255, 255, 0.6), inset 0 -2px 3px 0 rgba(0, 0, 0, 0.08); }
+.logo-placeholder { display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #a8c686 0%, #4c6630 100%); color: #fff; font-weight: 700; }
+.skeleton { background: linear-gradient(90deg, #f0ede9 25%, #e5e2dd 50%, #f0ede9 75%); background-size: 200% 100%; animation: shimmer 1.4s infinite; }
+@keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+</style>
+</head>
+<body class="bg-surface text-on-surface font-body-md text-body-md min-h-screen flex flex-col antialiased selection:bg-primary-container selection:text-on-primary-container">
+
+<header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_12px_rgba(43,43,40,0.04)] pt-safe">
+  <div class="h-16 max-w-7xl mx-auto px-margin lg:px-margin-desktop flex items-center justify-between gap-space-md">
+    <div class="flex items-center gap-space-sm">
+      <button aria-label="Go Back" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container-high/60 transition-colors" onclick="history.back()">
+        <span class="material-symbols-outlined text-[24px]">arrow_back</span>
+      </button>
+      <a class="flex items-center gap-space-sm" href="index.html">
+        <img src="logo.png" alt="Turontoo" class="w-8 h-8 rounded-full object-cover"/>
+        <h1 class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate max-w-[200px] sm:max-w-md">Job Details</h1>
+      </a>
+    </div>
+    <div class="flex items-center gap-space-xs">
+      <button aria-label="Share Task" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/60 transition-colors" id="share-btn">
+        <span class="material-symbols-outlined text-[22px]">share</span>
+      </button>
+      <div class="relative flex items-center">
+        <button id="notif-btn" aria-label="Notifications" class="relative w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/60 transition-colors">
+          <span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;">notifications</span>
+          <span class="absolute top-2.5 right-2.5 w-2 h-2 bg-secondary rounded-full ring-2 ring-surface hidden" id="notif-dot"></span>
+        </button>
+        <div id="notif-panel" class="hidden absolute right-0 top-14 w-80 sm:w-96 max-w-[92vw] bg-surface-container-lowest rounded-2xl shadow-2xl border border-outline-variant/30 overflow-hidden z-[60]">
+          <div class="flex items-center justify-between p-space-md border-b border-outline-variant/30">
+            <div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[20px]">notifications</span><h3 class="font-title-md text-title-md font-bold text-on-surface">Notifications</h3></div>
+            <button id="notif-mark-all" class="text-primary font-label-sm text-label-sm hover:underline">Mark all read</button>
+          </div>
+          <div id="notif-list" class="max-h-96 overflow-y-auto p-space-sm flex flex-col gap-1">
+            <div class="text-center py-6"><span class="material-symbols-outlined text-[36px] text-outline">notifications_off</span><p class="font-body-sm text-body-sm text-on-surface-variant mt-1">No notifications yet</p></div>
+          </div>
+        </div>
+      </div>
+      <a href="profile.html" class="flex items-center p-0.5 rounded-full hover:ring-2 hover:ring-primary-container transition-all">
+        <div id="nav-avatar" class="w-8 h-8 rounded-full logo-placeholder text-[11px] flex items-center justify-center font-bold">?</div>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="flex-1 flex flex-col relative w-full pt-16 pb-28 lg:pb-12 bg-surface min-h-screen">
+
+  <div class="fixed top-20 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 transform -translate-y-6 opacity-0 pointer-events-none px-margin py-space-sm rounded-full bg-inverse-surface text-inverse-on-surface shadow-lg flex items-center gap-space-sm font-label-md text-label-md" id="toastNotification">
+    <span class="material-symbols-outlined text-primary-fixed-dim text-[18px]">check_circle</span>
+    <span id="toastMessage">Action completed</span>
+  </div>
+
+  <div class="max-w-6xl mx-auto w-full px-margin lg:px-margin-desktop py-space-md pb-10">
+
+    <div id="loading-skeleton" class="grid grid-cols-1 lg:grid-cols-3 gap-space-md">
+      <div class="lg:col-span-2 flex flex-col gap-space-md">
+        <div class="h-32 rounded-xl skeleton"></div>
+        <div class="h-64 rounded-xl skeleton"></div>
+        <div class="h-48 rounded-xl skeleton"></div>
+      </div>
+      <div class="h-96 rounded-xl skeleton"></div>
+    </div>
+
+    <div id="content" class="hidden grid grid-cols-1 lg:grid-cols-3 gap-space-md">
+
+      <div class="lg:col-span-2 flex flex-col gap-space-md">
+
+        <div class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-[0_8px_20px_-4px_rgba(43,43,40,0.06)] flex flex-col gap-space-sm">
+          <div class="flex items-start justify-between gap-space-sm">
+            <div class="flex items-center gap-space-md min-w-0">
+              <div class="relative shrink-0">
+                <div id="poster-avatar" class="w-14 h-14 rounded-full logo-placeholder text-[18px] shadow-[0_3px_8px_rgba(0,0,0,0.08)]">?</div>
+                <span id="poster-badge" class="hidden absolute -bottom-1 -right-1 bg-primary text-on-primary w-5 h-5 rounded-full items-center justify-center shadow-sm">
+                  <span class="material-symbols-outlined text-[13px]">verified</span>
+                </span>
+              </div>
+              <div class="min-w-0">
+                <div class="flex items-center gap-space-xs flex-wrap">
+                  <h2 id="poster-name" class="font-title-md text-title-md text-on-surface truncate">Loading...</h2>
+                  <span id="poster-nid-chip" class="hidden bg-primary-container/30 text-on-primary-container font-label-sm text-label-sm px-space-xs py-0.5 rounded-full items-center gap-0.5">
+                    <span class="material-symbols-outlined text-[12px] text-primary" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+                    NID Verified
+                  </span>
+                </div>
+                <div class="flex items-center gap-space-xs mt-0.5 flex-wrap">
+                  <div class="flex items-center text-secondary font-label-md text-label-md">
+                    <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span id="poster-rating" class="font-bold ml-0.5">—</span>
+                  </div>
+                  <span class="text-outline-variant">•</span>
+                  <span id="poster-location" class="text-primary font-label-md text-label-md">—</span>
+                </div>
+              </div>
+            </div>
+            <button aria-label="Bookmark Job" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant active:scale-95 transition-transform flex-shrink-0" id="bookmarkBtn" onclick="toggleBookmark()">
+              <span class="material-symbols-outlined text-[20px]" id="bookmarkIcon">bookmark_border</span>
+            </button>
+          </div>
+          <div class="pt-space-xs flex items-center flex-wrap gap-x-space-md gap-y-1 text-on-surface-variant font-body-sm text-body-sm bg-surface-container-low rounded-lg p-space-sm">
+            <div class="flex items-center gap-1">
+              <span class="material-symbols-outlined text-[16px] text-primary">work_history</span>
+              <span>Total jobs offered: <strong class="text-on-surface font-semibold">14 jobs</strong></span>
+            </div>
+            <span class="text-outline-variant hidden sm:inline">•</span>
+            <div class="flex items-center gap-1 text-primary font-medium">
+              <span class="material-symbols-outlined text-[16px]">task_alt</span>
+              <span>0 No-shows</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-space-xs overflow-x-auto no-scrollbar py-0.5">
+          <span id="badge-urgent" class="hidden items-center gap-1 px-space-sm py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm uppercase tracking-wider shrink-0 shadow-sm">
+            <span class="material-symbols-outlined text-[14px]">local_fire_department</span>Urgent Need
+          </span>
+          <span id="badge-category" class="inline-flex items-center gap-1 px-space-sm py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm shrink-0">
+            <span class="material-symbols-outlined text-[14px]">storefront</span>
+            <span id="badge-category-text">Category</span>
+          </span>
+          <span class="inline-flex items-center gap-1 px-space-sm py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm shrink-0 font-mono">
+            Job ID: <span id="badge-id">#--------</span>
+          </span>
+          <span class="inline-flex items-center gap-1 px-space-sm py-1 rounded-full bg-primary-container/40 text-on-primary-container font-label-sm text-label-sm shrink-0">
+            <span class="material-symbols-outlined text-[14px]">group</span>
+            <span id="badge-cap-text">0 of N hired</span>
+          </span>
+        </div>
+
+        <div class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-[0_8px_20px_-4px_rgba(43,43,40,0.06)] space-y-space-sm">
+          <h2 id="gig-title" class="font-headline-sm text-headline-sm text-on-surface font-semibold leading-snug">Loading...</h2>
+          <p id="gig-description" class="font-body-md text-body-md text-on-surface-variant leading-relaxed">Loading...</p>
+        </div>
+
+        <div class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-[0_8px_20px_-4px_rgba(43,43,40,0.06)] space-y-space-md">
+          <h3 class="font-title-md text-title-md text-on-surface flex items-center gap-space-xs">
+            <span class="material-symbols-outlined text-primary text-[20px]">tune</span> Task Specifications
+          </h3>
+          <div class="space-y-space-sm">
+            <div class="flex items-start gap-space-sm p-space-sm rounded-lg bg-surface-container-low">
+              <div class="w-9 h-9 rounded-full bg-tertiary-container/30 text-on-tertiary-container flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-[20px]">pin_drop</span>
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="text-on-surface-variant font-label-sm text-label-sm uppercase">Location</div>
+                <div id="spec-location" class="font-body-md text-body-md text-on-surface font-medium">—</div>
+                <button class="inline-flex items-center gap-0.5 text-primary font-label-md text-label-md mt-0.5 hover:underline" onclick="toggleMapModal()">
+                  <span>View on Map</span>
+                  <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+                </button>
+              </div>
+            </div>
+            <div class="flex items-start gap-space-sm p-space-sm rounded-lg bg-primary-container/20">
+              <div class="w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0 shadow-sm">
+                <span class="material-symbols-outlined text-[20px]">payments</span>
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="text-on-primary-container font-label-sm text-label-sm uppercase font-semibold">Salary / Agreed Pay</div>
+                <div id="spec-wage" class="font-headline-sm text-headline-sm text-on-surface font-bold text-primary">৳—</div>
+                <div class="text-on-surface-variant font-body-sm text-body-sm">Net payment handed over instantly on task completion</div>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+              <div class="flex items-start gap-space-sm p-space-sm rounded-lg bg-surface-container-low">
+                <div class="w-9 h-9 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shrink-0">
+                  <span class="material-symbols-outlined text-[20px]">schedule</span>
+                </div>
+                <div class="min-w-0">
+                  <div class="text-on-surface-variant font-label-sm text-label-sm uppercase">Work Time</div>
+                  <div id="spec-time" class="font-label-lg text-label-lg text-on-surface">Flexible</div>
+                </div>
+              </div>
+              <div class="flex items-start gap-space-sm p-space-sm rounded-lg bg-surface-container-low">
+                <div class="w-9 h-9 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center shrink-0">
+                  <span class="material-symbols-outlined text-[20px]">store</span>
+                </div>
+                <div class="min-w-0">
+                  <div class="text-on-surface-variant font-label-sm text-label-sm uppercase">Work Place</div>
+                  <div class="font-label-lg text-label-lg text-on-surface">On-site / Physical</div>
+                  <div id="spec-area" class="text-on-surface-variant font-body-sm text-body-sm">—</div>
+                </div>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+              <div class="flex items-start gap-space-sm p-space-sm rounded-lg bg-surface-container-low">
+                <div class="w-9 h-9 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center shrink-0">
+                  <span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+                </div>
+                <div class="min-w-0">
+                  <div class="text-on-surface-variant font-label-sm text-label-sm uppercase">Payment Method</div>
+                  <div id="spec-payment" class="font-label-lg text-label-lg text-on-surface">Cash in Hand</div>
+                </div>
+              </div>
+              <div class="flex items-start gap-space-sm p-space-sm rounded-lg bg-surface-container-low">
+                <div class="w-9 h-9 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center shrink-0">
+                  <span class="material-symbols-outlined text-[20px]">person_pin</span>
+                </div>
+                <div class="min-w-0">
+                  <div class="text-on-surface-variant font-label-sm text-label-sm uppercase">People Needed</div>
+                  <div id="spec-workers" class="font-label-lg text-label-lg text-on-surface">1 Person</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hidden rounded-xl overflow-hidden shadow-inner pt-space-xs" id="mapPreview">
+            <div class="w-full h-44 bg-surface-container-high rounded-lg relative flex items-center justify-center">
+              <div class="absolute inset-0 flex items-center justify-center text-outline">
+                <span class="material-symbols-outlined text-[48px]">map</span>
+              </div>
+              <div class="relative bg-surface/90 backdrop-blur-md px-space-sm py-1 rounded-md text-on-surface font-label-sm text-label-sm flex items-center gap-1 shadow-sm">
+                <span class="material-symbols-outlined text-primary text-[14px]">navigation</span>
+                <span id="map-label">Approximate location</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-1 flex flex-col gap-space-md lg:sticky lg:top-20 lg:self-start">
+        <div class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-[0_8px_24px_rgba(43,43,40,0.08)] space-y-space-md">
+          <div class="space-y-1.5">
+            <div class="flex justify-between items-center text-on-surface font-label-md text-label-md">
+              <span class="flex items-center gap-1 text-on-surface font-semibold">
+                <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span> Spots Status
+              </span>
+              <span id="spots-text" class="text-on-surface-variant font-medium">—</span>
+            </div>
+            <div class="w-full bg-surface-container h-3 rounded-full overflow-hidden p-0.5 shadow-inner">
+              <div id="spots-bar" class="bg-gradient-to-r from-primary-container to-primary h-full rounded-full transition-all duration-500" style="width: 0%"></div>
+            </div>
+          </div>
+
+          <div class="space-y-space-sm">
+            <!-- POSTER VIEW (hidden unless you're the poster) -->
+            <div id="posterPanel" class="hidden flex-col gap-space-sm">
+              <div class="bg-primary-fixed/50 border border-primary-container/40 rounded-xl p-space-md flex items-start gap-2">
+                <span class="material-symbols-outlined text-primary text-[22px] shrink-0 mt-0.5">campaign</span>
+                <div class="flex flex-col gap-0.5">
+                  <span class="font-label-lg text-label-lg text-on-surface font-bold">You posted this job</span>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant leading-snug">Manage applicants, mark hires, and close the job from your profile.</p>
+                </div>
+              </div>
+              <a href="profile.html" class="w-full py-3 px-space-lg rounded-xl bg-primary-container text-on-primary-container font-label-lg text-label-lg font-bold clay-btn text-center flex items-center justify-center gap-2">
+                <span class="material-symbols-outlined text-[20px]">group</span>
+                <span>View Applications</span>
+              </a>
+            </div>
+
+            <!-- WORKER VIEW -->
+            <button id="bookJobBtn" class="w-full py-3.5 px-space-lg rounded-xl bg-primary-container text-on-primary-container font-headline-sm text-headline-sm font-semibold flex items-center justify-center gap-space-sm shadow-[0_4px_14px_0_rgba(168,198,134,0.5),inset_0_2px_2px_0_rgba(255,255,255,0.7),inset_0_-3px_3px_0_rgba(0,0,0,0.09)] active:translate-y-0.5 transition-all disabled:opacity-60" onclick="handleBooking()">
+              <span class="material-symbols-outlined text-[24px]">assignment_turned_in</span>
+              <span id="bookingBtnText">Book the Job</span>
+            </button>
+
+            <div id="workerActionsRow" class="grid grid-cols-2 gap-space-sm">
+              <button class="py-3 px-space-md rounded-xl bg-surface-container text-on-surface font-label-lg text-label-lg flex items-center justify-center gap-1.5 hover:bg-surface-container-high active:scale-[0.98] transition-transform" onclick="openChat()">
+                <span class="material-symbols-outlined text-[18px] text-tertiary">chat_bubble</span> Chat
+              </button>
+              <button class="py-3 px-space-md rounded-xl bg-surface-container-low text-on-surface-variant font-label-lg text-label-lg flex items-center justify-center gap-1.5 hover:bg-surface-container active:scale-[0.98] transition-transform" onclick="handleDismiss()">
+                <span class="material-symbols-outlined text-[18px]">close</span> Not Interested
+              </button>
+            </div>
+          </div>
+
+          <div class="space-y-space-xs pt-space-xs">
+            <div class="p-space-sm rounded-lg bg-surface-container-low flex items-start gap-space-sm text-on-surface-variant font-body-sm text-body-sm">
+              <span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">lock</span>
+              <div><strong class="text-on-surface font-medium">Safe Task Guarantee:</strong> Pay is agreed upfront. No platform commission.</div>
+            </div>
+            <div class="p-space-sm rounded-lg bg-secondary-fixed/40 flex items-start gap-space-sm text-on-secondary-fixed-variant font-body-sm text-body-sm">
+              <span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">notification_important</span>
+              <div><strong class="text-on-secondary-fixed font-semibold">Verify NID:</strong> Unlock instant 1-click booking without delays.</div>
+            </div>
+          </div>
+        </div>
+        <div class="px-space-xs text-center space-y-1">
+          <div class="flex items-center justify-center gap-space-xs text-outline font-label-sm text-label-sm">
+            <span class="material-symbols-outlined text-[14px]">shield</span>
+            <span>Turontoo Community Trust Standards Applied</span>
+          </div>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">Have queries? Call Help Desk : 01815848096 (9 AM – 9 PM)</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="not-found" class="hidden flex-col items-center justify-center text-center gap-space-sm py-space-xl">
+      <span class="material-symbols-outlined text-[64px] text-outline">search_off</span>
+      <p class="font-title-md text-title-md text-on-surface">Job not found</p>
+      <p class="font-body-sm text-body-sm text-on-surface-variant">This gig may have been removed or the link is broken.</p>
+      <a href="browse.html" class="mt-2 px-4 py-2 rounded-xl bg-primary-container text-on-primary-container font-label-md text-label-md clay-btn">Browse all jobs</a>
+    </div>
+  </div>
+</main>
+
+<footer class="mt-auto w-full bg-surface-container-low pt-space-xl pb-safe shadow-[0_-1px_10px_rgba(43,43,40,0.03)]">
+  <div class="max-w-7xl mx-auto px-margin lg:px-margin-desktop">
+    <div class="bg-surface-container rounded-2xl p-space-lg mb-space-xl grid grid-cols-2 md:grid-cols-4 gap-space-lg">
+      <div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary">30 Mins</span><span class="font-label-md text-label-md text-on-surface-variant">Avg Match Speed</span></div>
+      <div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary">৳ 0 Fee</span><span class="font-label-md text-label-md text-on-surface-variant">Worker Keeps 100%</span></div>
+      <div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary">100%</span><span class="font-label-md text-label-md text-on-surface-variant">NID-Verified Labor</span></div>
+      <div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary">64</span><span class="font-label-md text-label-md text-on-surface-variant">Districts Covered</span></div>
+    </div>
+    <div class="pt-space-lg pb-space-xl flex flex-col sm:flex-row items-center justify-between gap-space-sm font-body-sm text-body-sm text-on-surface-variant">
+      <p>© 2026 Turontoo Technologies Bangladesh. All rights reserved By Saad Iqbal Esti.</p>
+      <div class="flex items-center gap-space-lg">
+        <a class="hover:text-primary transition-colors" href="policy.html">Privacy</a>
+        <a class="hover:text-primary transition-colors" href="policy.html">Terms</a>
+        <a class="hover:text-primary transition-colors" href="policy.html">Guidelines</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<nav class="lg:hidden fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_16px_rgba(43,43,40,0.06)]">
+  <div class="flex justify-around items-center h-20 px-space-xs relative max-w-lg mx-auto">
+    <a class="flex flex-col items-center justify-center min-w-[56px] h-14 text-on-surface-variant hover:text-on-surface transition-all" href="index.html">
+      <span class="material-symbols-outlined text-[24px]">home</span>
+      <span class="font-label-sm text-label-sm mt-1">Home</span>
+    </a>
+    <a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] h-14 transition-all text-primary font-bold" href="browse.html">
+      <span class="material-symbols-outlined text-[24px]">work</span>
+      <span class="font-label-sm text-label-sm mt-1">Jobs</span>
+    </a>
+    <div class="relative -top-5 flex flex-col items-center">
+      <a aria-label="Post Job" class="w-14 h-14 rounded-full bg-primary-container text-on-primary-container clay-fab flex items-center justify-center active:scale-95 transition-transform" href="post-job.html">
+        <span class="material-symbols-outlined text-[30px]">add</span>
+      </a>
+      <span class="font-label-sm text-label-sm text-on-surface-variant mt-1.5 font-medium">Post</span>
+    </div>
+    <a class="flex flex-col items-center justify-center min-w-[56px] h-14 text-on-surface-variant hover:text-on-surface transition-all" href="activity.html">
+      <span class="material-symbols-outlined text-[24px]">bolt</span>
+      <span class="font-label-sm text-label-sm mt-1">My Work</span>
+    </a>
+    <a class="flex flex-col items-center justify-center min-w-[56px] h-14 text-on-surface-variant hover:text-on-surface transition-all" href="profile.html">
+      <span class="material-symbols-outlined text-[24px]">person</span>
+      <span class="font-label-sm text-label-sm mt-1">Profile</span>
+    </a>
+  </div>
+</nav>
+
+<script>
+(function () {
+  const API = window.API_BASE || 'http://localhost:5000';
+  const USER_KEY = 'turontoo_user';
+  let currentGig = null;
+
+  const authUser = JSON.parse(localStorage.getItem(USER_KEY) || 'null');
+
+  function initials(name) {
+    if (!name) return '?';
+    return name.trim().split(/\s+/).map(w => w[0]).slice(0, 2).join('').toUpperCase();
+  }
+
+  function escapeHtml(s) {
+    if (s == null) return '';
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  }
+
+  function showToast(msg, type = 'success') {
+    const toast = document.getElementById('toastNotification');
+    const label = document.getElementById('toastMessage');
+    if (!toast || !label) return;
+    label.innerText = msg;
+    const icon = toast.querySelector('.material-symbols-outlined');
+    if (icon) {
+      if (type === 'error') icon.className = 'material-symbols-outlined text-error text-[18px]';
+      else icon.className = 'material-symbols-outlined text-primary-fixed-dim text-[18px]';
+    }
+    toast.classList.remove('opacity-0', '-translate-y-6', 'pointer-events-none');
+    toast.classList.add('opacity-100', 'translate-y-0');
+    setTimeout(() => {
+      toast.classList.remove('opacity-100', 'translate-y-0');
+      toast.classList.add('opacity-0', '-translate-y-6', 'pointer-events-none');
+    }, 2600);
+  }
+
+  function getGigIdFromURL() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('id');
+  }
+
+  // ---------- NOTIFICATIONS ----------
+  async function loadNotifications() {
+    if (!authUser || !authUser.id) return;
+    const list = document.getElementById('notif-list');
+    const dot = document.getElementById('notif-dot');
+    try {
+      const res = await fetch(`${API}/api/notifications/${authUser.id}`);
+      const data = await res.json();
+      if (!data.ok) throw new Error(data.error);
+      const notifs = data.notifications || [];
+      if (dot) { if (data.unread > 0) dot.classList.remove('hidden'); else dot.classList.add('hidden'); }
+      if (!notifs.length) {
+        list.innerHTML = '<div class="text-center py-6"><span class="material-symbols-outlined text-[36px] text-outline">notifications_off</span><p class="font-body-sm text-body-sm text-on-surface-variant mt-1">No notifications yet</p></div>';
+        return;
+      }
+      list.innerHTML = '';
+      notifs.slice(0, 20).forEach(n => {
+        const btn = document.createElement('button');
+        btn.className = `text-left w-full p-3 rounded-xl hover:bg-surface-container-low transition-colors flex items-start gap-2 ${n.is_read ? 'opacity-60' : ''}`;
+        const iconMap = { application: 'work', application_booked: 'event_available', application_completed: 'check_circle', message: 'chat', report: 'flag', review: 'star' };
+        const icon = iconMap[n.type] || 'notifications';
+        btn.innerHTML = `
+          <div class="w-8 h-8 rounded-lg bg-primary-container/40 text-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-[18px]">${icon}</span></div>
+          <div class="flex flex-col min-w-0 flex-1">
+            <span class="font-label-md text-label-md text-on-surface font-semibold truncate">${escapeHtml(n.title || 'Notification')}</span>
+            <span class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">${escapeHtml(n.body || '')}</span>
+          </div>
+          ${!n.is_read ? '<span class="w-2 h-2 rounded-full bg-primary mt-1 shrink-0"></span>' : ''}
+        `;
+        btn.addEventListener('click', async () => {
+          try { await fetch(`${API}/api/notifications/${n.id}/read`, { method: 'PATCH' }); } catch (e) {}
+          if (n.link) window.location.href = n.link;
+          else loadNotifications();
+        });
+        list.appendChild(btn);
+      });
+    } catch (e) {
+      list.innerHTML = '<div class="text-center py-6"><span class="material-symbols-outlined text-[36px] text-error">cloud_off</span><p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Could not load</p></div>';
+    }
+  }
+
+  const notifBtn = document.getElementById('notif-btn');
+  const notifPanel = document.getElementById('notif-panel');
+  notifBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    notifPanel.classList.toggle('hidden');
+    if (!notifPanel.classList.contains('hidden')) loadNotifications();
+  });
+  document.addEventListener('click', (e) => {
+    if (notifPanel && !notifPanel.contains(e.target) && e.target !== notifBtn) notifPanel.classList.add('hidden');
+  });
+  document.getElementById('notif-mark-all')?.addEventListener('click', async () => {
+    if (!authUser || !authUser.id) return;
+    try { await fetch(`${API}/api/notifications/read-all/${authUser.id}`, { method: 'PATCH' }); loadNotifications(); } catch (e) {}
+  });
+
+  // ---------- FETCH GIG ----------
+  async function loadGig() {
+    const id = getGigIdFromURL();
+
+    if (!id) { showNotFound(); return; }
+
+    try {
+      const res = await fetch(`${API}/api/gigs/${id}`);
+      if (!res.ok) throw new Error(`Server responded ${res.status}`);
+      const data = await res.json();
+      if (!data.ok || !data.gig) throw new Error('Gig not found');
+
+      renderGig(data.gig);
+    } catch (err) {
+      console.error('loadGig error:', err);
+      showNotFound();
+    }
+  }
+
+  function showNotFound() {
+    document.getElementById('loading-skeleton').classList.add('hidden');
+    const nf = document.getElementById('not-found');
+    nf.classList.remove('hidden');
+    nf.classList.add('flex');
+  }
+
+  function renderGig(g) {
+    currentGig = g;
+    const p = g.poster || {};
+    const name = p.full_name_bn || p.full_name || 'Poster';
+    const cat = (g.category || '').charAt(0).toUpperCase() + (g.category || '').slice(1);
+
+    document.getElementById('poster-avatar').textContent = initials(name);
+    document.getElementById('poster-name').textContent = name;
+    document.getElementById('poster-rating').textContent = (p.rating_as_worker || 5.0).toFixed(1);
+    document.getElementById('poster-location').textContent = g.area ? g.area.split(',')[0] : (g.city || '');
+    if (p.nid_verified) {
+      document.getElementById('poster-badge').classList.remove('hidden');
+      document.getElementById('poster-badge').classList.add('flex');
+      const chip = document.getElementById('poster-nid-chip');
+      chip.classList.remove('hidden');
+      chip.classList.add('inline-flex');
+    }
+
+    document.getElementById('badge-category-text').textContent = cat || 'General';
+    document.getElementById('badge-id').textContent = '#' + g.id.slice(-4).toUpperCase();
+    document.getElementById('badge-cap-text').textContent = `${g.workers_hired || 0} of ${g.workers_needed || 1} hired`;
+
+    if (g.is_urgent) {
+      const u = document.getElementById('badge-urgent');
+      u.classList.remove('hidden');
+      u.classList.add('inline-flex');
+    }
+
+    document.getElementById('gig-title').textContent = g.title_bn || g.title;
+    document.getElementById('gig-description').textContent = g.description_bn || g.description || '';
+    document.getElementById('spec-location').textContent = `${g.area || ''}, ${g.city || ''}`.trim().replace(/^,\s*/, '');
+    document.getElementById('spec-wage').textContent = '৳' + g.wage;
+    document.getElementById('spec-time').textContent = g.start_time || 'Flexible';
+    document.getElementById('spec-area').textContent = g.area || g.city || '';
+    document.getElementById('spec-payment').textContent = g.payment_method === 'bkash' ? 'bKash' : 'Cash in Hand';
+    document.getElementById('spec-workers').textContent = `${g.workers_needed || 1} Person${(g.workers_needed || 1) > 1 ? 's' : ''} total`;
+    document.getElementById('map-label').textContent = g.area || g.city || '';
+
+    const pct = g.workers_needed ? Math.round(((g.workers_hired || 0) / g.workers_needed) * 100) : 0;
+    document.getElementById('spots-text').textContent = `${g.workers_hired || 0} of ${g.workers_needed || 1} spots filled (${pct}%)`;
+    document.getElementById('spots-bar').style.width = pct + '%';
+
+    document.title = (g.title_bn || g.title) + ' — Turontoo';
+
+    // POSTER DETECTION
+    const isPoster = authUser && authUser.id && p.id === authUser.id;
+    if (isPoster) {
+      document.getElementById('posterPanel').classList.remove('hidden');
+      document.getElementById('posterPanel').classList.add('flex');
+      document.getElementById('bookJobBtn').classList.add('hidden');
+      document.getElementById('workerActionsRow').classList.add('hidden');
+    } else {
+      document.getElementById('posterPanel').classList.add('hidden');
+      document.getElementById('posterPanel').classList.remove('flex');
+    }
+
+    document.getElementById('loading-skeleton').classList.add('hidden');
+    const content = document.getElementById('content');
+    content.classList.remove('hidden');
+    content.classList.add('grid');
+  }
+
+  // ---------- ACTIONS ----------
+  window.toggleBookmark = function () {
+    const icon = document.getElementById('bookmarkIcon');
+    const isBookmarked = icon.innerText === 'bookmark';
+    if (isBookmarked) {
+      icon.innerText = 'bookmark_border';
+      icon.style.fontVariationSettings = "'FILL' 0";
+      showToast('Removed from saved tasks');
+    } else {
+      icon.innerText = 'bookmark';
+      icon.style.fontVariationSettings = "'FILL' 1";
+      showToast('Task saved to your shortlist');
+    }
+  };
+
+  window.handleBooking = async function () {
+    const user = JSON.parse(localStorage.getItem(USER_KEY) || 'null');
+    if (!user) { window.location.href = 'login.html'; return; }
+
+    // Own-gig guard
+    if (currentGig && currentGig.poster && user.id === currentGig.poster.id) {
+      showToast("You can't book your own job", 'error');
+      return;
+    }
+
+    // Verification guard
+    if (!user.nid_verified && user.verification_status !== 'verified') {
+      window.location.href = 'verify.html';
+      return;
+    }
+
+    if (!currentGig) return;
+
+    const btn = document.getElementById('bookJobBtn');
+    const text = document.getElementById('bookingBtnText');
+    const orig = text.innerText;
+
+    btn.disabled = true;
+    text.innerText = 'Booking...';
+
+    try {
+      const res = await fetch(`${API}/api/gigs/${currentGig.id}/apply`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ worker_id: user.id })
+      });
+      const data = await res.json();
+      if (!data.ok) throw new Error(data.error || 'Booking failed');
+
+      text.innerText = 'Booking Sent!';
+      btn.classList.remove('bg-primary-container', 'text-on-primary-container');
+      btn.classList.add('bg-primary', 'text-on-primary');
+      showToast('Booking request sent to poster!');
+      setTimeout(() => { window.location.href = 'activity.html'; }, 1200);
+    } catch (err) {
+      console.error('Booking error:', err);
+      btn.disabled = false;
+      text.innerText = orig;
+      showToast('Could not book: ' + err.message, 'error');
+    }
+  };
+
+  window.openChat = function () {
+    if (!currentGig) return;
+    const posterId = (currentGig.poster && currentGig.poster.id) || '';
+    window.location.href = `chat.html?gig=${currentGig.id}&with=${posterId}`;
+  };
+
+  window.handleDismiss = function () {
+    showToast('Job hidden from your recommendations.');
+    setTimeout(() => history.back(), 900);
+  };
+
+  window.toggleMapModal = function () {
+    const map = document.getElementById('mapPreview');
+    map.classList.toggle('hidden');
+    if (!map.classList.contains('hidden')) map.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  };
+
+  document.getElementById('share-btn').addEventListener('click', () => {
+    if (navigator.share) {
+      navigator.share({ title: document.title, url: window.location.href }).catch(() => {});
+    } else {
+      navigator.clipboard.writeText(window.location.href);
+      showToast('Link copied to clipboard!');
+    }
+  });
+
+  // ---------- BOOT ----------
+  loadGig();
+
+  // Pre-fetch notification dot
+  if (authUser && authUser.id) {
+    fetch(`${API}/api/notifications/${authUser.id}`).then(r => r.json()).then(d => {
+      if (d.ok && d.unread > 0) {
+        const dot = document.getElementById('notif-dot');
+        if (dot) dot.classList.remove('hidden');
+      }
+    }).catch(() => {});
+  }
+
+  if (window.TurontooUser && window.TurontooUser.applyAvatar) window.TurontooUser.applyAvatar();
+})();
+</script>
+</body>
+</html>
